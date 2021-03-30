@@ -6,6 +6,8 @@ public class Button2Script : MonoBehaviour
 {
     public GameObject ConectObject2;
     Vector3 objectpos2;
+    //効果音
+    public AudioClip buttonSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,14 @@ public class Button2Script : MonoBehaviour
         {
             Vector3 goposY = new Vector3(objectpos2.x, objectpos2.y + 3, 0);
             ConectObject2.transform.position = (goposY);
+        }
+    }
+    //効果音を触れた瞬間だけ鳴らすため
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            AudioSource.PlayClipAtPoint(buttonSound, Camera.main.transform.position);
         }
     }
 }

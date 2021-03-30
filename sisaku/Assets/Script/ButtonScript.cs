@@ -16,6 +16,8 @@ public class ButtonScript : MonoBehaviour
     public bool AddBlock;
     Vector3 objectpos;
     Rigidbody CORB;
+    //効果音
+    public AudioClip buttonSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +61,14 @@ public class ButtonScript : MonoBehaviour
             {
                 addblock.SetActive(true);
             }
+        }
+    }
+    //効果音を触れた瞬間だけ鳴らすため
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            AudioSource.PlayClipAtPoint(buttonSound, Camera.main.transform.position);
         }
     }
 }

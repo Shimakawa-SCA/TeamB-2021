@@ -10,6 +10,8 @@ public class Button3Script : MonoBehaviour
     Vector3 objectpos31;
     public GameObject ConectObject32;
     Vector3 objectpos32;
+    //効果音
+    public AudioClip buttonSound;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,14 @@ public class Button3Script : MonoBehaviour
             ConectObject31.transform.position = (goposY1);
             Vector3 goposY2 = new Vector3(objectpos32.x, objectpos32.y - 3, 0);
             ConectObject32.transform.position = (goposY2);
+        }
+    }
+    //効果音を触れた瞬間だけ鳴らすため
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            AudioSource.PlayClipAtPoint(buttonSound, Camera.main.transform.position);
         }
     }
 }

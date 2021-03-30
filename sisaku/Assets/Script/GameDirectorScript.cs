@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameDirectorScript : MonoBehaviour
 {
+    //作たけ
     public GameObject Player;
     Vector3 GPos;
     Quaternion q;
@@ -13,9 +14,13 @@ public class GameDirectorScript : MonoBehaviour
     {
         GPos = new Vector3(0, -2, 0);
         q = Quaternion.Euler(0, 0, 0);
-        Instantiate(Player, GPos, q);
+        //GameObject obj =　子分にしたくて追加しましたポーズに使います
+        GameObject obj = Instantiate(Player, GPos, q);
+        // 作成したオブジェクトを子として登録
+        obj.transform.parent = transform;
         FindObjectOfType<PlayerScript>().getnnumber();
         FindObjectOfType<PlayerScript>().getnext();
+        
     }
 
     // Update is called once per frame
@@ -24,9 +29,11 @@ public class GameDirectorScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             FindObjectOfType<PlayerScript>().getnext();
-            Instantiate(Player, GPos, q);
+            GameObject obj = Instantiate(Player, GPos, q);
+            obj.transform.parent = transform;
             i += 1;
             Debug.Log(i);
+            
         }
         
     }
