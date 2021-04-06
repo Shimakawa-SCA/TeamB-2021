@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 // Rigidbodyの速度を保存しておくクラス
 public class RigidbodyVelocity
@@ -17,7 +18,7 @@ public class RigidbodyVelocity
 public class Pausable : MonoBehaviour
 {
   //現在Pause中か？
-	public bool pausing;
+	public bool pausing = false;
 
 	// 無視するGameObject
 	public GameObject[] ignoreGameObjects;
@@ -33,9 +34,21 @@ public class Pausable : MonoBehaviour
 	// ポーズ中のMonoBehaviourの配列
 	MonoBehaviour[] pausingMonoBehaviours;
 
+	//ポーズボタンhttp://kuromikangames.com/article/476587788.html
+	[SerializeField] private Button pauseButton;
+	[SerializeField] private GameObject pausePanel;
+	[SerializeField] private Button resumeButton;
+	//ポーズ処理
+	void Start()
+	{
+		pausePanel.SetActive(false);
+		pauseButton.onClick.AddListener(Pausefor);
+		resumeButton.onClick.AddListener(Resumefor);
+	}
 	// 更新処理
 	void Update()
 	{
+
 		// ポーズ状態が変更されていたら、Pause/Resumeを呼び出す。
 		if (prevPausing != pausing)
 		{
@@ -44,7 +57,14 @@ public class Pausable : MonoBehaviour
 			prevPausing = pausing;
 		}
 	}
-
+	void Pausefor()
+    {
+		pausing = true;
+	}
+	void Resumefor()
+    {
+		pausing = false;
+	}
 	// 中断
 	void Pause()
 	{
@@ -73,7 +93,8 @@ public class Pausable : MonoBehaviour
 		{
 			monoBehaviour.enabled = false;
 		}
-
+		Time.timeScale = 0;  // 時間停止
+		pausePanel.SetActive(true);
 	}
 
 	// 再開
@@ -92,6 +113,8 @@ public class Pausable : MonoBehaviour
 		{
 			monoBehaviour.enabled = true;
 		}
+		Time.timeScale = 1;  // 再開
+		pausePanel.SetActive(false);
 	}
 }
 
