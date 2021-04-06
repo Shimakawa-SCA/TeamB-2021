@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // 物理演算をしたい場合はFixedUpdateを使うのが一般的
