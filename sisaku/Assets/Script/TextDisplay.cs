@@ -8,11 +8,13 @@ public class TextDisplay : MonoBehaviour
 {
     //作やすひろ
     public Text StartText;
+    [SerializeField] GameObject secondText;
+    public int TextTime = 0;
     // Start is called before the first frame update
     void Start()
     {
         //DelayMethodを3.5秒後に呼び出す
-        Invoke("DelayMethod", 2.5f);
+        Invoke("DelayMethod", 3.5f);
     }
 
     // Update is called once per frame
@@ -23,5 +25,12 @@ public class TextDisplay : MonoBehaviour
     void DelayMethod()
     {
         StartText.gameObject.SetActive(false);
+        secondText.gameObject.SetActive(true);
+        Invoke("DelayMethods", 3.5f); 
+    }
+    void DelayMethods()
+    {
+        secondText.gameObject.SetActive(false);
+        TextTime = 1;
     }
 }
