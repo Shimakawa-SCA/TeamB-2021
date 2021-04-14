@@ -55,10 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PScript.cs" />
      <Compile Include="Assets\Script\Button1Script.cs" />
      <Compile Include="Assets\Script\Button2Script.cs" />
      <Compile Include="Assets\Script\Button3Script.cs" />
      <Compile Include="Assets\Script\ButtonScript.cs" />
+     <Compile Include="Assets\Script\Effect.cs" />
+     <Compile Include="Assets\Script\Fade.cs" />
      <Compile Include="Assets\Script\GameDirectorScript.cs" />
      <Compile Include="Assets\Script\Pausable.cs" />
      <Compile Include="Assets\Script\PlayerScript.cs" />

@@ -9,6 +9,16 @@ public class GameDirectorScript : MonoBehaviour
     Vector3 GPos;
     Quaternion q;
     int i = 0;
+    //　出現させるエフェクト
+    [SerializeField]
+    private GameObject effectObject;
+    //　エフェクトを消す秒数
+    [SerializeField]
+    private float deleteTime;
+    //　エフェクトの出現位置のオフセット値
+    [SerializeField]
+    private float offset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +43,9 @@ public class GameDirectorScript : MonoBehaviour
             obj.transform.parent = transform;
             i += 1;
             Debug.Log(i);
-            
+            //　ゲームオブジェクト登場時にエフェクトをインスタンス化
+            var instantiateEffect = GameObject.Instantiate(effectObject, transform.position + new Vector3(0f, offset, 0f), Quaternion.identity) as GameObject;
+            Destroy(instantiateEffect, deleteTime);
         }
         
     }

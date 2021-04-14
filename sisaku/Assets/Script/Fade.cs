@@ -9,10 +9,13 @@ public class Fade : MonoBehaviour
     public bool IsFade;//フェードの演出をするかどうか
     public float time;//フェードにかかる時間
     Image image;
+    [SerializeField] GameObject FadePanel;
+
     void Start()
     {
         image = this.GetComponent<Image>();
         Invoke("StartFade", 1.0f);
+        Invoke("Destroy", 1.0f);
     }
 
     void Update()
@@ -41,10 +44,9 @@ public class Fade : MonoBehaviour
         if (IsFadeOut) image.color = new Color(0, 0, 0, 0);
         else image.color = new Color(0, 0, 0, 1);
         IsFade = true;
-        Invoke("Destroy", 10.0f);
     }
     void Destroy()
     {
-        Destroy(gameObject);
+        FadePanel.SetActive(false);
     }
 }

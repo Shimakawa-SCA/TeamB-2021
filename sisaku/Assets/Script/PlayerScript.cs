@@ -9,6 +9,16 @@ public class PlayerScript : MonoBehaviour
     int mynumber;
     int nownumber;
     public GameDirectorScript GetGameDirectorScript;
+    //　出現させるエフェクト
+    [SerializeField]
+    private GameObject effectObject;
+    //　エフェクトを消す秒数
+    [SerializeField]
+    private float deleteTime;
+    //　エフェクトの出現位置のオフセット値
+    [SerializeField]
+    private float offset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +56,6 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Flor")) Jon = false;
-        
     }
 
     public void getnnumber()
@@ -56,6 +65,13 @@ public class PlayerScript : MonoBehaviour
 
     public void getnext()
     {
+       
         nownumber += 1;
+        if (nownumber == 1)
+        {
+            //　ゲームオブジェクト登場時にエフェクトをインスタンス化
+            var instantiateEffect = GameObject.Instantiate(effectObject, transform.position + new Vector3(0f, offset, 0f), Quaternion.identity) as GameObject;
+            Destroy(instantiateEffect, deleteTime);
+        }
     }
 }

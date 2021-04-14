@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Rigidbodyの速度を保存しておくクラス
 public class RigidbodyVelocity
@@ -15,6 +16,7 @@ public class RigidbodyVelocity
 		angularVeloccity = rigidbody.angularVelocity;
 	}
 }
+
 public class Pausable : MonoBehaviour
 {
   //現在Pause中か？
@@ -38,12 +40,18 @@ public class Pausable : MonoBehaviour
 	[SerializeField] private Button pauseButton;
 	[SerializeField] private GameObject pausePanel;
 	[SerializeField] private Button resumeButton;
+	[SerializeField] private Button retryButton;
+	[SerializeField] private Button titleButton;
+
 	//ポーズ処理
 	void Start()
 	{
 		pausePanel.SetActive(false);
 		pauseButton.onClick.AddListener(Pausefor);
 		resumeButton.onClick.AddListener(Resumefor);
+		retryButton.onClick.AddListener(OnClick);
+		titleButton.onClick.AddListener(OnClickT);
+
 	}
 	// 更新処理
 	void Update()
@@ -53,16 +61,16 @@ public class Pausable : MonoBehaviour
 		if (prevPausing != pausing)
 		{
 			if (pausing) Pause();
-			else Resume();
+			else  Resume();
 			prevPausing = pausing;
 		}
 	}
-	void Pausefor()
+	void Pausefor()//bool値の真
     {
 		pausing = true;
 	}
-	void Resumefor()
-    {
+	void Resumefor()//bool値の偽
+	{
 		pausing = false;
 	}
 	// 中断
@@ -94,7 +102,7 @@ public class Pausable : MonoBehaviour
 			monoBehaviour.enabled = false;
 		}
 		Time.timeScale = 0;  // 時間停止
-		pausePanel.SetActive(true);
+		pausePanel.SetActive(true);//メニューを開く
 	}
 
 	// 再開
@@ -114,7 +122,19 @@ public class Pausable : MonoBehaviour
 			monoBehaviour.enabled = true;
 		}
 		Time.timeScale = 1;  // 再開
-		pausePanel.SetActive(false);
+		pausePanel.SetActive(false);//メニューを閉じる
+	}
+	//やり直しボタン
+    void OnClick()
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		pausing = false;
+	}
+	//タイトルに行くボタン
+	void OnClickT()
+	{
+		SceneManager.LoadScene("Title");
+		pausing = false;
 	}
 }
 

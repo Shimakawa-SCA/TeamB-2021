@@ -126,3 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Jon: 0
   GetGameDirectorScript: {fileID: 0}
+  effectObject: {fileID: 4230358812135957385, guid: 1bcac63e48ae71247b1df0e4843d6540,
+    type: 3}
+  deleteTime: 1
+  offset: 0.2
