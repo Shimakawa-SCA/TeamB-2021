@@ -15,7 +15,7 @@ public class Fade : MonoBehaviour
     {
         image = this.GetComponent<Image>();
         Invoke("StartFade", 1.0f);
-        Invoke("Destroy", 1.0f);
+        Invoke("Destroy", 2.0f);
     }
 
     void Update()

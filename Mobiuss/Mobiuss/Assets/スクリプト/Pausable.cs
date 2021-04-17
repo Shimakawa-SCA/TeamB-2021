@@ -133,7 +133,7 @@ public class Pausable : MonoBehaviour
 	//タイトルに行くボタン
 	void OnClickT()
 	{
-		SceneManager.LoadScene("Title");
+		SceneManager.LoadScene("Opening");
 		pausing = false;
 	}
 }

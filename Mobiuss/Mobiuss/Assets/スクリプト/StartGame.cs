@@ -19,7 +19,7 @@ public class StartGame : MonoBehaviour
     }
     public void GameStart()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Stage1");
     }
     public void EndGame()
     {
