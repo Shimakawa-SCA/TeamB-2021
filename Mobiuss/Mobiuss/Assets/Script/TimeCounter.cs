@@ -7,7 +7,12 @@ using UnityEngine.SceneManagement;
 public class TimeCounter : MonoBehaviour
 {
     //カウントダウン
-    public float countdown = 5.0f;
+    public float countdown = 300.0f;
+    //取得用関数
+    public float Getcountdown()
+    {
+        return countdown;
+    }
 
     //時間を表示するText型の変数
     public Text timeText;
