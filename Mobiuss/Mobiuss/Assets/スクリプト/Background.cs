@@ -14,7 +14,7 @@ public class Background : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(0.0005f, 0, 0);
+        transform.Translate(0.0001f, 0, 0);
 
         // 境界線を超えたら
         if (transform.position.x < borderLine)
