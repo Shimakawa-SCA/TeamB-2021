@@ -8,7 +8,7 @@ public class GameDirectorScript : MonoBehaviour
     public GameObject Player;
     Vector3 GPos;
     Quaternion q;
-    public int i = 0;
+    int i = 0;
     //　出現させるエフェクト
     [SerializeField]
     private GameObject effectObject;
