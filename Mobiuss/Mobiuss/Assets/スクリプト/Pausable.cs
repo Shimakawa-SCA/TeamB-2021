@@ -125,13 +125,13 @@ public class Pausable : MonoBehaviour
 		pausePanel.SetActive(false);//メニューを閉じる
 	}
 	//やり直しボタン
-    void OnClick()
+	public void OnClick()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		pausing = false;
 	}
 	//タイトルに行くボタン
-	void OnClickT()
+	public void OnClickT()
 	{
 		SceneManager.LoadScene("Opening");
 		pausing = false;
