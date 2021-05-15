@@ -8,7 +8,7 @@ public class aka : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        i = 0;
     }
     void OnCollisionStay(Collision other)
     {
