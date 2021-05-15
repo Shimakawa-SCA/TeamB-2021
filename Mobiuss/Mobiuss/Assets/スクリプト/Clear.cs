@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class Clear : MonoBehaviour
 {
+    [SerializeField] private GameObject GameClearImag;
     [SerializeField] private GameObject ClearPanel;
     [SerializeField] private GameObject aClearImag;
     [SerializeField] private GameObject bClearImag;
@@ -20,6 +21,7 @@ public class Clear : MonoBehaviour
     void Start()
     {
         ClearPanel.SetActive(false);
+        GameClearImag.SetActive(false);
         aClearImag.SetActive(false);
         bClearImag.SetActive(false);
         countdown = GameObject.Find("Timer"); //countdownをオブジェクトの名前から取得して変数に格納する
@@ -53,8 +55,14 @@ public class Clear : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ClearPanel.SetActive(true);
+        GameClearImag.SetActive(true);
+        Invoke("CPanel",1);
+    }
 
+    void CPanel()
+    {
+        ClearPanel.SetActive(true);
+        GameClearImag.SetActive(false);
     }
 
     // if (other.gameObject.CompareTag("player"))
