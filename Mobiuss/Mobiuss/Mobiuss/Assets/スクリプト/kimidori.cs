@@ -9,15 +9,22 @@ public class kimidori : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Instantiate(CubePrefab);
     }
     void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "player")
         {
             i = 1;
-            Instantiate(CubePrefab);
+            
             Destroy(gameObject);
+            Invoke("DelayMethod", 0.5f);
         }
+
+       
+    }
+    void DelayMethod()
+    {
+        i=0;
     }
 }
