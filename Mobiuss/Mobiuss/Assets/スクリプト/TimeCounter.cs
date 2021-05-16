@@ -11,7 +11,7 @@ public class TimeCounter : MonoBehaviour
 
     //時間を表示するText型の変数
     public Text timeText;
-
+    [SerializeField] private GameObject TimeOverPanel;
     public TextDisplay TextDisplay;
     int tTime;
     void Start()
@@ -33,15 +33,18 @@ public class TimeCounter : MonoBehaviour
             if (countdown <= 0)
             {
                 timeText.text = "時間になりました！";
-                //Invoke("GameOver", 1.0f);
-                SceneManager.LoadScene("GameOver");
+                TimeOverPanel.SetActive(true);
             }
         }
-        void GameOver()
-        {
-            SceneManager.LoadScene("GameOver");
-        }
 
-
+    }
+    public void OnClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    //タイトルに行くボタン
+    public void OnClickT()
+    {
+        SceneManager.LoadScene("Opening");
     }
 }
