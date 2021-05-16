@@ -14,7 +14,7 @@ public class kimidorikabe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (kimidori.i == 1)
+        if (kimidori.i == 1&&n==0)
         {
             Destroy(gameObject);
         }

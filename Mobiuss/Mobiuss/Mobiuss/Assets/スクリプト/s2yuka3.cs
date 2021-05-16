@@ -10,11 +10,11 @@ public class s2yuka3 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-    void OnCollisionExit(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "iwa")
         {
-            Invoke("yuka", 0.5f);
+            Invoke("yuka", 1.5f);
         }
     }
 
@@ -23,5 +23,11 @@ public class s2yuka3 : MonoBehaviour
     void yuka()
     {
         rb.velocity = new Vector3(0, -5f, 0);
+        Invoke("kieru", 0.5f);
+    }
+    void kieru()
+    {
+        //透過度いじって消す
+        Destroy(gameObject);
     }
 }
