@@ -56,6 +56,7 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Flor")) Jon = false;
+        if (collision.gameObject.CompareTag("iwa")) Jon = false;
     }
 
     public void getnnumber()
