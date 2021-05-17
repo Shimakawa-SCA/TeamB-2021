@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class s2star : MonoBehaviour
 {
+    public GameObject item_Star;
+    float changeRed = 1.0f;
+    float changeGreen = 1.0f;
+    float cahngeBlue = 1.0f;
+    float cahngeAlpha = 0.25f;
+    
     // Start is called before the first frame update
     void Start()
     {
+        changeRed = 1.0f;
+        changeGreen = 1.0f;
+        cahngeBlue = 1.0f;
+        cahngeAlpha = 0.5f;
         GetComponent<Collider>().isTrigger = true;
+        GetComponent<Material>().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,6 +34,8 @@ public class s2star : MonoBehaviour
     void koraidalost() 
     {
         GetComponent<Collider>().isTrigger = false;
+        cahngeAlpha = 1f;
+        GetComponent<Material>().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);
     }
     // Update is called once per frame
 }
