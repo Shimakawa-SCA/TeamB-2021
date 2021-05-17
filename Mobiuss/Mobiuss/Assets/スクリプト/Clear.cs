@@ -38,6 +38,8 @@ public class Clear : MonoBehaviour
         if (countdowntime > 120)
         {
             aClearImag.SetActive(true);
+            bClearImag.SetActive(true);
+
         }
         /*int Rivcount = script.Riv; //新しく変数を宣言してその中にGameDirectorScriptの変数iを代入する
         //Debug.Log("復活回数は" + icount);
