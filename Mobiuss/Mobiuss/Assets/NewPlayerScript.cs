@@ -128,6 +128,7 @@ public class NewPlayerScript : MonoBehaviour
         FlightDuration = jumpStatusValue.FlightDuration;
         FallStart = jumpStatusValue.FallStart;
         FallSpeed = jumpStatusValue.FallSpeed;
+        Stagenumber = 2;
         SetUp();
         PlayerRight = true;
         Ji = 0;
@@ -138,8 +139,8 @@ public class NewPlayerScript : MonoBehaviour
         JF4 = false;
         CanHold = false;
         stetus = new float[21] { 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f, 0f };
-        stetusnumber = 0;
         PlayerHoldItem = 0;
+        stetusnumber = 0;
         LandingSticking = 0.5f;
         transform.position = PlayerSpawnPoint;
         bomq = Quaternion.Euler(0, 0, 0);
@@ -637,38 +638,43 @@ public class NewPlayerScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)//アイテムを入手
     {
+
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
         if (Input.GetKeyDown(KeyCode.I))
         {
             if (ItemHold == false)
             {
-                if (other.gameObject.tag == "Item1")
+                if (collision.gameObject.tag == "Bom")
                 {
                     ItemHold = true;
                     PlayerHoldItem = 1;
-                    transform.parent = other.transform;
+                    transform.parent = collision.transform;
                 }
-                if (other.gameObject.tag == "Item2")
+                if (collision.gameObject.tag == "Item2")
                 {
                     ItemHold = true;
                     PlayerHoldItem = 2;
-                    transform.parent = other.transform;
+                    transform.parent = collision.transform;
                 }
-                if (other.gameObject.tag == "Item3")
+                if (collision.gameObject.tag == "Item3")
                 {
                     ItemHold = true;
                     PlayerHoldItem = 3;
-                    transform.parent = other.transform;
+                    transform.parent = collision.transform;
                 }
             }
         }
 
-        if (other.gameObject.tag == "")//レバー
+        if (collision.gameObject.tag == "")//レバー
         {
 
 
         }
 
-        if (other.gameObject.tag == (""))//アイテムを使用できる場所
+        if (collision.gameObject.tag == (""))//アイテムを使用できる場所
         {
             ItemHold = false;
             if ((PlayerHoldItem == 1) || (PlayerHoldItem == 2))
