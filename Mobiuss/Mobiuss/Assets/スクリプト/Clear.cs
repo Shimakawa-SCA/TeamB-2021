@@ -14,20 +14,18 @@ public class Clear : MonoBehaviour
 
     GameObject countdown; //countdownそのものが入る変数
     TimeCounter timeCounter; //TimeCounterが入る変数
-    GameObject i; //iそのものが入る変数
-    GameDirectorScript script; //GameDirectorScriptが入る変数
 
     // Start is called before the first frame update
     void Start()
     {
+
         ClearPanel.SetActive(false);
         GameClearImag.SetActive(false);
         aClearImag.SetActive(false);
         bClearImag.SetActive(false);
         countdown = GameObject.Find("Timer"); //countdownをオブジェクトの名前から取得して変数に格納する
         timeCounter = countdown.GetComponent<TimeCounter>(); //countdownの中にあるTimeCounterを取得して変数に格納する
-        i = GameObject.Find("GameDrector"); //iをオブジェクトの名前から取得して変数に格納する
-        script = i.GetComponent<GameDirectorScript>(); //iの中にあるGameDirectorScriptを取得して変数に格納する
+       
 
     }
 
@@ -41,16 +39,16 @@ public class Clear : MonoBehaviour
         {
             aClearImag.SetActive(true);
         }
-        int icount = script.i; //新しく変数を宣言してその中にGameDirectorScriptの変数iを代入する
+        /*int Rivcount = script.Riv; //新しく変数を宣言してその中にGameDirectorScriptの変数iを代入する
         //Debug.Log("復活回数は" + icount);
-        if (icount < 5)
+        if (Rivcount < 5)
         {
             bClearImag.SetActive(true);
         }
         else
         {
             bClearImag.SetActive(false);
-        }
+        }*/
     }
 
     private void OnTriggerEnter(Collider other)
@@ -65,6 +63,7 @@ public class Clear : MonoBehaviour
         GameClearImag.SetActive(false);
     }
 
+    
     // if (other.gameObject.CompareTag("player"))
     //    {
     //      SceneManager.LoadScene("stage2");
