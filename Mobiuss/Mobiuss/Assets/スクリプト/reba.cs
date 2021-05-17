@@ -29,6 +29,7 @@ public class reba : MonoBehaviour
 
     void Update()
     {
+        Transform myTransform = this.transform;
         if (n == 1)
         {
             if (Input.GetKeyDown(KeyCode.T))
@@ -36,10 +37,12 @@ public class reba : MonoBehaviour
                 if (i == 0)
                 {
                     i=1;
+                    myTransform.Rotate(0, 180f,0, Space.World);
                 }
                 else
                 {
                     i=0;
+                    myTransform.Rotate(0,  -180f,0, Space.World);
                 }
             }
         }

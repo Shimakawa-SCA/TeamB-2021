@@ -5,6 +5,8 @@ using UnityEngine;
 public class iwa2 : MonoBehaviour
 {
     int n = 0;
+    float x;
+    int j=0;
     public GameObject iwaPrefab;
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class iwa2 : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         n=0;
         aka2.i=0;
+        x=3;
     }
     void OnCollisionEnter(Collision other)
     {
@@ -35,15 +38,30 @@ public class iwa2 : MonoBehaviour
             Destroy(gameObject);
         } 
     }
-            // Update is called once per frame
-    void Update()
+    void OnCollisionStay(Collision other)
     {
-        if (aka2.i == 1)
+        if (other.gameObject.tag == "Floryuka")
+        {
+           j=1;
+          
+        }
+    }
+            // Update is called once per frame
+            void Update()
+    {
+        if (aka2.i == 1&&j==0)
         {
             //n++;
             //Position.x += 10;
             rb.velocity = new Vector3(-3f, -3f, 0);
         }
-
+        if (j == 1) { 
+        x *= 0.9985f;
+        if (x < 1.2)
+        {
+            x = 0;
+        }
+        rb.velocity = new Vector3(-x, -3f, 0);
+        }
     }
 }
