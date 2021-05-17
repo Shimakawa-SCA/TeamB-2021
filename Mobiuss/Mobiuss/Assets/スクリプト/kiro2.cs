@@ -20,7 +20,7 @@ public class kiro2 : MonoBehaviour
         if (kiirobo2.i == 1)
         {
             
-            if (j >= -1.28)
+            if (j >= -1.514)
             {
                 rb.velocity = new Vector3(0, -5f, 0);
                 j = transform.position.y;
@@ -32,7 +32,7 @@ public class kiro2 : MonoBehaviour
         }
         if (kiirobo2.i == 0)
         {
-            if (j <= 1.215)
+            if (j <= 1.315) 
             {
                 rb.velocity = new Vector3(0, 5f, 0);
                 j = transform.position.y;

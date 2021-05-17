@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space) && (Jon == false))
             {
-                rb.velocity = new Vector3(rb.velocity.x, 5, 0);
+                rb.velocity = new Vector3(rb.velocity.x, 7, 0);
                 Jon = true;
             }
         }
@@ -56,6 +56,7 @@ public class PlayerScript : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Flor")) Jon = false;
+        if (collision.gameObject.CompareTag("iwa")) Jon = false;
     }
 
     public void getnnumber()

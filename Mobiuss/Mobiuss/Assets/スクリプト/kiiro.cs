@@ -7,6 +7,10 @@ public class kiiro : MonoBehaviour
     public static int i = 0;
     public GameObject CubePrefab;
     // Start is called before the first frame update
+    void Start()
+    {
+        i=0;
+    }
     void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "player")

@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class TextDisplay : MonoBehaviour
 {
     //作やすひろ
-    public Text StartText;
-    [SerializeField] GameObject secondText;
+    [SerializeField] private GameObject GameStartImage;
+    [SerializeField] private GameObject StartText;
+    [SerializeField] private GameObject secondText; 
     public int TextTime = 0;
     // Start is called before the first frame update
     void Start()
     {
         //DelayMethodを3.5秒後に呼び出す
-        Invoke("DelayMethod", 3.5f);
+        Invoke("DelayMethod", 1.5f);
     }
 
     // Update is called once per frame
@@ -24,11 +25,17 @@ public class TextDisplay : MonoBehaviour
     }
     void DelayMethod()
     {
-        StartText.gameObject.SetActive(false);
-        secondText.gameObject.SetActive(true);
-        Invoke("DelayMethods", 3.5f); 
+        GameStartImage.SetActive(false);
+        StartText.gameObject.SetActive(true);
+        Invoke("DelayMethods", 2.5f); 
     }
     void DelayMethods()
+    {
+        StartText.gameObject.SetActive(false);
+        secondText.gameObject.SetActive(true);
+        Invoke("DelayMethodss", 2.5f);
+    }
+    void DelayMethodss()
     {
         secondText.gameObject.SetActive(false);
         TextTime = 1;

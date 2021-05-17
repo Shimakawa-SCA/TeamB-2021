@@ -43,7 +43,7 @@ public class Clear : MonoBehaviour
         }
         int icount = script.i; //新しく変数を宣言してその中にGameDirectorScriptの変数iを代入する
         //Debug.Log("復活回数は" + icount);
-        if (icount < 3)
+        if (icount < 5)
         {
             bClearImag.SetActive(true);
         }
@@ -56,7 +56,7 @@ public class Clear : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         GameClearImag.SetActive(true);
-        Invoke("CPanel",1);
+        Invoke("CPanel", 1);
     }
 
     void CPanel()

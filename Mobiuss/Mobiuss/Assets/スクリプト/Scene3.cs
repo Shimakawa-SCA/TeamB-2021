@@ -12,5 +12,9 @@ public class Scene3 : MonoBehaviour
     {
         SceneManager.LoadScene("stage2");
     }
-  
+    public void OnClickT()
+    {
+        SceneManager.LoadScene("Opening");
+    }
+
 }
