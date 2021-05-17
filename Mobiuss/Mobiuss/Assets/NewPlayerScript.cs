@@ -128,7 +128,7 @@ public class NewPlayerScript : MonoBehaviour
         FlightDuration = jumpStatusValue.FlightDuration;
         FallStart = jumpStatusValue.FallStart;
         FallSpeed = jumpStatusValue.FallSpeed;
-        Stagenumber = 2;
+        Stagenumber = 1;
         SetUp();
         PlayerRight = true;
         Ji = 0;
@@ -162,13 +162,7 @@ public class NewPlayerScript : MonoBehaviour
 
         if (Stagenumber == 1)
         {
-            JumpForce = stetus[0];
-            InputReceiveTime = stetus[1];
-            KeepStart = stetus[2];
-            KeepForce = stetus[3];
-            FlightDuration = stetus[4];
-            FallStart = stetus[5];
-            FallSpeed = stetus[6];
+
             PlayerSpawnPoint = new Vector3(0, -2.5f, 0);
         }
         if (Stagenumber == 2)
