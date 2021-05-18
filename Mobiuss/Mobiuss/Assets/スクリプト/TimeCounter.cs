@@ -13,8 +13,7 @@ public class TimeCounter : MonoBehaviour
     public Text timeText;
     [SerializeField] private GameObject TimeOverPanel;
 
-    public TextDisplay TextDisplay;
-    int tTime;
+    public static int tTime;
     void Start()
     {
         TimeOverPanel.SetActive(false);
@@ -23,7 +22,6 @@ public class TimeCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tTime = TextDisplay.TextTime;
         if (tTime == 1)
         {
             //時間をカウントダウンする

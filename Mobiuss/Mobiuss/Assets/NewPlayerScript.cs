@@ -196,6 +196,8 @@ public class NewPlayerScript : MonoBehaviour
         ItemDropPoint = new Vector3(transform.position.x + 0.5f, transform.position.y, 0);
         if (Input.GetKeyDown(KeyCode.R))
         {
+            TimeCounter.tTime = 1;
+            Debug.Log(TimeCounter.tTime);
             if (PlayerRight ==true)
             {
                 Instantiate(cadaver, PlayerPosition,bomq);
@@ -235,12 +237,14 @@ public class NewPlayerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) //動作テスト用
         {
             LSH = -0.5f;
-
+            TimeCounter.tTime = 1;
+            Debug.Log(TimeCounter.tTime);
         }
         if (Input.GetKey(KeyCode.D)) //動作テスト用
         {
             LSH = 0.5f;
-
+            TimeCounter.tTime = 1;
+            Debug.Log(TimeCounter.tTime);
         }
         //if (CanMove == true)
         //{
