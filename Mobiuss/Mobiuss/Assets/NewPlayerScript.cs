@@ -130,7 +130,7 @@ public class NewPlayerScript : MonoBehaviour
         FlightDuration = jumpStatusValue.FlightDuration;
         FallStart = jumpStatusValue.FallStart;
         FallSpeed = jumpStatusValue.FallSpeed;
-        Stagenumber = 2;
+        Stagenumber = 1;
         SetUp();
         PlayerRight = true;
         Ji = 0;
