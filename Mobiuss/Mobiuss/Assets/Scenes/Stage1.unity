@@ -2274,10 +2274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149bb9b9324ad0842b38dc9b8ad5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 5
+  countdown: 300
   timeText: {fileID: 450719090}
   TimeOverPanel: {fileID: 1080313098}
-  TextDisplay: {fileID: 1767744774}
 --- !u!114 &450719090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7660,7 +7659,6 @@ MonoBehaviour:
   GameStartImage: {fileID: 625574354}
   StartText: {fileID: 934776402}
   secondText: {fileID: 734426008}
-  TextTime: 0
 --- !u!4 &1767744775
 Transform:
   m_ObjectHideFlags: 0

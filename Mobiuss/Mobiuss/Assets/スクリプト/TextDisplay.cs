@@ -10,7 +10,6 @@ public class TextDisplay : MonoBehaviour
     [SerializeField] private GameObject GameStartImage;
     [SerializeField] private GameObject StartText;
     [SerializeField] private GameObject secondText; 
-    public int TextTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +37,7 @@ public class TextDisplay : MonoBehaviour
     void DelayMethodss()
     {
         secondText.gameObject.SetActive(false);
-        TextTime = 1;
+        TimeCounter.tTime = 1;
+        Debug.Log(TimeCounter.tTime);
     }
 }
