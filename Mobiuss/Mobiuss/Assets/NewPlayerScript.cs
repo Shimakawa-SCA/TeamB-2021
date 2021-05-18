@@ -20,6 +20,8 @@ public class NewPlayerScript : MonoBehaviour
 
     public bool PlayerRight;//プレイヤーの方向
 
+    public static int RCount;
+
     [Serializable]//インスペクターをきれいにするもの
     public class StatusValue
     {
@@ -128,7 +130,7 @@ public class NewPlayerScript : MonoBehaviour
         FlightDuration = jumpStatusValue.FlightDuration;
         FallStart = jumpStatusValue.FallStart;
         FallSpeed = jumpStatusValue.FallSpeed;
-        Stagenumber = 1;
+        Stagenumber = 2;
         SetUp();
         PlayerRight = true;
         Ji = 0;
@@ -167,13 +169,7 @@ public class NewPlayerScript : MonoBehaviour
         }
         if (Stagenumber == 2)
         {
-            JumpForce = stetus[7];
-            InputReceiveTime = stetus[8];
-            KeepStart = stetus[9];
-            KeepForce = stetus[10];
-            FlightDuration = stetus[11];
-            FallStart = stetus[12];
-            FallSpeed = stetus[13];
+
             PlayerSpawnPoint = new Vector3(-7.5f, 1.5f, 0);
         }
         if (Stagenumber == 3)
@@ -198,6 +194,8 @@ public class NewPlayerScript : MonoBehaviour
         {
             TimeCounter.tTime = 1;
             Debug.Log(TimeCounter.tTime);
+            RCount += 1;
+            Debug.Log(RCount);
             if (PlayerRight ==true)
             {
                 Instantiate(cadaver, PlayerPosition,bomq);

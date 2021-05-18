@@ -38,25 +38,28 @@ public class Clear : MonoBehaviour
         if (countdowntime > 120)
         {
             aClearImag.SetActive(true);
-            bClearImag.SetActive(true);
-
         }
-        /*int Rivcount = script.Riv; //新しく変数を宣言してその中にGameDirectorScriptの変数iを代入する
-        //Debug.Log("復活回数は" + icount);
-        if (Rivcount < 5)
+        
+        if (NewPlayerScript.RCount < 4)
         {
             bClearImag.SetActive(true);
         }
         else
         {
             bClearImag.SetActive(false);
-        }*/
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         GameClearImag.SetActive(true);
         Invoke("CPanel", 1);
+        TimeCounter.tTime = 0;
+        Debug.Log(TimeCounter.tTime);
+        //DeleteTargetObj という名前のオブジェクトを取得
+        GameObject obj = GameObject.Find("New Sprite");
+        // 指定したオブジェクトを削除
+        Destroy(obj);
     }
 
     void CPanel()
