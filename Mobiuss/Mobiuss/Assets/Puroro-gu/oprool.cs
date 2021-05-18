@@ -72,8 +72,14 @@ public class oprool : MonoBehaviour
             Brack.SendMessage("BrackOut");
 
             StopCoroutine(opRollCoroutine);
+            Invoke("Stage", 3.0f);
         }
 
         yield return null;
+    }
+
+    void Stage()
+    {
+        SceneManager.LoadScene("Stage1");
     }
 }
