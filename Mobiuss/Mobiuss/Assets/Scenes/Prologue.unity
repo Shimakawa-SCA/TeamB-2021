@@ -807,18 +807,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d622b1d6f2d54fa42b0c9a91f7477ada, type: 3}
-    m_FontSize: 102
+    m_FontSize: 145
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 102
+    m_MaxSize: 148
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Rivive Spin
+  m_Text: Revive Spin
 --- !u!222 &1387703364
 CanvasRenderer:
   m_ObjectHideFlags: 0
