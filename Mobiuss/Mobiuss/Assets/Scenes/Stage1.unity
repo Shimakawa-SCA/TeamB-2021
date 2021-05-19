@@ -987,10 +987,10 @@ MonoBehaviour:
   AnimationJF: 0
   Speed: 2
   jumpup: 60
-  jumpkeep: 60
+  jumpkeep: 90
   jumpfall: 0
-  JumpForce: 4
-  KeepForce: 1
+  JumpForce: 2
+  KeepForce: 2
   cadaver: {fileID: 5360416352593068188, guid: 9e3c2573a6b96bd4d8a8630e84dd5d02, type: 3}
   cadaverl: {fileID: 5471547294990251966, guid: 818fb40640f4e9441aa8ee11368e0ccd,
     type: 3}
@@ -5847,7 +5847,7 @@ GameObject:
   - component: {fileID: 1302515082}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Flor
+  m_TagString: iwa
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

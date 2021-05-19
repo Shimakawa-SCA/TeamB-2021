@@ -15,6 +15,11 @@ public class Desutoroi : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            transform.Translate(0,0.01f,0);
+            transform.Translate(0, 0.01f, 0);
+            transform.Translate(0, 0.01f, 0);
+            transform.Translate(0, 0.01f, 0);
+            transform.Translate(0, 0.01f, 0);
             GameObject.Destroy(this.gameObject);
         }
     }
