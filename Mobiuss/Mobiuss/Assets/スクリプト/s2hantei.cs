@@ -15,7 +15,7 @@ public class s2hantei : MonoBehaviour
     {
         if (bom.n == 1)
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

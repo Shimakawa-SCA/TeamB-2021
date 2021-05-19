@@ -22,6 +22,12 @@ public class iwa : MonoBehaviour
             //n++;
             //Position.x += 10;
             rb.velocity = new Vector3(3f, -1f, 0);
+            Invoke("chengetag",1.8f);
         }
+    }
+
+    void chengetag()
+    {
+        gameObject.tag = ("Flor");
     }
 }
