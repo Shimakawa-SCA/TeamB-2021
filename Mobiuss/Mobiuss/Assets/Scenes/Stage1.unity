@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 11381325}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Flor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -974,52 +974,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 177406215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9864ab4d220f4124787ac51a82f07900, type: 3}
+  m_Script: {fileID: 11500000, guid: 853bb500a16932b418626eadff25bdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waiting: 0
-  Hold: 0
-  Move: 0
-  HoldingMove: 0
-  Jump: 0
-  HoldingJump: 0
-  Death1: 0
-  CanMove: 0
   PlayerRight: 0
-  statusValue:
-    Speed: 2.5
-  jumpStatusValue:
-    JumpForce: 4
-    InputReceiveTime: 0.3
-    KeepStart: 0
-    KeepForce: 1
-    FlightDuration: 0.2
-    FallStart: 0.1
-    FallSpeed: 5
-  GetJumpInput: 0
-  AnimationWaitRight: 0
-  AnimationMoveRight: 0
-  AnimationJumpRight: 0
-  AnimationHoldRight: 0
-  AnimationHoldingMoveRight: 0
-  AnimationHoldingJumpRight: 0
-  AnimationDeath1Right: 0
-  AnimationWaitLeft: 0
-  AnimationMoveLeft: 0
-  AnimationJumpLeft: 0
-  AnimationHoldLeft: 0
-  AnimationHoldingMoveLeft: 0
-  AnimationHoldingJumpLeft: 0
-  AnimationDeath1Left: 0
-  AnimationJumpUpingRight: 0
-  AnimationJumpUpingLeft: 0
-  AnimationJumpKeepingRight: 0
-  AnimationJumpKeepingLeft: 0
-  AnimationJumpFallingRight: 0
-  AnimationJumpFallingLeft: 0
+  Waiting: 0
+  Move: 0
+  Jump: 0
+  Hold: 0
+  JumpUping: 0
+  JumpKeeping: 0
   AnimationJF: 0
-  ItemHold: 0
-  ActiveBom: {fileID: 0}
+  Speed: 2
+  jumpup: 60
+  jumpkeep: 60
+  jumpfall: 0
+  JumpForce: 4
+  KeepForce: 1
   cadaver: {fileID: 5360416352593068188, guid: 9e3c2573a6b96bd4d8a8630e84dd5d02, type: 3}
   cadaverl: {fileID: 5471547294990251966, guid: 818fb40640f4e9441aa8ee11368e0ccd,
     type: 3}
@@ -6888,8 +6859,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506430203}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.734, y: 4.881, z: 0}
-  m_LocalScale: {x: 5.8153687, y: 0.043472506, z: 1}
+  m_LocalPosition: {x: -6.8262, y: 4.881, z: 0}
+  m_LocalScale: {x: 7.6310153, y: 0.043472506, z: 1}
   m_Children: []
   m_Father: {fileID: 1797573681}
   m_RootOrder: 6
