@@ -18,6 +18,9 @@ public class s2star : MonoBehaviour
         cahngeBlue = 1.0f;
         cahngeAlpha = 0.5f;
         GetComponent<Collider>().isTrigger = true;
+        Color color = gameObject.GetComponent<Renderer>().material.color;
+        color.a = 0.6f;
+        gameObject.GetComponent<Renderer>().material.color = color;
         GetComponent<Material>().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);
     }
 
@@ -35,6 +38,9 @@ public class s2star : MonoBehaviour
     {
         GetComponent<Collider>().isTrigger = false;
         cahngeAlpha = 1f;
+        Color color = gameObject.GetComponent<Renderer>().material.color;
+        color.a = 1f;
+        gameObject.GetComponent<Renderer>().material.color = color;
         GetComponent<Material>().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);
     }
     // Update is called once per frame
