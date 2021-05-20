@@ -54,7 +54,7 @@ public class ImageEx : MonoBehaviour
     void Whitein()
     {
         FadeController2.isFadeIn = true;
-        TextFead.isFadeIn = true;
+        ReviveImage.fadeIn = true;
         Invoke("StartButt",3.5f);
         //FindObjectOfType<TextFead>().FadeIn();
     }
