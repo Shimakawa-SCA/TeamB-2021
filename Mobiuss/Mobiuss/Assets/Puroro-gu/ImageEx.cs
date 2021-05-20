@@ -8,7 +8,7 @@ public class ImageEx : MonoBehaviour
 {
     [SerializeField] private GameObject BookImag;
     [SerializeField] private GameObject BooksImag;
-    [SerializeField] private Button StartButton;
+    [SerializeField] private GameObject bottonPanel;
 
 
     // Start is called before the first frame update
@@ -16,7 +16,8 @@ public class ImageEx : MonoBehaviour
     {
         BookImag.SetActive(true);
         BooksImag.SetActive(false);
-        
+        bottonPanel.SetActive(false);
+
     }
 
 
@@ -50,11 +51,11 @@ public class ImageEx : MonoBehaviour
     {
         FadeController2.isFadeIn = true;
         TextFead.isFadeIn = true;
-        //Invoke(StartButtin,2.0f);
+        Invoke("StartButt",3.5f);
         //FindObjectOfType<TextFead>().FadeIn();
     }
-    /*void StartButtin()
+    void StartButt()
     {
-        StartButton.SetActive(true);
-    }*/
+        bottonPanel.SetActive(true);
+    }
 }
