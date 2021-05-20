@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class FadeController2 : MonoBehaviour
 {
-    float fadeSpeed = 0.002f;        //透明度が変わるスピードを管理
+    float fadeSpeed = 0.006f;        //透明度が変わるスピードを管理
     float red, green, blue, alfa;   //パネルの色、不透明度を管理
 
     public static bool isFadeOut = false;  //フェードアウト処理の開始、完了を管理するフラグ

@@ -5,8 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class Scene2 : MonoBehaviour
 {
-    // Use this for initialization
-	public void OnClick()
+	int count;
+	void Start()
+    {
+		count = 0;
+    }
+	void Update()
+	{
+		if (count == 0 && Input.GetKeyDown("joystick button 1"))
+		{
+			count++;
+			Invoke("Loadpuro", 2.0f);
+		}
+	}
+		// Use this for initialization
+		public void OnClick()
 	{
 		Invoke("Loadpuro", 2.0f);
 	}

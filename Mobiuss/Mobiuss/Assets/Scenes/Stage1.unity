@@ -3032,7 +3032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFade: 1
-  time: 15
+  time: 2
   FadePanel: {fileID: 983711230}
 --- !u!114 &642931915
 MonoBehaviour:
@@ -4986,7 +4986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &983711231
 RectTransform:
   m_ObjectHideFlags: 0
