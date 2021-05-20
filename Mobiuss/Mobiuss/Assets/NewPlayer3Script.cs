@@ -91,7 +91,10 @@ public class NewPlayer3Script : MonoBehaviour
             }
             rb.velocity = new Vector3(Speed * MoveDirection, rb.velocity.y, 0);
         }
+        if (bom.n == 0)
+        {
         FindObjectOfType<bom>().getright(PlayerRight);
+        }
         if (Input.GetKeyUp(KeyCode.A)) LSH = 0;
         if (Input.GetKeyUp(KeyCode.D)) LSH = 0;
         if (LSH == 0) Move = false;
@@ -305,7 +308,6 @@ public class NewPlayer3Script : MonoBehaviour
         {
             Animator animator1 = GetComponent<Animator>();
             int Animaint1 = animator1.GetInteger("Animationint");
-            PlayerPosition = transform.position;
             if (PlayerRight == true)
             {
                 Invoke("PlayerDethR", 1);
@@ -323,7 +325,7 @@ public class NewPlayer3Script : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player"))
+        if ((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player") || (collision.gameObject.tag == "iwa"))
         {
             Jump = false;
             //AnimationJF = true;
@@ -359,7 +361,7 @@ public class NewPlayer3Script : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player")||(collision.gameObject.tag == "iwa"))
+        if((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player"))
         {
             if(Jump == true)
             {
@@ -398,6 +400,7 @@ public class NewPlayer3Script : MonoBehaviour
 
     void PlayerDethR()
     {
+        PlayerPosition = transform.position;
         Instantiate(cadaver, PlayerPosition, bomq);
         transform.position = new Vector3(PlayerSpownPoint.x, PlayerSpownPoint.y + 0.5f,0f);
         rb.velocity = new Vector3(0,0,0);
@@ -405,6 +408,7 @@ public class NewPlayer3Script : MonoBehaviour
     }
     void PlayerDethL()
     {
+        PlayerPosition = transform.position;
         Instantiate(cadaverl, PlayerPosition, bomq);
         transform.position = new Vector3(PlayerSpownPoint.x, PlayerSpownPoint.y + 0.5f, 0f); ;
         rb.velocity = new Vector3(0, 0, 0);
