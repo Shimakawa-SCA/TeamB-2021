@@ -14,7 +14,7 @@ public class Scene3 : MonoBehaviour
     }
     public void OnClickT()
     {
-        SceneManager.LoadScene("Opening");
+        SceneManager.LoadScene("Prologue");
     }
 
 }
