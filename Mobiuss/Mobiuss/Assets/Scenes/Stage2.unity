@@ -1715,9 +1715,11 @@ GameObject:
   m_Component:
   - component: {fileID: 394930430}
   - component: {fileID: 394930431}
-  m_Layer: 0
+  - component: {fileID: 394930432}
+  - component: {fileID: 394930433}
+  m_Layer: 8
   m_Name: "\u30DB\u3099\u30BF\u30F3a"
-  m_TagString: Untagged
+  m_TagString: Floryuka
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1786,6 +1788,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &394930432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394930429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15.53034, y: 12.838601, z: 0.2}
+  m_Center: {x: -0.20383562, y: 0.81541955, z: 0}
+--- !u!114 &394930433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394930429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54f95d90344c774cbe6396def44400f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &420768455
 GameObject:
   m_ObjectHideFlags: 0
@@ -6705,7 +6732,7 @@ GameObject:
   - component: {fileID: 1739218141}
   - component: {fileID: 1739218140}
   - component: {fileID: 1739218139}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: New Sprite
   m_TagString: player
   m_Icon: {fileID: 0}
@@ -7054,6 +7081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049f00f231c14c34493d3cb980c0e5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1739218138}
 --- !u!1 &1783189624
 GameObject:
   m_ObjectHideFlags: 0
@@ -7709,7 +7737,7 @@ GameObject:
   - component: {fileID: 1886381741}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Untagged
+  m_TagString: Flor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8905,6 +8933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356461558671803431, guid: 829b2d0cc57ef4f49b8a13ebdcc1cf58,
+        type: 3}
+      propertyPath: m_TagString
+      value: Flor
       objectReference: {fileID: 0}
     - target: {fileID: 3172728322925847150, guid: 829b2d0cc57ef4f49b8a13ebdcc1cf58,
         type: 3}
