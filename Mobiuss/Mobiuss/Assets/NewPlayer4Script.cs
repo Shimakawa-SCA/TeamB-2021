@@ -70,10 +70,12 @@ public class NewPlayer4Script : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             LSH = -0.5f;
+            TimeCounter.tTime = 1;
         }
         if (Input.GetKey(KeyCode.D))
         {
             LSH = 0.5f;
+            TimeCounter.tTime = 1;
         }
         if (LSH != 0)
         {
@@ -104,6 +106,8 @@ public class NewPlayer4Script : MonoBehaviour
                 Waiting = false;
                 JumpUp = true;
                 JumpUping = true;
+                TimeCounter.tTime = 1;
+
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -304,6 +308,7 @@ public class NewPlayer4Script : MonoBehaviour
         {
             Animator animator1 = GetComponent<Animator>();
             int Animaint1 = animator1.GetInteger("Animationint");
+            TimeCounter.tTime = 1;
             if (PlayerRight == true)
             {
                 Invoke("PlayerDethR", 1.1f);
