@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degreeInTime: 3
-  fadeSpeed: 0.0005
+  fadeSpeed: 0.002
   RivieSpin: {fileID: 1387703361}
 --- !u!4 &331879153
 Transform:
