@@ -58,7 +58,7 @@ public class NewPlayer3Script : MonoBehaviour
         J1 = 0;
         J2 = 0;
         J3 = 0;
-        PlayerSpownPoint = new Vector3(0,0,0);
+        PlayerSpownPoint = new Vector3(-7,2,0);
         bomq = Quaternion.Euler(0, 0, 0);
         repoint = 0;
         dethstack = 0;
