@@ -359,7 +359,7 @@ public class NewPlayer3Script : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player"))
+        if((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player")||(collision.gameObject.tag == "iwa"))
         {
             if(Jump == true)
             {
