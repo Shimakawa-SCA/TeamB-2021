@@ -32,7 +32,7 @@ public class reba : MonoBehaviour
         Transform myTransform = this.transform;
         if (n == 1)
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.T))
             {
                 if (i == 0)
                 {
