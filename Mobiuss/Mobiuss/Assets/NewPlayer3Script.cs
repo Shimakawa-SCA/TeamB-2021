@@ -50,6 +50,7 @@ public class NewPlayer3Script : MonoBehaviour
     float canuseposition;
 
     Rigidbody rb;
+    public static int RCount;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +63,7 @@ public class NewPlayer3Script : MonoBehaviour
         bomq = Quaternion.Euler(0, 0, 0);
         repoint = 0;
         dethstack = 0;
+        RCount = 0;
     }
 
     // Update is called once per frame
@@ -319,6 +321,7 @@ public class NewPlayer3Script : MonoBehaviour
                 Animaint1 = 11;
             }
             animator1.SetInteger("Animationint", Animaint1);
+            RCount++;
         }
         
     }

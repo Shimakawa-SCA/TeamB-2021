@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFade: 1
-  time: 15
+  time: 7
   FadePanel: {fileID: 555265285}
 --- !u!114 &647283405
 MonoBehaviour:
