@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class NewPlayer3Script : MonoBehaviour
 {
-    public bool PlayerRight;
+    public static bool PlayerRight;
     public bool Waiting;
     public bool Move;
     public bool Jump;
-    public bool Hold;
+    public static bool Hold;
     public bool JumpUping;
     public bool JumpKeeping;
     public bool AnimationJF;
@@ -48,11 +48,15 @@ public class NewPlayer3Script : MonoBehaviour
     public bool CanHold;
     float bomdistance;
     float canuseposition;
+    float star1renge;
+    float star2renge;
+    Vector3 s1t;
+    Vector3 s2t;
 
     float blx;
+    public static int RCount;
 
     Rigidbody rb;
-    public static int RCount;
 
     // Start is called before the first frame update
     void Start()
@@ -67,11 +71,16 @@ public class NewPlayer3Script : MonoBehaviour
         dethstack = 0;
         blx = 0;
         RCount = 0;
+        Hold = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        s1t = takestar1Script.stop;
+        s2t = takestar2Script.sttp;
+        star1renge = (transform.position.x - s1t.x) + (transform.position.y - s1t.y);
+        star2renge = (transform.position.x - s2t.x) + (transform.position.y - s2t.y);
         if (Mathf.Abs(transform.position.x) > 8.5) transform.position = new Vector3(blx, transform.position.y, transform.position.z);
         blx = this.transform.position.x;
         if (Input.GetKey(KeyCode.A))
@@ -106,7 +115,7 @@ public class NewPlayer3Script : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D)) LSH = 0;
         if (LSH == 0) Move = false;
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (IsFlor == true)
             {
@@ -149,18 +158,7 @@ public class NewPlayer3Script : MonoBehaviour
         {
             rb.AddForce(0, KeepForce, 0);
         }
-
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            if (bomdistance < 1 && Hold == false)
-            {
-                Hold = true;
-            }
-            if (canuseposition < 1 && Hold == true)
-            {
-                Hold = false;
-            }
-        }
+        
 
         Animator animator = GetComponent<Animator>();
         int Animaint = animator.GetInteger("Animationint");
@@ -426,10 +424,21 @@ public class NewPlayer3Script : MonoBehaviour
     public void setcanhold(float ii)
     {
         bomdistance = ii;
+        Debug.Log(ii);
     }
 
     public void setcanuseposition(float jj)
     {
         canuseposition = jj;
+    }
+
+    public void pihb(bool pih)
+    {
+        Hold = pih;
+    }
+
+    public void getihold(bool ih)
+    {
+        Hold = ih;
     }
 }

@@ -105,7 +105,7 @@ public class NewPlayer4Script : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.D)) LSH = 0;
         if (LSH == 0) Move = false;
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (IsFlor == true)
             {

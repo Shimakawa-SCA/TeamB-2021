@@ -15,7 +15,7 @@ public class getplayerScript : MonoBehaviour
     void Update()
     {
         Debug.Log(pd);
-        if(pd < 0 && pd > -0.8)
+        if(pd < 0 && pd > -0.9)
         {
             FindObjectOfType<kiirobo2>().getc(1);
         }
