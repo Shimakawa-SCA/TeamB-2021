@@ -66,7 +66,7 @@ public class oprool : MonoBehaviour
 
         OpText.SetActive(true);
 
-        if (check==0 && Input.GetKeyDown("space")/*||Input.GetButtonDown("1")*/)
+        if (check==0 && Input.GetKeyDown("space")|| check == 0 && Input.GetKeyDown("joystick button 0"))
         {
             check = 1;
             Brack.SendMessage("BrackOut");
