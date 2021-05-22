@@ -49,6 +49,11 @@ public class NewPlayer4Script : MonoBehaviour
     float bomdistance;
     float canuseposition;
 
+    float blx;
+    int ii;
+
+    bool ex;
+
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -62,11 +67,14 @@ public class NewPlayer4Script : MonoBehaviour
         bomq = Quaternion.Euler(0, 0, 0);
         repoint = 0;
         dethstack = 0;
+        blx = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Mathf.Abs(transform.position.x) > 8.5)transform.position = new Vector3(blx,transform.position.y,transform.position.z);
+        blx = this.transform.position.x;
         if (Input.GetKey(KeyCode.A))
         {
             LSH = -0.5f;
@@ -321,7 +329,13 @@ public class NewPlayer4Script : MonoBehaviour
             }
             animator1.SetInteger("Animationint", Animaint1);
         }
+        //Debug.Log(Animaint);
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        ex = true;
+        ii = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -358,18 +372,48 @@ public class NewPlayer4Script : MonoBehaviour
             J1 = 0;
             J2 = 0;
         }
+        Debug.Log("koko");
+        Invoke("sub",0.5f);
+    }
+
+    void sub()
+    {
+        if(Jump == false)
+        {
+            if (Hold == true)
+            {
+                if (PlayerRight == true)
+                {
+                    JF1 = true;
+                }
+                if (PlayerRight == false)
+                {
+                    JF2 = true;
+                }
+            }
+            if (Hold == false)
+            {
+                if (PlayerRight == true)
+                {
+                    JF3 = true;
+                }
+                if (PlayerRight == false)
+                {
+                    JF4 = true;
+                }
+            }
+        }
     }
 
     private void OnCollisionStay(Collision collision)
     {
         if ((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "player"))
         {
-            if (Jump == true)
+            if (ex == true)
             {
-                Jump = false;
+                ex = false;
                 //AnimationJF = true;
                 IsFlor = true;
-                rb.velocity = new Vector3(rb.velocity.x, 0, 0);
                 if (Hold == true)
                 {
                     if (PlayerRight == true)
@@ -395,8 +439,71 @@ public class NewPlayer4Script : MonoBehaviour
                 Jump = false;
                 J1 = 0;
                 J2 = 0;
+                
+            }
+            ii++;
+            if (ii > 5 && ex == true)
+            {
+
+                if (Jump == true)
+                {
+                    Jump = false;
+                    if (Hold == true)
+                    {
+                        if (PlayerRight == true)
+                        {
+                            JF1 = true;
+                        }
+                        if (PlayerRight == false)
+                        {
+                            JF2 = true;
+                        }
+                    }
+                    if (Hold == false)
+                    {
+                        if (PlayerRight == true)
+                        {
+                            JF3 = true;
+                        }
+                        if (PlayerRight == false)
+                        {
+                            JF4 = true;
+                        }
+                    }
+                }
+            }
+            if (ii == 10)
+            {
+                if (Jump == true)
+                {
+                    Jump = false;
+                    if (Hold == true)
+                    {
+                        if (PlayerRight == true)
+                        {
+                            JF1 = true;
+                        }
+                        if (PlayerRight == false)
+                        {
+                            JF2 = true;
+                        }
+                    }
+                    if (Hold == false)
+                    {
+                        if (PlayerRight == true)
+                        {
+                            JF3 = true;
+                        }
+                        if (PlayerRight == false)
+                        {
+                            JF4 = true;
+                        }
+                    }
+                }
+                ii = 0;
             }
         }
+        Debug.Log("oi");
     }
 
     void PlayerDethR()
