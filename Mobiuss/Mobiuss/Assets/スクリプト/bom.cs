@@ -58,6 +58,7 @@ public class bom : MonoBehaviour
                 Invoke("ban", 6f);
             }
         }
+        FindObjectOfType<NewPlayer3Script>().pihb(itemposition);
 
     }
 
