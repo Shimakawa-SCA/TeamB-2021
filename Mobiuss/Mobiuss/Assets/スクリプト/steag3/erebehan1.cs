@@ -6,26 +6,23 @@ public class erebehan1 : MonoBehaviour
 {
     public static int i;
 
-    void Start() {
+    void Start()
+    {
         i = 0;
     }
 
-    void OnTriggerStay(Collider other) {
-        if(other.gameObject.tag == "player") {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "player")
+        {
             i = 1;
         }
     }
-    void OnTriggerExit(Collider other) {
-        if(other.gameObject.tag == "player") {
-            i = 0;
-        }
-
-    }
-    // Start is called before the first frame update
-
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider other)
     {
-        
+        if (other.gameObject.tag == "player")
+        {
+            i = 2;
+        }
     }
 }

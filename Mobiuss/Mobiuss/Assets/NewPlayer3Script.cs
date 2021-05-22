@@ -52,6 +52,7 @@ public class NewPlayer3Script : MonoBehaviour
     float blx;
 
     Rigidbody rb;
+    public static int RCount;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +66,7 @@ public class NewPlayer3Script : MonoBehaviour
         repoint = 0;
         dethstack = 0;
         blx = 0;
+        RCount = 0;
     }
 
     // Update is called once per frame
@@ -311,6 +313,7 @@ public class NewPlayer3Script : MonoBehaviour
         animator.SetInteger("Animationint", Animaint);
         if (Input.GetKeyDown(KeyCode.R))
         {
+            RCount++;
             Animator animator1 = GetComponent<Animator>();
             int Animaint1 = animator1.GetInteger("Animationint");
             if (PlayerRight == true)

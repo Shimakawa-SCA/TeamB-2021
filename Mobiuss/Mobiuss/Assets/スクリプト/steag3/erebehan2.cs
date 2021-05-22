@@ -10,16 +10,15 @@ public class erebehan2 : MonoBehaviour
         i = 0;
     }
 
-    void OnTriggerStay(Collider other) {
+    void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "player") {
             i = 1;
         }
     }
     void OnTriggerExit(Collider other) {
         if(other.gameObject.tag == "player") {
-            i = 0;
+            i = 2;
         }
-
     }
     // Update is called once per frame
     void Update()

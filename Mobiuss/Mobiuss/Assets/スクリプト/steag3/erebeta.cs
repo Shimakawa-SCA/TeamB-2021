@@ -4,36 +4,73 @@ using UnityEngine;
 
 public class erebeta : MonoBehaviour
 {
-    private int j; 
- 
+    private int j;
+    private int z;
     private int y;
+    private int i1;
+    private int q;
     // Start is called before the first frame update
     void Start()
     {
         j=0;
-       
+        z=0;
         y=0;
+        i1=0;
+        q=0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(erebehan1.i == 1) {
-            j = 0;
-            if(y <= 20625) { 
-            this.transform.position += new Vector3(0, 0.01f, 0);
-            y+=100;
-            }
+
+        if (erebehan2.i == 1 && q == 0)
+        {
+            q = 1;
+            Invoke("nori", 1f);
         }
-        
-        
-        if(erebehan2.i == 1 ) {
-            y=0;
-            if(j <= 20625) {
+        if (erebehan2.i == 2 && q == 0 )
+        {
+            q = 1;
+            Invoke("ori", 1f);
+        }
+        if (i1 == 1)
+        {
+            if (y <= 206)
+            {
                 this.transform.position += new Vector3(0, 0.01f, 0);
-                j += 100;
+                y++;
+            }
+            else
+            {
+                y = 0;
+                erebehan2.i = 0;
+               q=0;
+                i1=0;
             }
         }
-    }    
+        if (i1 == 2)
+        {
+            if (y <= 206)
+            {
+                this.transform.position += new Vector3(0, -0.01f, 0);
+                y++;
+            }
+            else
+            {
+                y = 0;
+                erebehan2.i = 0;
+              q=0;
+                i1=0;
+            }
+        }
+
+    }
+    void nori()
+    {
+        i1=1;
+    }
+    void ori()
+    {
+        i1=2;
+    }
 }
