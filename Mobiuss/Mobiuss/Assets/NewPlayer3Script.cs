@@ -49,6 +49,8 @@ public class NewPlayer3Script : MonoBehaviour
     float bomdistance;
     float canuseposition;
 
+    float blx;
+
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -62,11 +64,14 @@ public class NewPlayer3Script : MonoBehaviour
         bomq = Quaternion.Euler(0, 0, 0);
         repoint = 0;
         dethstack = 0;
+        blx = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Mathf.Abs(transform.position.x) > 8.5) transform.position = new Vector3(blx, transform.position.y, transform.position.z);
+        blx = this.transform.position.x;
         if (Input.GetKey(KeyCode.A))
         {
             LSH = -0.5f;
