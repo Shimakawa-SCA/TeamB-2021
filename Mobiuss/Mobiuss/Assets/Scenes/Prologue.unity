@@ -324,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 331879153}
   - component: {fileID: 331879154}
+  - component: {fileID: 331879152}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -331,6 +332,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &331879152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331879151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb5b92e59c6b4945afc7a042bed1c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &331879153
 Transform:
   m_ObjectHideFlags: 0
@@ -485,7 +498,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8658ea4a7a0b66748a6730f0a75c9d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFadeOut: 0
   isFadeIn: 0
   changeSceneName: 
 --- !u!114 &504843670
@@ -651,7 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsFade: 1
-  time: 7
+  time: 5
   FadePanel: {fileID: 555265285}
 --- !u!114 &647283405
 MonoBehaviour:
@@ -702,7 +714,6 @@ GameObject:
   - component: {fileID: 760916061}
   - component: {fileID: 760916060}
   - component: {fileID: 760916059}
-  - component: {fileID: 760916058}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -730,18 +741,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000061274, y: -250}
   m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &760916058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 760916056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f67ac6aeda8db8142af895d59ce24013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &760916059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,8 +795,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 760916058}
-        m_MethodName: OnClick
+      - m_Target: {fileID: 331879151}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1524,7 +1523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46b4c939dd9dc734cb1e48ff62eec202, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e17a006ab57e60542b88ff77ec727d78, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

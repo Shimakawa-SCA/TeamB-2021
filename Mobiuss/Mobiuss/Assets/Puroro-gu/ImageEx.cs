@@ -10,7 +10,7 @@ public class ImageEx : MonoBehaviour
     [SerializeField] private GameObject BooksImag;
     [SerializeField] private GameObject bottonPanel;
     int count;
-
+    public static int NextSceneCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class ImageEx : MonoBehaviour
         BooksImag.SetActive(false);
         bottonPanel.SetActive(false);
         count = 0;
+        NextSceneCount = 0;
     }
 
 
@@ -30,7 +31,7 @@ public class ImageEx : MonoBehaviour
             WhiteOut();
             count++;
         }
-        if (count == 0 && Input.GetKeyDown("joystick button 1"))
+        if (count == 0 && Input.GetKeyDown("joystick button 0"))
         {
             WhiteOut();
             count++;
@@ -61,5 +62,6 @@ public class ImageEx : MonoBehaviour
     void StartButt()
     {
         bottonPanel.SetActive(true);
+        NextSceneCount++;
     }
 }
