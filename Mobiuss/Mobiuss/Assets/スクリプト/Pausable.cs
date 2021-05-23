@@ -57,13 +57,26 @@ public class Pausable : MonoBehaviour
 	void Update()
 	{
 
+		if (Input.GetKeyDown("joystick button 9"))
+		{
+			pausing = !pausing;
+
+			if (pausing == true)
+			{
+				Pause();
+			}
+			else
+			{
+				Resume();
+			}
+		}
 		// ポーズ状態が変更されていたら、Pause/Resumeを呼び出す。
-		if (prevPausing != pausing)
+		/*if (prevPausing != pausing)
 		{
 			if (pausing) Pause();
-			else  Resume();
+			else Resume();
 			prevPausing = pausing;
-		}
+		}*/
 	}
 	void Pausefor()//bool値の真
     {
