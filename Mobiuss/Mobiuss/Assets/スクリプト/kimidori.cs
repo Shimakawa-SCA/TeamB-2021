@@ -10,6 +10,7 @@ public class kimidori : MonoBehaviour
     void Start()
     {
         Instantiate(CubePrefab);
+        i = 0;
     }
     void OnCollisionStay(Collision other)
     {
