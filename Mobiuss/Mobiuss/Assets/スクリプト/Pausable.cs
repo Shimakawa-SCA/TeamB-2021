@@ -57,7 +57,7 @@ public class Pausable : MonoBehaviour
 	void Update()
 	{
 
-		if (Input.GetKeyDown("joystick button 9"))
+		if (Input.GetKeyDown("joystick button 7"))
 		{
 			pausing = !pausing;
 
@@ -77,6 +77,12 @@ public class Pausable : MonoBehaviour
 			else Resume();
 			prevPausing = pausing;
 		}*/
+		float dph = Input.GetAxis("D_Pad_H");
+		float dpv = Input.GetAxis("D_Pad_V");
+		if ((dph != 0) || (dpv != 0))
+		{
+			Debug.Log("D Pad:" + dph + "," + dpv);
+		}
 	}
 	void Pausefor()//bool値の真
     {
@@ -116,10 +122,14 @@ public class Pausable : MonoBehaviour
 		}
 		Time.timeScale = 0;  // 時間停止
 		pausePanel.SetActive(true);//メニューを開く
+		Button button;
+		button = GameObject.Find("MainCanvas/Menu/PausePanel/Resume").GetComponent<Button>();
+		//ボタンが選択された状態になる
+		button.Select();
 	}
 
 	// 再開
-	void Resume()
+	public void Resume()
 	{
 		// Rigidbodyの再開
 		for (int i = 0; i < pausingRigidbodies.Length; i++)
@@ -138,13 +148,13 @@ public class Pausable : MonoBehaviour
 		pausePanel.SetActive(false);//メニューを閉じる
 	}
 	//やり直しボタン
-    void OnClick()
+    public void OnClick()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		pausing = false;
 	}
 	//タイトルに行くボタン
-	void OnClickT()
+	public void OnClickT()
 	{
 		SceneManager.LoadScene("Prologue");
 		pausing = false;
