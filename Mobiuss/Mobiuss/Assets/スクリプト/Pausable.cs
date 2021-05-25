@@ -56,27 +56,30 @@ public class Pausable : MonoBehaviour
 	// 更新処理
 	void Update()
 	{
-
-		if (Input.GetKeyDown("joystick button 7"))
+        if (Clear.NotMenuCount == 0) 
 		{
-			pausing = !pausing;
-
-			if (pausing == true)
+			if (Input.GetKeyDown("joystick button 7"))
 			{
+				pausing = !pausing;
+
+				if (pausing == true)
+				{
 				Pause();
-			}
-			else
-			{
+				}
+				else
+				{
 				Resume();
-			}
+				}
+			}	
+			// ポーズ状態が変更されていたら、Pause/Resumeを呼び出す。
+			/*if (prevPausing != pausing)
+			{
+				if (pausing) Pause();
+				else Resume();
+				prevPausing = pausing;
+			}*/ 
 		}
-		// ポーズ状態が変更されていたら、Pause/Resumeを呼び出す。
-		/*if (prevPausing != pausing)
-		{
-			if (pausing) Pause();
-			else Resume();
-			prevPausing = pausing;
-		}*/
+		
 		float dph = Input.GetAxis("D_Pad_H");
 		float dpv = Input.GetAxis("D_Pad_V");
 		if ((dph != 0) || (dpv != 0))
@@ -123,7 +126,7 @@ public class Pausable : MonoBehaviour
 		Time.timeScale = 0;  // 時間停止
 		pausePanel.SetActive(true);//メニューを開く
 		Button button;
-		button = GameObject.Find("MainCanvas/Menu/PausePanel/Resume").GetComponent<Button>();
+		button = GameObject.Find("MainCanvas/PausePanel/Resume").GetComponent<Button>();
 		//ボタンが選択された状態になる
 		button.Select();
 	}
@@ -145,6 +148,11 @@ public class Pausable : MonoBehaviour
 			monoBehaviour.enabled = true;
 		}
 		Time.timeScale = 1;  // 再開
+
+		Button button;
+		button = GameObject.Find("MainCanvas/PausePanel/Title").GetComponent<Button>();
+		//ボタンが選択された状態になる
+		button.Select();
 		pausePanel.SetActive(false);//メニューを閉じる
 	}
 	//やり直しボタン
@@ -152,6 +160,8 @@ public class Pausable : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		pausing = false;
+		Time.timeScale = 1;  // 再開
+
 	}
 	//タイトルに行くボタン
 	public void OnClickT()

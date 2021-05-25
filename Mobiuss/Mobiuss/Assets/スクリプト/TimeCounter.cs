@@ -17,7 +17,7 @@ public class TimeCounter : MonoBehaviour
     void Start()
     {
         TimeOverPanel.SetActive(false);
-
+        tTime = 0;
     }
     // Update is called once per frame
     void Update()

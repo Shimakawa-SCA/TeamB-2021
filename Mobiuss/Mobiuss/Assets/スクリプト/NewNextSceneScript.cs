@@ -27,4 +27,8 @@ public class NewNextSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("Prologue");
     }
+    public void Stage3()
+    {
+        SceneManager.LoadScene("stage3");
+    }
 }

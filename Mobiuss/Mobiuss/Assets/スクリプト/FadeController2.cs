@@ -12,8 +12,7 @@ public class FadeController2 : MonoBehaviour
 
     public static bool isFadeOut = false;  //フェードアウト処理の開始、完了を管理するフラグ
     public static bool isFadeIn = false;   //フェードイン処理の開始、完了を管理するフラグ
-    public string changeSceneName; // フェードアウト処理後、シーン遷移する場合のシーン名
-
+    
     Image fadeImage;                //透明度を変更するパネルのイメージ
 
     void Start()

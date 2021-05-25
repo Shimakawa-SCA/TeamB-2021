@@ -16,6 +16,12 @@ public class Clear : MonoBehaviour
     GameObject countdown; //countdownそのものが入る変数
     TimeCounter timeCounter; //TimeCounterが入る変数
 
+    [SerializeField] private Button NextButton;
+    [SerializeField] private Button TitleButton;
+
+    public static int NotMenuCount;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +32,14 @@ public class Clear : MonoBehaviour
         bClearImag.SetActive(false);
         countdown = GameObject.Find("Timer"); //countdownをオブジェクトの名前から取得して変数に格納する
         timeCounter = countdown.GetComponent<TimeCounter>(); //countdownの中にあるTimeCounterを取得して変数に格納する
-       
+        NotMenuCount = 0;
 
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {        
+        Debug.Log(NewPlayer4Script.R1Count);
         //時間
         float countdowntime = timeCounter.countdown; //新しく変数を宣言してその中にTimeCounterの変数countdownを代入する
         //Debug.Log("クリアまでの時間" + countdowntime);
@@ -40,8 +47,8 @@ public class Clear : MonoBehaviour
         {
             aClearImag.SetActive(true);
         }
-        
-        if (NewPlayer3Script.RCount < 4)
+
+        if (NewPlayer4Script.R1Count < 4)
         {
             bClearImag.SetActive(true);
         }
@@ -61,12 +68,16 @@ public class Clear : MonoBehaviour
         GameObject obj = GameObject.Find("New Sprite");
         // 指定したオブジェクトを削除
         Destroy(obj);
+        NotMenuCount = 1;
     }
 
     void CPanel()
     {
         ClearPanel.SetActive(true);
         GameClearImag.SetActive(false);
+        // 最初に選択状態にしたいボタンの設定
+        NextButton.Select();
+
     }
 
     
