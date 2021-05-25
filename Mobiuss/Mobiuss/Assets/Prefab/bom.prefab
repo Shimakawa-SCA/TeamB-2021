@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubePrefab: {fileID: 6176694364796214941}
+  player: {fileID: 0}
+  particleObject: {fileID: 4910948430540803796, guid: 008c82a83c717054fb7dfd87121ffd54,
+    type: 3}
 --- !u!1 &8285853495511489837
 GameObject:
   m_ObjectHideFlags: 0

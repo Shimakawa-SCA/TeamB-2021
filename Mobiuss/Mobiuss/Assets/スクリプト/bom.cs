@@ -14,6 +14,9 @@ public class bom : MonoBehaviour
     bool PlayerRight;
     Rigidbody rb;
     Quaternion q;
+    //爆発エフェクト的なパーティクル
+    public GameObject particleObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,7 +93,8 @@ public class bom : MonoBehaviour
         void ban()
         {
             //爆発エフェクト的なパーティクル
-            
+            //パーティクル用ゲームオブジェクト生成
+            Instantiate(particleObject, this.transform.position, Quaternion.identity); 
             if (i == 1)
             {
                 n=1;
@@ -98,11 +102,11 @@ public class bom : MonoBehaviour
             else
             {
                 i=0;
-            GameObject iwa = Instantiate(CubePrefab);
-            iwa.transform.position = new Vector3(8.05f, -2.05f, 0);
-        }
+                GameObject iwa = Instantiate(CubePrefab);
+                iwa.transform.position = new Vector3(8.05f, -2.05f, 0);
+            }
 
-        Destroy(this.gameObject);
+            Destroy(this.gameObject);
 
         }
   

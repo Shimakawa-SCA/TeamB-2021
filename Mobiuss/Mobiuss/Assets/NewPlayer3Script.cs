@@ -70,7 +70,7 @@ public class NewPlayer3Script : MonoBehaviour
         repoint = 0;
         dethstack = 0;
         blx = 0;
-        RCount = 0;
+        //RCount = 0;
         Hold = false;
     }
 
@@ -86,10 +86,13 @@ public class NewPlayer3Script : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             LSH = -0.5f;
+            //タイマーを起動させる用
+            TimeCounter.tTime = 1;
         }
         if (Input.GetKey(KeyCode.D))
         {
             LSH = 0.5f;
+            TimeCounter.tTime = 1;
         }
         if (LSH != 0)
         {
@@ -124,6 +127,7 @@ public class NewPlayer3Script : MonoBehaviour
                 Waiting = false;
                 JumpUp = true;
                 JumpUping = true;
+                TimeCounter.tTime = 1;
             }
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -311,9 +315,10 @@ public class NewPlayer3Script : MonoBehaviour
         animator.SetInteger("Animationint", Animaint);
         if (Input.GetKeyDown(KeyCode.R))
         {
-            RCount++;
+            RCount += 1;
             Animator animator1 = GetComponent<Animator>();
             int Animaint1 = animator1.GetInteger("Animationint");
+            TimeCounter.tTime = 1;
             if (PlayerRight == true)
             {
                 Invoke("PlayerDethR", 1);

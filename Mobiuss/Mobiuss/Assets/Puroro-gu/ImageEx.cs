@@ -45,12 +45,13 @@ public class ImageEx : MonoBehaviour
         //FindObjectOfType<FadeController2>().StartFadeOut();
         FadeController2.isFadeOut = true;
         Invoke("Books",2.0f);
-        Invoke("Whitein", 3.0f);
+
     }
     void Books()
     {
         BookImag.SetActive(false);
         BooksImag.SetActive(true);
+        Invoke("Whitein", 1.0f);
     }
     void Whitein()
     {
