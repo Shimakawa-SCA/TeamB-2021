@@ -21,15 +21,25 @@ public class TakesanPlayerScript : MonoBehaviour
     public float JumpKeepForce;
     int JumpStatusNumber;
 
+    public GameObject cadaver;
+    public GameObject cadaverl;
+    Quaternion q;
+    int repoint;
+    bool CanReSpown;
+    Vector3 PlayerSpownpoint;
+
     // Start is called before the first frame update
     void Start()
     {
         Application.targetFrameRate = 120;
         rb = GetComponent<Rigidbody>();
+        q = Quaternion.Euler(0, 0, 0);
         LSH = 0;
         CanMove = true;
         JumpTimeLine = 0;
         JumpStatusNumber = 0;
+        CanReSpown = true;
+        PlayerSpownpoint = new Vector3(0,0,0);
     }
 
     // Update is called once per frame
@@ -39,8 +49,10 @@ public class TakesanPlayerScript : MonoBehaviour
         VectolxBorderLine();
         if(CanMove == true){
             GetLStickHorizontal();
-            //if (Input.GetButtonDown(""))
+            //if (Input.GetButtonDown("")) DoJump = true;
             if (Input.GetKeyDown(KeyCode.Space)) DoJump = true;
+            //if (Input.GetButtonDown(""))
+            if (Input.GetKeyDown(KeyCode.R)) ReSpown();
         }
         AddSpeed();
         if (DoJump  == true) Jump();
@@ -121,5 +133,30 @@ public class TakesanPlayerScript : MonoBehaviour
                 JumpTimeLine = 0;
             }
         }
+    }
+
+    void ReSpown(){
+        if (CanReSpown == true){
+            if (PlayerRight == true){
+
+                Invoke("RightDeth",0.8f);
+            }
+            if (PlayerRight == false){
+
+                Invoke("LeftDeth", 0.8f);
+            }
+        }
+    }
+
+    void RightDeth(){
+        Instantiate(cadaver,playerposition,q);
+        transform.position = PlayerSpownpoint;
+        rb.velocity = new Vector3(0, 0, 0);
+    }
+
+    void LeftDeth(){
+        Instantiate(cadaverl, playerposition, q);
+        transform.position = PlayerSpownpoint;
+        rb.velocity = new Vector3(0, 0, 0);
     }
 }
