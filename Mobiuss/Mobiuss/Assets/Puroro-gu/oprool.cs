@@ -48,9 +48,8 @@ public class oprool : MonoBehaviour
          else
          {
             isStopOpRoll = true;
-            OpText.SetActive(true);
             cou++;
-            
+            //OpText.SetActive(true);
             Debug.Log(cou);
             //　エンドロールが終了した時
             if (isStopOpRoll == true && cou > 1/*||Input.GetButtonDown("1")*/)
@@ -61,10 +60,11 @@ public class oprool : MonoBehaviour
         }
         
     }
+
     IEnumerator GoGameScene()
     {
 
-        OpText.SetActive(true);
+        Invoke("OproolText",2.0f);
 
         if (check==0 && Input.GetKeyDown("space")|| check == 0 && Input.GetKeyDown("joystick button 0"))
         {
@@ -81,5 +81,10 @@ public class oprool : MonoBehaviour
     void Stage()
     {
         SceneManager.LoadScene("Stage1");
+    }
+
+    void OproolText()
+    {
+        OpText.SetActive(true);
     }
 }
