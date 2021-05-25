@@ -79,13 +79,13 @@ public class Pausable : MonoBehaviour
 				prevPausing = pausing;
 			}*/ 
 		}
-		
-		float dph = Input.GetAxis("D_Pad_H");
+		//D　Padの反応
+		/*float dph = Input.GetAxis("D_Pad_H");
 		float dpv = Input.GetAxis("D_Pad_V");
 		if ((dph != 0) || (dpv != 0))
 		{
 			Debug.Log("D Pad:" + dph + "," + dpv);
-		}
+		}*/
 	}
 	void Pausefor()//bool値の真
     {
