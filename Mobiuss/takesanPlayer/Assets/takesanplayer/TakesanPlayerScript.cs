@@ -25,8 +25,11 @@ public class TakesanPlayerScript : MonoBehaviour
     public GameObject cadaverl;
     Quaternion q;
     int repoint;
-    bool CanReSpown;
     Vector3 PlayerSpownpoint;
+
+    public static bool Hold;
+    bool PlayerDeth;
+    bool Wait;
 
     // Start is called before the first frame update
     void Start()
@@ -38,13 +41,14 @@ public class TakesanPlayerScript : MonoBehaviour
         CanMove = true;
         JumpTimeLine = 0;
         JumpStatusNumber = 0;
-        CanReSpown = true;
         PlayerSpownpoint = new Vector3(0,0,0);
+        Hold = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (PlayerDeth == true) PlayerDeth = false;
         GetPlayerPosition();
         VectolxBorderLine();
         if(CanMove == true){
@@ -58,6 +62,7 @@ public class TakesanPlayerScript : MonoBehaviour
         if (DoJump  == true) Jump();
         Playerdirection();
         JumpStatus();
+        GetPlayerStatus();
     }
 
 
@@ -80,7 +85,10 @@ public class TakesanPlayerScript : MonoBehaviour
     }
 
     void AddSpeed(){
-        if (LSH != 0)rb.velocity = new Vector3(Speed*MoveDirection,rb.velocity.y,0);
+        if (LSH != 0){
+            rb.velocity = new Vector3(Speed*MoveDirection,rb.velocity.y,0); 
+            Wait = false;
+        }
     }
 
     void Jump() { 
@@ -117,6 +125,7 @@ public class TakesanPlayerScript : MonoBehaviour
             JumpTimeLine = 0;
             rb.velocity = new Vector3(rb.velocity.x,0,0);
         }
+        Debug.Log(JumpStatusNumber);
     }
 
     private void OnCollisionStay(Collision collision){
@@ -132,31 +141,165 @@ public class TakesanPlayerScript : MonoBehaviour
                 DoJump = false;
                 JumpTimeLine = 0;
             }
+            if (JumpStatusNumber == 1){
+                if (rb.velocity.y == 0){
+                    JumpTimeLine = FirstJumpProcessRange;
+                }
+            }
         }
     }
 
     void ReSpown(){
-        if (CanReSpown == true){
-            if (PlayerRight == true){
-
-                Invoke("RightDeth",0.8f);
-            }
-            if (PlayerRight == false){
-
-                Invoke("LeftDeth", 0.8f);
-            }
+        if (PlayerRight == true){
+            Invoke("RightDeth", 0.8f);
         }
+        if (PlayerRight == false){
+            Invoke("LeftDeth", 0.8f);
+        }
+        CanMove = false;
+        PlayerDeth = true;
     }
 
     void RightDeth(){
         Instantiate(cadaver,playerposition,q);
-        transform.position = PlayerSpownpoint;
-        rb.velocity = new Vector3(0, 0, 0);
+        SetUp();
     }
 
     void LeftDeth(){
         Instantiate(cadaverl, playerposition, q);
-        transform.position = PlayerSpownpoint;
+        SetUp();
+    }
+
+    void SetUp(){
+        JumpStatusNumber = 0;
         rb.velocity = new Vector3(0, 0, 0);
+        transform.position = PlayerSpownpoint;
+        LSH = 0;
+        CanMove = true;
+    }
+
+    void GetPlayerStatus(){
+        Animator animator = GetComponent<Animator>();
+        int Animaint = animator.GetInteger("Animationint");
+        if (LSH == 0) Wait = true;
+        if (Hold == true){
+            if (DoJump == true){
+                if (JumpStatusNumber == 1){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (JumpStatusNumber == 2){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (JumpStatusNumber == 3){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (JumpStatusNumber == 4){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+            }
+            if (DoJump == false){
+                if (Wait == true){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (Wait == false){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+            }
+        }
+        if (Hold == false){
+            if (DoJump == true)
+            {
+                if (JumpStatusNumber == 1)
+                {
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (JumpStatusNumber == 2){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (JumpStatusNumber == 3){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (JumpStatusNumber == 4){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+            }
+            if (DoJump == false){
+                if (Wait == true){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+                if (Wait == false){
+                    if (PlayerRight == true){
+
+                    }
+                    if (PlayerRight == false){
+
+                    }
+                }
+            }
+        }
+        if (PlayerDeth == true){
+            if (PlayerRight == true){
+
+            }
+            if (PlayerRight == false){
+
+            }
+        }
+        animator.SetInteger("Animationint", Animaint);
     }
 }
