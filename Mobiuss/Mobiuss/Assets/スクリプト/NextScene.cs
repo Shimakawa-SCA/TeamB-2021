@@ -15,7 +15,7 @@ public class NextScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ImageEx.NextSceneCount == 1 && Input.GetKeyDown("joystick button 0"))
+        if (ImageEx.NextSceneCount == 1 && Input.GetKey("space") || ImageEx.NextSceneCount == 1 && Input.GetKeyDown("joystick button 0"))
         {
             FadeController.isFadeOut = true;
             Invoke("next",2.0f);
