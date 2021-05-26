@@ -15,7 +15,7 @@ public class oprool : MonoBehaviour
 
     //　テキストのスクロールスピード
     [SerializeField]
-    private float textScrollSpeed = 30;
+    private float textScrollSpeed = 60;
     //　テキストの制限位置
     [SerializeField]
     private float limitPosition = 730f;
@@ -23,6 +23,13 @@ public class oprool : MonoBehaviour
     private bool isStopOpRoll;
     //　シーン移動用コルーチン
     private Coroutine opRollCoroutine;
+
+    bool buttonFlag = false;
+
+    [SerializeField]
+    float scale = 2.0f;
+
+    bool isButtonPressed = false;
 
     private void Start()
     {
@@ -34,37 +41,52 @@ public class oprool : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.Space)||Input.GetButtonDown("1"))
-        {
-            
-        }*/
         //　オープニングロール用テキストがリミットを越えるまで動かす
         if (transform.position.y <= limitPosition&&cou>0)
-         {
+        {
             OpText.SetActive(false);
-            
-            transform.position = new Vector2(transform.position.x, transform.position.y + textScrollSpeed * Time.deltaTime);
-         }
-         else
-         {
-            isStopOpRoll = true;
-            cou++;
-            //OpText.SetActive(true);
-            Debug.Log(cou);
-            //　エンドロールが終了した時
-            if (isStopOpRoll == true && cou > 1/*||Input.GetButtonDown("1")*/)
+
+            CheckTimeScale();
+
+            if (Input.GetKey("space") || Input.GetKey("joystick button 0"))
             {
-                Debug.Log("d");
+                isButtonPressed = true;
+            }
+            else
+            {
+                isButtonPressed = false;
+            }
+            transform.position = new Vector2(transform.position.x, transform.position.y + textScrollSpeed * Time.deltaTime);
+
+        }
+        else//動きを止める、ボタンテキストを表示
+        {
+            isStopOpRoll = true;
+            Invoke("Optextcre", 2.5f);
+            cou = 2;
+
+            Debug.Log(cou);
+            //　オープニングロールが終了した時
+            if (isStopOpRoll == true && cou > 1 || Input.GetKeyDown("joystick button 0"))
+            {
+                Time.timeScale = 1.0f;
+                Debug.Log("b");
                 opRollCoroutine = StartCoroutine(GoGameScene());
             }
         }
-        
+    }
+
+    void Optextcre()
+    {
+        OpText.SetActive(true);
     }
 
     IEnumerator GoGameScene()
     {
 
-        Invoke("OproolText",2.0f);
+        //Invoke("OproolText",2.0f);
+        yield return new WaitForSeconds(1.5f);
+        OpText.SetActive(true);
 
         if (check==0 && Input.GetKeyDown("space")|| check == 0 && Input.GetKeyDown("joystick button 0"))
         {
@@ -83,8 +105,22 @@ public class oprool : MonoBehaviour
         SceneManager.LoadScene("Stage1");
     }
 
-    void OproolText()
+    /*void OproolText()
     {
         OpText.SetActive(true);
+    }*/
+
+    void CheckTimeScale()
+    {
+        // スケール格納用ローカル変数
+        float newTimeScale = 1.0f;
+
+        if (isButtonPressed)
+        {
+            // ボタンが押されている間は早送りする
+            newTimeScale = scale;
+        }
+        // Unity世界の時間にスケールを適用
+        Time.timeScale = newTimeScale;
     }
 }

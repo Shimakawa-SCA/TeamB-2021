@@ -1112,11 +1112,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177406215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -2.55, z: 0}
+  m_LocalPosition: {x: -0.7599851, y: -2.592106, z: 3.0967555}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_Father: {fileID: 717050640}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193975359
 GameObject:
@@ -1640,7 +1640,7 @@ GameObject:
   - component: {fileID: 354850754}
   - component: {fileID: 354850753}
   m_Layer: 5
-  m_Name: Button
+  m_Name: TimeOverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.19607843, g: 0.77254903, b: 0.84313726, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.19607843, g: 0.77254903, b: 0.84313726, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2422,6 +2422,7 @@ MonoBehaviour:
   countdown: 300
   timeText: {fileID: 450719090}
   TimeOverPanel: {fileID: 1080313098}
+  TimeButton: {fileID: 354850753}
 --- !u!114 &450719090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3380,6 +3381,7 @@ Transform:
   m_Children:
   - {fileID: 738646973}
   - {fileID: 1302515081}
+  - {fileID: 177406221}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5377,7 +5379,7 @@ RectTransform:
   m_GameObject: {fileID: 1080313098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 1616088471}
   - {fileID: 354850752}
@@ -5868,7 +5870,7 @@ Transform:
   m_LocalScale: {x: 8.24349, y: 0.5924647, z: -1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196961889
 GameObject:
@@ -6237,7 +6239,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.19607843, g: 0.77254903, b: 0.84313726, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.19607843, g: 0.77254903, b: 0.84313726, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

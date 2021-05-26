@@ -12,12 +12,15 @@ public class TimeCounter : MonoBehaviour
     //時間を表示するText型の変数
     public Text timeText;
     [SerializeField] private GameObject TimeOverPanel;
+    [SerializeField] private Button TimeButton;
+    bool isCalledOnce;
 
     public static int tTime;
     void Start()
     {
         TimeOverPanel.SetActive(false);
         tTime = 0;
+        isCalledOnce = false;
     }
     // Update is called once per frame
     void Update()
@@ -34,7 +37,12 @@ public class TimeCounter : MonoBehaviour
             {
                 timeText.text = "時間になりました！";
                 TimeOverPanel.SetActive(true);
-
+                if (!isCalledOnce)
+                {
+                    isCalledOnce = true;
+                    TimeButton.Select();
+                }
+                
                 //Invoke("GameOver", 1.0f);
                 //SceneManager.LoadScene("GameOver");
             }

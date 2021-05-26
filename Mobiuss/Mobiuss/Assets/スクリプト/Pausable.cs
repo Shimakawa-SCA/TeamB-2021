@@ -56,7 +56,7 @@ public class Pausable : MonoBehaviour
 	// 更新処理
 	void Update()
 	{
-        if (Clear.NotMenuCount == 0) 
+        if (Clear.NotMenuCount == 0 ) 
 		{
 			if (Input.GetKeyDown("joystick button 7"))
 			{

@@ -31,4 +31,8 @@ public class NewNextSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("stage3");
     }
+    public void Stage4()
+    {
+        SceneManager.LoadScene("end");
+    }
 }
