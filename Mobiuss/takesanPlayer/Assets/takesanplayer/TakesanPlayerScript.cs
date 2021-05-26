@@ -31,6 +31,7 @@ public class TakesanPlayerScript : MonoBehaviour
     bool PlayerDeth;
     bool Wait;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -186,7 +187,7 @@ public class TakesanPlayerScript : MonoBehaviour
             if (DoJump == true){
                 if (JumpStatusNumber == 1){
                     if (PlayerRight == true){
-
+                        
                     }
                     if (PlayerRight == false){
 
