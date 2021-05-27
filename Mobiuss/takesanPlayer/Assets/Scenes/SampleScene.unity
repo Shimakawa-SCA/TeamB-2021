@@ -487,13 +487,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 1.5
+  Move: 0
   DoJump: 0
   FirstJumpProcessRange: 40
   SecondJumpRrocessRange: 60
   JumpForce: 3
   JumpKeepForce: 0.5
-  cadaver: {fileID: 0}
-  cadaverl: {fileID: 0}
+  cadaver: {fileID: 5360416352593068188, guid: 2904c177168d2c445999fcdcdbd51836, type: 3}
+  cadaverl: {fileID: 5471547294990251966, guid: 1c68798f3e69a6741ac13d899492e631,
+    type: 3}
+  Wait: 0
 --- !u!54 &1317722487
 Rigidbody:
   m_ObjectHideFlags: 0

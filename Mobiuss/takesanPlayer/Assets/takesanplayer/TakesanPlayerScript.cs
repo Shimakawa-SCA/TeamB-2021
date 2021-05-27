@@ -11,6 +11,7 @@ public class TakesanPlayerScript : MonoBehaviour
     float MoveDirection;
     public float Speed;
     public static bool PlayerRight;
+    public bool Move;
 
     public static bool CanMove;
     public bool DoJump;
@@ -29,7 +30,7 @@ public class TakesanPlayerScript : MonoBehaviour
 
     public static bool Hold;
     bool PlayerDeth;
-    bool Wait;
+    public bool Wait;
 
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class TakesanPlayerScript : MonoBehaviour
         JumpStatusNumber = 0;
         PlayerSpownpoint = new Vector3(0,0,0);
         Hold = false;
+        Move = false;
     }
 
     // Update is called once per frame
@@ -89,6 +91,7 @@ public class TakesanPlayerScript : MonoBehaviour
         if (LSH != 0){
             rb.velocity = new Vector3(Speed*MoveDirection,rb.velocity.y,0); 
             Wait = false;
+            if (DoJump == false) Move = true;
         }
     }
 
@@ -113,7 +116,10 @@ public class TakesanPlayerScript : MonoBehaviour
 
     void JumpStatus(){
         float JumpVelocityy = rb.velocity.y;
-        if (JumpVelocityy == JumpForce) JumpStatusNumber = 1;
+        if (JumpVelocityy == JumpForce) {
+            JumpStatusNumber = 1;
+            Move = false;
+        }
         if (JumpStatusNumber == 1){
             if ((JumpVelocityy > 0) && (JumpVelocityy != JumpForce)) JumpStatusNumber = 2;
         }
@@ -182,8 +188,36 @@ public class TakesanPlayerScript : MonoBehaviour
     void GetPlayerStatus(){
         Animator animator = GetComponent<Animator>();
         int Animaint = animator.GetInteger("Animationint");
-        if (LSH == 0) Wait = true;
+        if (LSH == 0) {
+            Wait = true; 
+            Move = false;
+        }
         if (Hold == true){
+            if (DoJump == false)
+            {
+                if (Wait == true)
+                {
+                    if (PlayerRight == true)
+                    {
+                        Animaint = 12;
+                    }
+                    if (PlayerRight == false)
+                    {
+                        Animaint = 13;
+                    }
+                }
+                if (Move == true)
+                {
+                    if (PlayerRight == true)
+                    {
+                        Animaint = 14;
+                    }
+                    if (PlayerRight == false)
+                    {
+                        Animaint = 15;
+                    }
+                }
+            }
             if (DoJump == true){
                 if (JumpStatusNumber == 1){
                     if (PlayerRight == true){
@@ -209,35 +243,45 @@ public class TakesanPlayerScript : MonoBehaviour
                         Animaint = 21;
                     }
                 }
-                if (JumpStatusNumber == 4){
-                    if (PlayerRight == true){
-                        Animaint = 22;
-                    }
-                    if (PlayerRight == false){
-                        Animaint = 23;
-                    }
-                }
             }
-            if (DoJump == false){
-                if (Wait == true){
-                    if (PlayerRight == true){
-                        Animaint = 12;
-                    }
-                    if (PlayerRight == false){
-                        Animaint = 13;
-                    }
+            if (JumpStatusNumber == 4)
+            {
+                if (PlayerRight == true)
+                {
+                    Animaint = 22;
                 }
-                if (Wait == false){
-                    if (PlayerRight == true){
-                        Animaint = 14;
-                    }
-                    if (PlayerRight == false){
-                        Animaint = 15;
-                    }
+                if (PlayerRight == false)
+                {
+                    Animaint = 23;
                 }
             }
         }
         if (Hold == false){
+            if (DoJump == false)
+            {
+                if (Wait == true)
+                {
+                    if (PlayerRight == true)
+                    {
+                        Animaint = 0;
+                    }
+                    if (PlayerRight == false)
+                    {
+                        Animaint = 1;
+                    }
+                }
+                if (Move == true)
+                {
+                    if (PlayerRight == true)
+                    {
+                        Animaint = 2;
+                    }
+                    if (PlayerRight == false)
+                    {
+                        Animaint = 3;
+                    }
+                }
+            }
             if (DoJump == true)
             {
                 if (JumpStatusNumber == 1)
@@ -265,31 +309,16 @@ public class TakesanPlayerScript : MonoBehaviour
                         Animaint = 9;
                     }
                 }
-                if (JumpStatusNumber == 4){
-                    if (PlayerRight == true){
-                        Animaint = 10;
-                    }
-                    if (PlayerRight == false){
-                        Animaint = 11;
-                    }
-                }
             }
-            if (DoJump == false){
-                if (Wait == true){
-                    if (PlayerRight == true){
-                        Animaint = 0;
-                    }
-                    if (PlayerRight == false){
-                        Animaint = 1;
-                    }
+            if (JumpStatusNumber == 4)
+            {
+                if (PlayerRight == true)
+                {
+                    Animaint = 10;
                 }
-                if (Wait == false){
-                    if (PlayerRight == true){
-                        Animaint = 2;
-                    }
-                    if (PlayerRight == false){
-                        Animaint = 3;
-                    }
+                if (PlayerRight == false)
+                {
+                    Animaint = 11;
                 }
             }
         }
@@ -302,5 +331,7 @@ public class TakesanPlayerScript : MonoBehaviour
             }
         }
         animator.SetInteger("Animationint", Animaint);
+        if (JumpStatusNumber == 4) JumpStatusNumber = 0;
+        Debug.Log(Animaint);
     }
 }
