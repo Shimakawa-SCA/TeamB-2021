@@ -31,8 +31,8 @@ public class Fade : MonoBehaviour
             else
             {
                 //フェードインの処理
-                if (image.color.a >= 0) image.color = new Color(0, 0, 0, image.color.a - 1 / (60 * time));
-                else image.color = new Color(0, 0, 0, 0);
+                if (image.color.a >= 0) image.color = new Color(255, 255, 255, image.color.a - 1 / (60 * time));
+                else image.color = new Color(255, 255, 255, 0);
             }
         }
     }

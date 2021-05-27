@@ -75,6 +75,8 @@ public class botun : MonoBehaviour
             }
             else
             {
+                //これで行けると思う
+                //outu()
                 Invoke("outu", 0f);
             }
 
