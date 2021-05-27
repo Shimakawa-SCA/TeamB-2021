@@ -22,7 +22,7 @@ public class NextScene : MonoBehaviour
         }
     }
 
-    void next()
+    public void next()
     {
         SceneManager.LoadScene("SampleScene"); 
     }

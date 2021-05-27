@@ -60,7 +60,7 @@ public class TimeCounter : MonoBehaviour
     //タイトルに行くボタン
     public void OnClickT()
     {
-        SceneManager.LoadScene("Opening");
+        SceneManager.LoadScene("Prologue");
     }
 
 }

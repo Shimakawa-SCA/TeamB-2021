@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; //パネルのイメージを操作するのに必要
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
-public class FadeController2 : MonoBehaviour
+public class StoryFade : MonoBehaviour
 {
     float fadeSpeed = 0.0024f;        //透明度が変わるスピードを管理
     float red, green, blue, alfa;   //パネルの色、不透明度を管理
 
     public static bool isFadeOut = false;  //フェードアウト処理の開始、完了を管理するフラグ
     public static bool isFadeIn = false;   //フェードイン処理の開始、完了を管理するフラグ
-    
+
     Image fadeImage;                //透明度を変更するパネルのイメージ
 
     void Start()
@@ -64,12 +63,4 @@ public class FadeController2 : MonoBehaviour
     {
         fadeImage.color = new Color(red, green, blue, alfa);
     }
-
-    //　スタートボタンを押したら実行する
-    public void GameStart()
-    {
-        isFadeOut = true;
-    }
-
 }
-
