@@ -402,6 +402,7 @@ GameObject:
   - component: {fileID: 1317722488}
   - component: {fileID: 1317722487}
   - component: {fileID: 1317722486}
+  - component: {fileID: 1317722489}
   m_Layer: 0
   m_Name: TakesanPlayerSprite
   m_TagString: Player
@@ -522,6 +523,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3333523, y: 9.331289, z: 1}
   m_Center: {x: -0.26667053, y: -1.1663818, z: 0}
+--- !u!95 &1317722489
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317722483}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66e5313431fd1064eaff34322d530d08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1434676586
 GameObject:
   m_ObjectHideFlags: 0

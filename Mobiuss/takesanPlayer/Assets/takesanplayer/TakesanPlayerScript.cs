@@ -126,7 +126,7 @@ public class TakesanPlayerScript : MonoBehaviour
             JumpTimeLine = 0;
             rb.velocity = new Vector3(rb.velocity.x,0,0);
         }
-        Debug.Log(JumpStatusNumber);
+        //Debug.Log(JumpStatusNumber);
     }
 
     private void OnCollisionStay(Collision collision){
@@ -187,52 +187,52 @@ public class TakesanPlayerScript : MonoBehaviour
             if (DoJump == true){
                 if (JumpStatusNumber == 1){
                     if (PlayerRight == true){
-                        
+                        Animaint = 16;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 17;
                     }
                 }
                 if (JumpStatusNumber == 2){
                     if (PlayerRight == true){
-
+                        Animaint = 81;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 19;
                     }
                 }
                 if (JumpStatusNumber == 3){
                     if (PlayerRight == true){
-
+                        Animaint = 20;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 21;
                     }
                 }
                 if (JumpStatusNumber == 4){
                     if (PlayerRight == true){
-
+                        Animaint = 22;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 23;
                     }
                 }
             }
             if (DoJump == false){
                 if (Wait == true){
                     if (PlayerRight == true){
-
+                        Animaint = 12;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 13;
                     }
                 }
                 if (Wait == false){
                     if (PlayerRight == true){
-
+                        Animaint = 14;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 15;
                     }
                 }
             }
@@ -243,62 +243,62 @@ public class TakesanPlayerScript : MonoBehaviour
                 if (JumpStatusNumber == 1)
                 {
                     if (PlayerRight == true){
-
+                        Animaint = 4;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 5;
                     }
                 }
                 if (JumpStatusNumber == 2){
                     if (PlayerRight == true){
-
+                        Animaint = 6;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 7;
                     }
                 }
                 if (JumpStatusNumber == 3){
                     if (PlayerRight == true){
-
+                        Animaint = 8;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 9;
                     }
                 }
                 if (JumpStatusNumber == 4){
                     if (PlayerRight == true){
-
+                        Animaint = 10;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 11;
                     }
                 }
             }
             if (DoJump == false){
                 if (Wait == true){
                     if (PlayerRight == true){
-
+                        Animaint = 0;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 1;
                     }
                 }
                 if (Wait == false){
                     if (PlayerRight == true){
-
+                        Animaint = 2;
                     }
                     if (PlayerRight == false){
-
+                        Animaint = 3;
                     }
                 }
             }
         }
         if (PlayerDeth == true){
             if (PlayerRight == true){
-
+                Animaint = 24;
             }
             if (PlayerRight == false){
-
+                Animaint = 25;
             }
         }
         animator.SetInteger("Animationint", Animaint);
