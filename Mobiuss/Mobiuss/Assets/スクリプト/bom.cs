@@ -9,6 +9,7 @@ public class bom : MonoBehaviour
     public GameObject CubePrefab;
     GameObject player;
     float pdis;
+    float blx;
     float pdistans;
     bool itemposition;
     bool PlayerRight;
@@ -32,6 +33,8 @@ public class bom : MonoBehaviour
     {
         pdis = ((transform.position.x - player.transform.position.x) + (transform.position.y - player.transform.position.y));
         //Debug.Log(pdis);
+        if (Mathf.Abs(this.transform.position.x) > 8.5f) transform.position = new Vector3(blx, transform.position.y);
+        blx = this.transform.position.x;
         PlayerRight = TakesanPlayerScript2.PlayerRight;
         if (pdis < 1)
         {

@@ -320,4 +320,9 @@ public class TakesanPlayerScript1 : MonoBehaviour
         if (JumpStatusNumber == 4) JumpStatusNumber = 0;
         //Debug.Log(Animaint);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == ("yuka")) ReSpown();
+    }
 }
