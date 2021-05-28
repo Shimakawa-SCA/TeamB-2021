@@ -14,7 +14,7 @@ public class s2botan3 : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.tag == "player"&&i==0)
+        if (other.gameObject.tag == "player"&&i==0|| other.gameObject.tag == "dead"&&i==0)
         {
             Instantiate(iwaPrefab);
             i=1;
@@ -32,6 +32,12 @@ public class s2botan3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (i == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                i = 0;
+            }
+        }
     }
 }
