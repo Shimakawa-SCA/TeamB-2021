@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TimeCounter : MonoBehaviour
 {
     //カウントダウン
-    public float countdown = 5.0f;
+    public static float countdown = 300.0f;
 
     //時間を表示するText型の変数
     public Text timeText;
@@ -40,10 +40,12 @@ public class TimeCounter : MonoBehaviour
                 TimeOverPanel.SetActive(true);
                 if (!isCalledOnce)
                 {
+                    //タイムオーバー音
+                    //NewSoundScriot.GameOver1 = true;
                     isCalledOnce = true;
                     TimeButton.Select();
                 }
-                
+
                 //Invoke("GameOver", 1.0f);
                 //SceneManager.LoadScene("GameOver");
             }

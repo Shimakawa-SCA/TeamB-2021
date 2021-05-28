@@ -37,7 +37,7 @@ public class pepar : MonoBehaviour
         Transform myTransform = this.transform;
         if (i == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 3"))
             {
                 if (kami.i == 0 && v == 1)
                 {

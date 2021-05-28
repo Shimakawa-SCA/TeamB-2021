@@ -62,10 +62,10 @@ public class TakesanPlayerScript1 : MonoBehaviour
             if (DoJump == false)
             {
                 //if (Input.GetButtonDown("")) DoJump = true;
-                if (Input.GetKeyDown(KeyCode.Space)) DoJump = true;
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")) DoJump = true;
             }
             //if (Input.GetButtonDown(""))
-            if (Input.GetKeyDown(KeyCode.R)) ReSpown();
+            if (Input.GetKeyDown(KeyCode.R)|| Input.GetKeyDown("joystick button 2")) ReSpown();
         }
         AddSpeed();
         if (DoJump  == true) Jump();
@@ -86,6 +86,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
 
     void GetLStickHorizontal(){
         //LSH = Input.GetAxis("???");//"設定値"（スティックの入力
+        LSH = Input.GetAxis("L_Stick_H");
         if (Input.GetKeyDown(KeyCode.A)) LSH = -0.5f;
         if (Input.GetKeyDown(KeyCode.D)) LSH = 0.5f;
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LSH = 0;
@@ -98,6 +99,8 @@ public class TakesanPlayerScript1 : MonoBehaviour
             rb.velocity = new Vector3(Speed*MoveDirection,rb.velocity.y,0); 
             Wait = false;
             if (DoJump == false) Move = true;
+            //タイマーを起動させる用
+            TimeCounter.tTime = 1;
         }
     }
 
@@ -172,6 +175,8 @@ public class TakesanPlayerScript1 : MonoBehaviour
         if (PlayerRight == false){
             Invoke("LeftDeth", 1f);
         }
+        //音
+        //NewSoundScriot.Revive1 = true;
         R1Count++;
         CanMove = false;
         PlayerDeth = true;

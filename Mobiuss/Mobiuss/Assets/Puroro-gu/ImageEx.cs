@@ -26,13 +26,10 @@ public class ImageEx : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (count == 0 && Input.GetKeyDown(KeyCode.Space))
+        if (count == 0 && Input.GetKeyDown(KeyCode.Space) || count == 0 && Input.GetKeyDown("joystick button 0"))
         {
-            WhiteOut();
-            count++;
-        }
-        if (count == 0 && Input.GetKeyDown("joystick button 0"))
-        {
+            //ボタン音
+            //NewSoundScriot.TitleButton1 = true;
             WhiteOut();
             count++;
         }
