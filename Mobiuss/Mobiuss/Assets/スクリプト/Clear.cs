@@ -48,7 +48,7 @@ public class Clear : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (NewPlayer4Script.R1Count < 4)
+        if (TakesanPlayerScript1.R1Count < 4)
         {
             bClearImag.SetActive(true);
         }
