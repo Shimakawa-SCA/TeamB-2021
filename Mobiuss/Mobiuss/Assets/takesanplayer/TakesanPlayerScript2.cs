@@ -66,6 +66,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
         if (DoJump  == true) Jump();
         Playerdirection();
         JumpStatus();
+        LimitSpeed();
         GetPlayerStatus();
     }
 
@@ -140,8 +141,18 @@ public class TakesanPlayerScript2 : MonoBehaviour
         //Debug.Log(JumpStatusNumber);
     }
 
+    void LimitSpeed(){
+        if (rb.velocity.x > Speed ){
+            rb.velocity = new Vector3(Speed, rb.velocity.y, rb.velocity.z);
+        }
+        if (rb.velocity.y > JumpForce){
+            rb.velocity = new Vector3(rb.velocity.x, JumpForce, rb.velocity.z);
+        }
+    }
+
     private void OnCollisionStay(Collision collision){
-        if (collision.gameObject.tag == ("Flor")){
+        if ((collision.gameObject.tag == ("Flor")) || (collision.gameObject.tag == ("iwa")))
+        {
             if (JumpStatusNumber == 3){
                 JumpStatusNumber = 4;
                 DoJump = false;

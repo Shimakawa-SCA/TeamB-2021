@@ -65,6 +65,8 @@ public class iwa2 : MonoBehaviour
         }*/
         rb.velocity = new Vector3(-x , -3f, 0);
         }
-        if (transform.position.x < kyp.x) rb.velocity = new Vector3(0,rb.velocity.y,0);
+        if (transform.position.x < kyp.x){
+            rb.velocity = new Vector3(0,rb.velocity.y,0);
+        }
     }
 }
