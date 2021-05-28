@@ -9,6 +9,7 @@ public class botun : MonoBehaviour
     public AudioClip audioClip1;
     public AudioClip audioClip2;
     private AudioSource audioSource;
+    private int a;
     private int v;
     [SerializeField] private GameObject Clear3Object;
 
@@ -16,6 +17,7 @@ public class botun : MonoBehaviour
     void Start()
     {
         sum = 0;
+        a = 0;
         v = 0;
         audioSource = gameObject.GetComponent<AudioSource>();
     }
@@ -23,9 +25,9 @@ public class botun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sum == 1)
+        if (sum == 1&&a==0)
         {
-
+            a++;
             if (x.i == 1 && y.i == 0 && z.i == 0 && o.i == 0)
             {
                 audioSource.clip = audioClip1;
@@ -37,9 +39,9 @@ public class botun : MonoBehaviour
             }
             
         }
-        if (sum == 2)
+        if (sum == 2&&a==1)
         {
-
+            a++;
             if (x.i == 1 && y.i == 1 && z.i == 0 && o.i == 0)
             {
                 audioSource.clip = audioClip1;
@@ -51,9 +53,9 @@ public class botun : MonoBehaviour
             }
 
         }
-        if (sum == 3)
+        if (sum == 3&&a==2)
         {
-
+            a++;
             if (x.i == 1 && y.i == 1 && z.i == 1 && o.i == 0)
             {
                 audioSource.clip = audioClip1;
@@ -96,5 +98,6 @@ public class botun : MonoBehaviour
         z.i = 0;
         o.i = 0;
         sum = 0;
+        a = 0;
     }
 }
