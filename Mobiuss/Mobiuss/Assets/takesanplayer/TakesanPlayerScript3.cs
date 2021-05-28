@@ -43,7 +43,7 @@ public class TakesanPlayerScript3 : MonoBehaviour
         CanMove = true;
         JumpTimeLine = 0;
         JumpStatusNumber = 0;
-        PlayerSpownpoint = new Vector3(0,4.4f,2.75f);
+        PlayerSpownpoint = new Vector3(0,4.4f,-0.3f);
         Hold = false;
         Move = false;
         PlayerRight = true;

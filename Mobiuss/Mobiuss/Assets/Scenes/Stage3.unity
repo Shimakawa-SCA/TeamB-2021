@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149bb9b9324ad0842b38dc9b8ad5d1c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countdown: 3
+  countdown: 300
   timeText: {fileID: 151992505}
   TimeOverPanel: {fileID: 514745384}
   TimeButton: {fileID: 160925630}
