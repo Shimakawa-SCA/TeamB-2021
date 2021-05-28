@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class pepar : MonoBehaviour
 {
     public static int i;
     public static int n;
     private int v;
+    public GameObject score_object ;
     public GameObject CubePrefab;
     // Start is called before the first frame update
     void Start()
@@ -42,11 +44,14 @@ public class pepar : MonoBehaviour
                     Instantiate(CubePrefab);
                     kami.i = 1;
                     v = 0;
+                   
                  
                 }
                 else
                 {
                     v = 1;
+                    Text score_text = score_object.GetComponent<Text>();
+                    score_text.text = "E.紙を見直す";
                 }
             }
         }
@@ -57,8 +62,10 @@ public class pepar : MonoBehaviour
                 if (i == 0&&kami.i==0)
                 {
                     i = 1;
+                    transform.position = new Vector3(88f, 88f, 88f);
                     Instantiate(CubePrefab);
                     kami.i = 1;
+                    
                 }
             }
         }
