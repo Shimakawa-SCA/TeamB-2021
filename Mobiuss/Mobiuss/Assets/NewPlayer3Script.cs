@@ -112,7 +112,6 @@ public class NewPlayer3Script : MonoBehaviour
         }
         if (bom.n == 0)
         {
-        FindObjectOfType<bom>().getright(PlayerRight);
         }
         if (Input.GetKeyUp(KeyCode.A)) LSH = 0;
         if (Input.GetKeyUp(KeyCode.D)) LSH = 0;

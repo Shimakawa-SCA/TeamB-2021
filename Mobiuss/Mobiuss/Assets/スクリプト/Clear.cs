@@ -39,7 +39,7 @@ public class Clear : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        Debug.Log(NewPlayer4Script.R1Count);
+        //Debug.Log(NewPlayer4Script.R1Count);
         //時間
         float countdowntime = timeCounter.countdown; //新しく変数を宣言してその中にTimeCounterの変数countdownを代入する
         //Debug.Log("クリアまでの時間" + countdowntime);

@@ -14,7 +14,7 @@ public class getplayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(pd);
+        //Debug.Log(pd);
         if(pd < 0 && pd > -0.9)
         {
             FindObjectOfType<kiirobo2>().getc(1);
