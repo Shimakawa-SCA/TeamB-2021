@@ -32,6 +32,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
     bool PlayerDeth;
     public bool Wait;
 
+    public static int R1Count;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
         Hold = false;
         Move = false;
         PlayerRight = true;
+        R1Count=0;
     }
 
     // Update is called once per frame
@@ -167,6 +169,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
         if (PlayerRight == false){
             Invoke("LeftDeth", 1f);
         }
+        R1Count++;
         CanMove = false;
         PlayerDeth = true;
     }

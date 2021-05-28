@@ -16,6 +16,7 @@ public class TimeCounter : MonoBehaviour
     bool isCalledOnce;
 
     public static int tTime;
+
     void Start()
     {
         TimeOverPanel.SetActive(false);
