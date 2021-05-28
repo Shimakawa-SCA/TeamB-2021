@@ -3660,7 +3660,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 51.98
+  m_PlaneDistance: 52
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -6626,7 +6626,7 @@ RectTransform:
   - {fileID: 980324054}
   - {fileID: 294183121}
   m_Father: {fileID: 2023283952}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7681,7 +7681,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 131.3
+  m_PlaneDistance: 130
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -7743,7 +7743,7 @@ RectTransform:
   m_Children:
   - {fileID: 1389948665}
   m_Father: {fileID: 2023283952}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9026,8 +9026,8 @@ RectTransform:
   - {fileID: 625574355}
   - {fileID: 934776403}
   - {fileID: 734426009}
-  - {fileID: 1336361318}
   - {fileID: 1575863537}
+  - {fileID: 1336361318}
   - {fileID: 912656268}
   - {fileID: 983711231}
   - {fileID: 1080313099}
