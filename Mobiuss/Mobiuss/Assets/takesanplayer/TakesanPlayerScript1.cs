@@ -57,8 +57,11 @@ public class TakesanPlayerScript1 : MonoBehaviour
         VectolxBorderLine();
         if(CanMove == true){
             GetLStickHorizontal();
-            //if (Input.GetButtonDown("")) DoJump = true;
-            if (Input.GetKeyDown(KeyCode.Space)) DoJump = true;
+            if (DoJump == false)
+            {
+                //if (Input.GetButtonDown("")) DoJump = true;
+                if (Input.GetKeyDown(KeyCode.Space)) DoJump = true;
+            }
             //if (Input.GetButtonDown(""))
             if (Input.GetKeyDown(KeyCode.R)) ReSpown();
         }
@@ -97,11 +100,11 @@ public class TakesanPlayerScript1 : MonoBehaviour
     }
 
     void Jump() { 
-        if (JumpTimeLine <= SecondJumpRrocessRange){ 
-            JumpTimeLine++;
+        if (JumpTimeLine <= SecondJumpRrocessRange) JumpTimeLine++;
+        if (JumpTimeLine <= FirstJumpProcessRange){
+            FirstJumpProcess();
             if (Input.GetKeyUp(KeyCode.Space)) JumpTimeLine = FirstJumpProcessRange;
         }
-        if (JumpTimeLine <= FirstJumpProcessRange) FirstJumpProcess();
         if (JumpTimeLine > FirstJumpProcessRange && JumpTimeLine <= SecondJumpRrocessRange) SecondJumpProcess();
     }
 
@@ -136,7 +139,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
             JumpTimeLine = 0;
             rb.velocity = new Vector3(rb.velocity.x,0,0);
         }
-        //Debug.Log(JumpStatusNumber);
+        Debug.Log(JumpStatusNumber);
     }
 
     private void OnCollisionStay(Collision collision){
@@ -337,6 +340,6 @@ public class TakesanPlayerScript1 : MonoBehaviour
         }
         animator.SetInteger("Animationint", Animaint);
         if (JumpStatusNumber == 4) JumpStatusNumber = 0;
-        Debug.Log(Animaint);
+        //Debug.Log(Animaint);
     }
 }

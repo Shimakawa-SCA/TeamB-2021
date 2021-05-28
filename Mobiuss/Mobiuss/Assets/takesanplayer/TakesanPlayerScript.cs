@@ -96,12 +96,13 @@ public class TakesanPlayerScript : MonoBehaviour
         }
     }
 
-    void Jump() { 
-        if (JumpTimeLine <= SecondJumpRrocessRange){ 
-            JumpTimeLine++;
+    void Jump() {
+        if (JumpTimeLine <= SecondJumpRrocessRange) JumpTimeLine++;
+        if (JumpTimeLine <= FirstJumpProcessRange)
+        {
+            FirstJumpProcess();
             if (Input.GetKeyUp(KeyCode.Space)) JumpTimeLine = FirstJumpProcessRange;
         }
-        if (JumpTimeLine <= FirstJumpProcessRange) FirstJumpProcess();
         if (JumpTimeLine > FirstJumpProcessRange && JumpTimeLine <= SecondJumpRrocessRange) SecondJumpProcess();
     }
 
@@ -136,7 +137,7 @@ public class TakesanPlayerScript : MonoBehaviour
             JumpTimeLine = 0;
             rb.velocity = new Vector3(rb.velocity.x,0,0);
         }
-        //Debug.Log(JumpStatusNumber);
+        Debug.Log(JumpStatusNumber);
     }
 
     private void OnCollisionStay(Collision collision){
@@ -337,6 +338,6 @@ public class TakesanPlayerScript : MonoBehaviour
         }
         animator.SetInteger("Animationint", Animaint);
         if (JumpStatusNumber == 4) JumpStatusNumber = 0;
-        Debug.Log(Animaint);
+        //Debug.Log(Animaint);
     }
 }

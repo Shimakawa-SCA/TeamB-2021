@@ -96,12 +96,13 @@ public class TakesanPlayerScript3 : MonoBehaviour
         }
     }
 
-    void Jump() { 
-        if (JumpTimeLine <= SecondJumpRrocessRange){ 
-            JumpTimeLine++;
+    void Jump() {
+        if (JumpTimeLine <= SecondJumpRrocessRange) JumpTimeLine++;
+        if (JumpTimeLine <= FirstJumpProcessRange)
+        {
+            FirstJumpProcess();
             if (Input.GetKeyUp(KeyCode.Space)) JumpTimeLine = FirstJumpProcessRange;
         }
-        if (JumpTimeLine <= FirstJumpProcessRange) FirstJumpProcess();
         if (JumpTimeLine > FirstJumpProcessRange && JumpTimeLine <= SecondJumpRrocessRange) SecondJumpProcess();
     }
 
@@ -337,6 +338,6 @@ public class TakesanPlayerScript3 : MonoBehaviour
         }
         animator.SetInteger("Animationint", Animaint);
         if (JumpStatusNumber == 4) JumpStatusNumber = 0;
-        Debug.Log(Animaint);
+        //Debug.Log(Animaint);
     }
 }
