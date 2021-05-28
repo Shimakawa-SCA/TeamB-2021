@@ -6,6 +6,7 @@ public class takestar2Script : MonoBehaviour
 {
     public GameObject player;
     float pdis;
+    float blx;
     bool ch;
     bool PlayerRight;
     bool pih;
@@ -42,6 +43,8 @@ public class takestar2Script : MonoBehaviour
                 }
             }
         }
+        if (Mathf.Abs(this.transform.position.x) > 8.5f) transform.position = new Vector3(blx, transform.position.y);
+        blx = this.transform.position.x;
     }
     
 }
