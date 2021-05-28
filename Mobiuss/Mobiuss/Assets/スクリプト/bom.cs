@@ -31,12 +31,12 @@ public class bom : MonoBehaviour
     {
         pdis = ((transform.position.x - player.transform.position.x) + (transform.position.y - player.transform.position.y));
         //Debug.Log(pdis);
-        FindObjectOfType<NewPlayer3Script>().setcanhold(pdis);
         if (pdis < 1)
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
                 itemposition = true;
+                TakesanPlayerScript2.Hold = true;
             }
         }
         if (itemposition == true)
@@ -59,6 +59,7 @@ public class bom : MonoBehaviour
                 itemposition = false;
                 Debug.Log("6秒後に爆発！！");
                 Invoke("ban", 6f);
+                TakesanPlayerScript2.Hold = false;
             }
         }
         FindObjectOfType<NewPlayer3Script>().pihb(itemposition);
