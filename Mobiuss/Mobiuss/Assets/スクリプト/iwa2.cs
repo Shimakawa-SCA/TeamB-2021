@@ -56,11 +56,11 @@ public class iwa2 : MonoBehaviour
             rb.velocity = new Vector3(-3f, -3f, 0);
         }
         if (j == 1) {
-            x *= 0.9985f;
-        if (x < 1.2)
+            x *= 0.9965f;
+        /*if (x < 1.2)
         {
             x = 0;
-        }
+        }*/
         rb.velocity = new Vector3(-x , -3f, 0);
         }
     }
