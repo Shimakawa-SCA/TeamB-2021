@@ -14,6 +14,8 @@ public class aka : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
+            NewSoundScriot.Sound1 = true;
+            NewSoundScriot.Stone1 = true;
             i = 1;
             Destroy(gameObject);
         }

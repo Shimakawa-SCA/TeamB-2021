@@ -17,7 +17,8 @@ public class kimidori : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             i = 1;
-            
+
+            NewSoundScriot.Sound1 = true;
             Destroy(gameObject);
             Invoke("DelayMethod", 0.5f);
         }

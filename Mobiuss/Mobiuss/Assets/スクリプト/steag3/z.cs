@@ -31,7 +31,7 @@ void Update()
 {
     if (n == 1)
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) || Input.GetKeyDown("joystick button 3"))
         {
             
                 botun.sum += 1;

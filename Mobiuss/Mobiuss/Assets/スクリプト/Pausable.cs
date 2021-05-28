@@ -42,6 +42,10 @@ public class Pausable : MonoBehaviour
 	[SerializeField] private Button resumeButton;
 	[SerializeField] private Button retryButton;
 	[SerializeField] private Button titleButton;
+	[SerializeField] private Button SelectButton;
+	[SerializeField] private Button SelectButtont;
+
+	public static int NotMenuCount;
 
 	//ポーズ処理
 	void Start()
@@ -51,12 +55,12 @@ public class Pausable : MonoBehaviour
 		resumeButton.onClick.AddListener(Resumefor);
 		retryButton.onClick.AddListener(OnClick);
 		titleButton.onClick.AddListener(OnClickT);
-
-	}
+		NotMenuCount = 0;
+}
 	// 更新処理
 	void Update()
 	{
-        if (Clear.NotMenuCount == 0 ) 
+        if (NotMenuCount == 0 ) 
 		{
 			if (Input.GetKeyDown("joystick button 7"))
 			{
@@ -125,10 +129,10 @@ public class Pausable : MonoBehaviour
 		}
 		Time.timeScale = 0;  // 時間停止
 		pausePanel.SetActive(true);//メニューを開く
-		Button button;
-		button = GameObject.Find("MainCanvas/PausePanel/Resume").GetComponent<Button>();
+		//メニューを開く音
+		//NewSoundScriot.Menu1 = true;
 		//ボタンが選択された状態になる
-		button.Select();
+		SelectButton.Select();
 	}
 
 	// 再開
@@ -149,16 +153,18 @@ public class Pausable : MonoBehaviour
 		}
 		Time.timeScale = 1;  // 再開
 
-		Button button;
-		button = GameObject.Find("MainCanvas/PausePanel/Title").GetComponent<Button>();
 		//ボタンが選択された状態になる
-		button.Select();
+		SelectButtont.Select();
+		//ボタンを押す音
+		//NewSoundScriot.MenuButton1 = true;
 		pausePanel.SetActive(false);//メニューを閉じる
 	}
 	//やり直しボタン
     public void OnClick()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		//ボタンを押す音
+		//NewSoundScriot.MenuButton1 = true;
 		pausing = false;
 		Time.timeScale = 1;  // 再開
 
@@ -167,6 +173,8 @@ public class Pausable : MonoBehaviour
 	public void OnClickT()
 	{
 		Time.timeScale = 1;  // 再開
+	　　//ボタンを押す音
+		//NewSoundScriot.MenuButton1 = true;
 		pausing = false;
 		SceneManager.LoadScene("Prologue");
 

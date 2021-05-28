@@ -37,7 +37,9 @@ public class TextDisplay : MonoBehaviour
     void DelayMethodss()
     {
         secondText.gameObject.SetActive(false);
+        //タイマーを進める
         TimeCounter.tTime = 1;
-        Debug.Log(TimeCounter.tTime);
+        TimeCounter2.tTime2 = 1;
+        TimeCounter3.tTime3= 1;
     }
 }
