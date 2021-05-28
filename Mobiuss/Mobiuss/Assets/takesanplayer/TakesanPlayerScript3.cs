@@ -62,6 +62,7 @@ public class TakesanPlayerScript3 : MonoBehaviour
             //if (Input.GetButtonDown(""))
             if (Input.GetKeyDown(KeyCode.R)) ReSpown();
         }
+        GetLstickNull();
         AddSpeed();
         if (DoJump  == true) Jump();
         Playerdirection();
@@ -86,6 +87,10 @@ public class TakesanPlayerScript3 : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LSH = 0;
         if (LSH < 0) MoveDirection = -1;
         if (LSH > 0) MoveDirection = 1;
+    }
+
+    void GetLstickNull(){
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LSH = 0;
     }
 
     void AddSpeed(){
