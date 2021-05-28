@@ -46,6 +46,7 @@ public class TakesanPlayerScript : MonoBehaviour
         PlayerSpownpoint = new Vector3(0,0,0);
         Hold = false;
         Move = false;
+        PlayerRight = true;
     }
 
     // Update is called once per frame
@@ -96,7 +97,10 @@ public class TakesanPlayerScript : MonoBehaviour
     }
 
     void Jump() { 
-        if (JumpTimeLine <= SecondJumpRrocessRange) JumpTimeLine++;
+        if (JumpTimeLine <= SecondJumpRrocessRange){ 
+            JumpTimeLine++;
+            if (Input.GetKeyUp(KeyCode.Space)) JumpTimeLine = FirstJumpProcessRange;
+        }
         if (JumpTimeLine <= FirstJumpProcessRange) FirstJumpProcess();
         if (JumpTimeLine > FirstJumpProcessRange && JumpTimeLine <= SecondJumpRrocessRange) SecondJumpProcess();
     }
@@ -158,10 +162,10 @@ public class TakesanPlayerScript : MonoBehaviour
 
     void ReSpown(){
         if (PlayerRight == true){
-            Invoke("RightDeth", 0.8f);
+            Invoke("RightDeth", 1f);
         }
         if (PlayerRight == false){
-            Invoke("LeftDeth", 0.8f);
+            Invoke("LeftDeth", 1f);
         }
         CanMove = false;
         PlayerDeth = true;
@@ -183,6 +187,7 @@ public class TakesanPlayerScript : MonoBehaviour
         transform.position = PlayerSpownpoint;
         LSH = 0;
         CanMove = true;
+        PlayerRight = true;
     }
 
     void GetPlayerStatus(){
