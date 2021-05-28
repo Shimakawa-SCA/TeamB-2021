@@ -7,7 +7,7 @@ public class elevator : MonoBehaviour
     private int iti;
     private int tyek;
     private int mati;
-    private int y;
+    public static int y;
     // Start is called before the first frame update
     void Start()
     {
