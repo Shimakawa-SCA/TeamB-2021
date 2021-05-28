@@ -25,7 +25,6 @@ public class Clear3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         ClearPanel.SetActive(false);
         GameClearImag.SetActive(false);
         aClearImag.SetActive(false);
@@ -48,7 +47,7 @@ public class Clear3 : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (NewPlayer4Script.R1Count < 4)
+        if (TakesanPlayerScript3.R3Count < 4)
         {
             bClearImag.SetActive(true);
         }

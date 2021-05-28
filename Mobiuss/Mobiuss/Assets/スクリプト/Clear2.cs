@@ -39,7 +39,7 @@ public class Clear2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(NewPlayer4Script.R1Count);
+        Debug.Log(TakesanPlayerScript2.R2Count);
         //時間
         float countdowntime = timeCounter.countdown; //新しく変数を宣言してその中にTimeCounterの変数countdownを代入する
         //Debug.Log("クリアまでの時間" + countdowntime);
@@ -48,7 +48,7 @@ public class Clear2 : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (NewPlayer3Script.RCount < 4)
+        if (TakesanPlayerScript2.R2Count < 4)
         {
             bClearImag.SetActive(true);
         }
