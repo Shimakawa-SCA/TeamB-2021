@@ -32,22 +32,22 @@ public class edrool : MonoBehaviour
 
     private void Start()
     {
-
+        count = 2;
+        Debug.Log(count);
+        Debug.Log("buttonB");
+        isStopEndRoll = false;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //エンドロール開始
+        /*エンドロール開始
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0"))
         {
-            count = 2;
-            Debug.Log(count);
-            Debug.Log("buttonB");
-            isStopEndRoll = false;
+            
 
-        }
+        }*/
         //　エンドロール用テキストがリミットを越えるまで動かす
         if (transform.position.y <= limitPosition && count > 1)
         {
@@ -92,13 +92,15 @@ public class edrool : MonoBehaviour
             Debug.Log("button");
             FadeController2.isFadeOut = true;
             white.SendMessage("WhiteOut");
-
             StopCoroutine(endRollCoroutine);
-
-
+            Invoke("title",3.5f);
         }
     }
 
+    void title()
+    {
+        SceneManager.LoadScene("Prologue");
+    }
 
     void CheckTimeScale()
     {

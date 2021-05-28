@@ -10,6 +10,8 @@ public class botun : MonoBehaviour
     public AudioClip audioClip2;
     private AudioSource audioSource;
     private int v;
+    [SerializeField] private GameObject Clear3Object;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +72,8 @@ public class botun : MonoBehaviour
             {
                 audioSource.clip = audioClip1;
                 audioSource.Play();
-                Instantiate(CubePrefab);
+                Clear3Object.SetActive(true);
+                //Instantiate(CubePrefab);
                 v = 1;
             }
             else
