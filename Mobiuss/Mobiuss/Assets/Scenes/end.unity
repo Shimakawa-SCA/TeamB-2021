@@ -694,7 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   white: {fileID: 863467038}
   BText: {fileID: 210616228}
-  textScrollSpeed: 70
+  textScrollSpeed: 60
   limitPosition: 500
   scale: 10
 --- !u!114 &1073353877
