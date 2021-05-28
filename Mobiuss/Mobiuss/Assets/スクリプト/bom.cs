@@ -7,7 +7,7 @@ public class bom : MonoBehaviour
     private int i;
     public static int n;
     public GameObject CubePrefab;
-    public GameObject player;
+    GameObject player;
     float pdis;
     float pdistans;
     bool itemposition;
@@ -25,12 +25,14 @@ public class bom : MonoBehaviour
         itemposition = false;
         rb = GetComponent<Rigidbody>();
         q = Quaternion.Euler(0, 0, 0);
+        player = GameObject.Find("New Sprite");
     }
 
     private void Update()
     {
         pdis = ((transform.position.x - player.transform.position.x) + (transform.position.y - player.transform.position.y));
         //Debug.Log(pdis);
+        PlayerRight = TakesanPlayerScript2.PlayerRight;
         if (pdis < 1)
         {
             if (Input.GetKeyDown(KeyCode.I))
@@ -62,8 +64,6 @@ public class bom : MonoBehaviour
                 TakesanPlayerScript2.Hold = false;
             }
         }
-        FindObjectOfType<NewPlayer3Script>().pihb(itemposition);
-
     }
 
     void OnCollisionStay(Collision other)
@@ -110,11 +110,6 @@ public class bom : MonoBehaviour
             Destroy(this.gameObject);
 
         }
-  
-    public void getright(bool pr)
-    {
-        PlayerRight = pr;
-    }
 
    /* void res()
     {

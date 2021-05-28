@@ -21,9 +21,9 @@ public class takestar1Script : MonoBehaviour
     void Update()
     {
         stop = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        PlayerRight = NewPlayer3Script.PlayerRight;
-        pih = NewPlayer3Script.Hold;
-        pdis = ((transform.position.x - player.transform.position.x) + (transform.position.y - player.transform.position.y));
+        PlayerRight = TakesanPlayerScript2.PlayerRight;
+        pih = TakesanPlayerScript2.Hold;
+        pdis = ((Mathf.Abs(transform.position.x) - Mathf.Abs(player.transform.position.x)) + (Mathf.Abs(transform.position.y) - Mathf.Abs(player.transform.position.y)));
         if (pdis < 1)
         {
             if (Input.GetKeyDown(KeyCode.I) && (pih == false))
@@ -43,7 +43,6 @@ public class takestar1Script : MonoBehaviour
             }
         }
     }
-
 
     
 }

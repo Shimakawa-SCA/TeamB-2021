@@ -228,7 +228,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
                 }
                 if (JumpStatusNumber == 2){
                     if (PlayerRight == true){
-                        Animaint = 81;
+                        Animaint = 18;
                     }
                     if (PlayerRight == false){
                         Animaint = 19;
@@ -316,6 +316,6 @@ public class TakesanPlayerScript2 : MonoBehaviour
         }
         animator.SetInteger("Animationint", Animaint);
         if (JumpStatusNumber == 4) JumpStatusNumber = 0;
-        //Debug.Log(Animaint);
+        Debug.Log(Animaint);
     }
 }
