@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class iwa2 : MonoBehaviour
 {
+    Vector3 kyp;
     int n = 0;
     float x;
     int j=0;
@@ -21,6 +22,7 @@ public class iwa2 : MonoBehaviour
     private float offset;
     void Start()
     {
+        kyp = new Vector3(-5.194008f, -2.634925f, 14.32001f);
         rb = GetComponent<Rigidbody>();
         n=0;
         aka2.i=0;
@@ -63,5 +65,6 @@ public class iwa2 : MonoBehaviour
         }*/
         rb.velocity = new Vector3(-x , -3f, 0);
         }
+        if (transform.position.x < kyp.x) rb.velocity = new Vector3(0,rb.velocity.y,0);
     }
 }
