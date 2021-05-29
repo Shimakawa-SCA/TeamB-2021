@@ -111,7 +111,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
         if (JumpTimeLine <= FirstJumpProcessRange)
         {
             FirstJumpProcess();
-            if (Input.GetKeyUp(KeyCode.Space)) JumpTimeLine = FirstJumpProcessRange;
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp("joystick button 0")) JumpTimeLine = FirstJumpProcessRange;
         }
         if (JumpTimeLine > FirstJumpProcessRange && JumpTimeLine <= SecondJumpRrocessRange) SecondJumpProcess();
     }
