@@ -130,7 +130,7 @@ public class Pausable : MonoBehaviour
 		Time.timeScale = 0;  // 時間停止
 		pausePanel.SetActive(true);//メニューを開く
 		//メニューを開く音
-		//NewSoundScriot.Menu1 = true;
+		NewSoundScriot.Menu1 = true;
 		//ボタンが選択された状態になる
 		SelectButton.Select();
 	}
@@ -156,7 +156,7 @@ public class Pausable : MonoBehaviour
 		//ボタンが選択された状態になる
 		SelectButtont.Select();
 		//ボタンを押す音
-		//NewSoundScriot.MenuButton1 = true;
+		NewSoundScriot.MenuButton1 = true;
 		pausePanel.SetActive(false);//メニューを閉じる
 	}
 	//やり直しボタン
@@ -164,7 +164,7 @@ public class Pausable : MonoBehaviour
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		//ボタンを押す音
-		//NewSoundScriot.MenuButton1 = true;
+		NewSoundScriot.MenuButton1 = true;
 		pausing = false;
 		Time.timeScale = 1;  // 再開
 
@@ -174,7 +174,7 @@ public class Pausable : MonoBehaviour
 	{
 		Time.timeScale = 1;  // 再開
 	　　//ボタンを押す音
-		//NewSoundScriot.MenuButton1 = true;
+		NewSoundScriot.MenuButton1 = true;
 		pausing = false;
 		SceneManager.LoadScene("Prologue");
 

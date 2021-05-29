@@ -37,7 +37,7 @@ public class pepar : MonoBehaviour
         Transform myTransform = this.transform;
         if (i == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 3"))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 1"))
             {
                 if (kami.i == 0 && v == 1)
                 {
@@ -51,13 +51,13 @@ public class pepar : MonoBehaviour
                 {
                     v = 1;
                     Text score_text = score_object.GetComponent<Text>();
-                    score_text.text = "E.紙を見直す";
+                    score_text.text = "B.紙を見直す";
                 }
             }
         }
         if (n == 1)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 1"))
             {
                 if (i == 0&&kami.i==0)
                 {

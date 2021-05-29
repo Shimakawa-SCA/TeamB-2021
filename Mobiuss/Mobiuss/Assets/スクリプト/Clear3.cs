@@ -29,12 +29,12 @@ public class Clear3 : MonoBehaviour
     void Update()
     {
         //時間
-        if (TimeCounter3.countdown3 > 120)
+        if (TimeCounter3.countdown3 > 120.0f)
         {
             aClearImag.SetActive(true);
         }
 
-        if (TakesanPlayerScript3.R3Count < 4)
+        if (TakesanPlayerScript3.R3Count < 5)
         {
             bClearImag.SetActive(true);
         }
@@ -47,7 +47,7 @@ public class Clear3 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //クリア音
-        //NewSoundScriot.Clear1 = true;
+        NewSoundScriot.Clear1 = true;
         GameClearImag.SetActive(true);
         GameClearImag.SetActive(true);
         Invoke("CPanel", 1);

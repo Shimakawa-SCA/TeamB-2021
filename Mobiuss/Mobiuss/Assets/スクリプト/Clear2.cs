@@ -31,7 +31,7 @@ public class Clear2 : MonoBehaviour
     void Update()
     {
         //時間        
-        if (TimeCounter2.countdown2 > 120)
+        if (TimeCounter2.countdown2 > 120.0f)
         {
             aClearImag.SetActive(true);
         }
@@ -49,7 +49,7 @@ public class Clear2 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //クリア音
-        //NewSoundScriot.Clear1 = true;
+        NewSoundScriot.Clear1 = true;
         GameClearImag.SetActive(true);
         GameClearImag.SetActive(true);
         Invoke("CPanel", 1);

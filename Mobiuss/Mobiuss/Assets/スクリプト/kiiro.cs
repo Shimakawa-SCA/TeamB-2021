@@ -18,7 +18,7 @@ public class kiiro : MonoBehaviour
         if (other.gameObject.tag == "player" || other.gameObject.tag == "dead")
         {
             //足場が出てくるときの音
-            //NewSoundScriot.Floor1 = true;
+            NewSoundScriot.Floor1 = true;
             NewSoundScriot.Sound1 = true;
             i = 1;
             Instantiate(CubePrefab);

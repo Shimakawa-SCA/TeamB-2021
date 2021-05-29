@@ -19,6 +19,7 @@ public class TimeCounter2 : MonoBehaviour
 
     void Start()
     {
+        countdown2 = 300.0f;
         TimeOverPanel.SetActive(false);
         tTime2 = 0;
         isCalledOnce = false;
@@ -41,7 +42,7 @@ public class TimeCounter2 : MonoBehaviour
                 if (!isCalledOnce)
                 {
                     //タイムオーバー音
-                    //NewSoundScriot.GameOver1 = true;
+                    NewSoundScriot.GameOver1 = true;
                     isCalledOnce = true;
                     TimeButton.Select();
                 }
