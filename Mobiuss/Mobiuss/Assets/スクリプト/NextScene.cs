@@ -17,6 +17,7 @@ public class NextScene : MonoBehaviour
     {
         if (ImageEx.NextSceneCount == 1 && Input.GetKey("space") || ImageEx.NextSceneCount == 1 && Input.GetKeyDown("joystick button 0"))
         {
+            NewSoundScriot.TitleButton1 = true;
             FadeController.isFadeOut = true;
             Invoke("next",2.0f);
         }

@@ -1567,7 +1567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &215096051
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3989,13 +3989,12 @@ MonoBehaviour:
   menuButton: {fileID: 8300000, guid: 8cc9645158db20742a919e6be205738e, type: 3}
   clear: {fileID: 8300000, guid: 90334200a939bd240bb45549e0ecf060, type: 3}
   gameOver: {fileID: 8300000, guid: eee0dd723d200e24393a80d410d7a424, type: 3}
-  lever: {fileID: 8300000, guid: 6790ac3589636d74ca1590082e988440, type: 3}
   getItem: {fileID: 8300000, guid: 127846b93e979be40abae37ed28ad669, type: 3}
   useItem: {fileID: 8300000, guid: cd85442668d42a74196e3bd705c2d1b0, type: 3}
   titleButton: {fileID: 8300000, guid: 160b38df028ecb145a33d90a505b6b4f, type: 3}
-  revive: {fileID: 8300000, guid: 4ef905509e5ff774ea0859e141bc24f6, type: 3}
-  floor: {fileID: 8300000, guid: b84963845b5dfdc468103f7ca0b848a5, type: 3}
-  downDoor: {fileID: 8300000, guid: c6439483367b9404badf20c19bddee7d, type: 3}
+  jump: {fileID: 0}
+  landing: {fileID: 0}
+  run: {fileID: 0}
 --- !u!82 &938594310
 AudioSource:
   m_ObjectHideFlags: 0
