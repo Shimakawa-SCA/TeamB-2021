@@ -25,7 +25,7 @@ public class TakesanPlayerScript : MonoBehaviour
     public GameObject cadaver;
     public GameObject cadaverl;
     Quaternion q;
-    bool respornstack;
+    public static bool respornstack;
     Vector3 PlayerSpownpoint;
 
     public static bool Hold;

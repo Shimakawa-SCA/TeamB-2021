@@ -25,7 +25,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
     public GameObject cadaver;
     public GameObject cadaverl;
     Quaternion q;
-    bool respornstack;
+    public static bool respornstack;
     Vector3 PlayerSpownpoint;
 
     public static bool Hold;
@@ -340,6 +340,9 @@ public class TakesanPlayerScript1 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ("yuka")) ReSpown();
+        if (respornstack == false)
+        {
+            if (collision.gameObject.tag == ("yuka")) ReSpown();
+        }
     }
 }
