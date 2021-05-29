@@ -50,17 +50,20 @@ public class Clear : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //クリア音
-        NewSoundScriot.Clear1 = true;
-        GameClearImag.SetActive(true);
-        Invoke("CPanel", 1);
-        TimeCounter.tTime = 0;
-        Debug.Log(TimeCounter.tTime);
-        //DeleteTargetObj という名前のオブジェクトを取得
-        GameObject obj = GameObject.Find("New Sprite");
-        // 指定したオブジェクトを削除
-        Destroy(obj);
-        Pausable.NotMenuCount = 1;
+        if (other.gameObject.tag == "player")
+        {
+            //クリア音
+            NewSoundScriot.Clear1 = true;
+            GameClearImag.SetActive(true);
+            Invoke("CPanel", 1);
+            TimeCounter.tTime = 0;
+            Debug.Log(TimeCounter.tTime);
+            //DeleteTargetObj という名前のオブジェクトを取得
+            GameObject obj = GameObject.Find("New Sprite");
+            // 指定したオブジェクトを削除
+            Destroy(obj);
+            Pausable.NotMenuCount = 1;
+        }
     }
 
     void CPanel()
