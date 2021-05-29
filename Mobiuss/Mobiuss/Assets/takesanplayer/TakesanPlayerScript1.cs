@@ -25,7 +25,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
     public GameObject cadaver;
     public GameObject cadaverl;
     Quaternion q;
-    int repoint;
+    bool respornstack;
     Vector3 PlayerSpownpoint;
 
     public static bool Hold;
@@ -49,6 +49,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
         Move = false;
         PlayerRight = true;
         R1Count=0;
+        respornstack = false;
     }
 
     // Update is called once per frame
@@ -65,7 +66,9 @@ public class TakesanPlayerScript1 : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")) DoJump = true;
             }
             //if (Input.GetButtonDown(""))
-            if (Input.GetKeyDown(KeyCode.R)|| Input.GetKeyDown("joystick button 2")) ReSpown();
+            if (respornstack == false){
+                if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")) ReSpown();
+            }
         }
         AddSpeed();
         if (DoJump  == true) Jump();
@@ -180,6 +183,12 @@ public class TakesanPlayerScript1 : MonoBehaviour
         R1Count++;
         CanMove = false;
         PlayerDeth = true;
+        respornstack = true;
+        Invoke("RespornReset", 1);
+    }
+
+    void RespornReset(){
+        respornstack = false;
     }
 
     void RightDeth(){
