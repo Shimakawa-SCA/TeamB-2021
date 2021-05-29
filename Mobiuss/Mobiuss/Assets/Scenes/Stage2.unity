@@ -6145,11 +6145,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound1: {fileID: 8300000, guid: 2bd04003e955f3042a7047cd28828e37, type: 3}
-  stone: {fileID: 8300000, guid: 250c76f1205f5fe4aae0a3965c0ca981, type: 3}
+  stone: {fileID: 8300000, guid: c28cc1f5d5eabf948a14caa9ea98d512, type: 3}
   menu: {fileID: 8300000, guid: 13a72baaadbf6214799fd38f38a2dbed, type: 3}
   menuButton: {fileID: 8300000, guid: 5a1d24b00d338984f8a463e41c706e12, type: 3}
-  clear: {fileID: 8300000, guid: 90334200a939bd240bb45549e0ecf060, type: 3}
-  gameOver: {fileID: 8300000, guid: eee0dd723d200e24393a80d410d7a424, type: 3}
+  clear: {fileID: 8300000, guid: 23aa35439e56e1a4e9ae199a4196511b, type: 3}
+  gameOver: {fileID: 8300000, guid: df0ba0151f1bfcf48b1ecb90bb57dc18, type: 3}
   getItem: {fileID: 8300000, guid: cfb183aea1af3ce40affbb1fd81cf3b2, type: 3}
   useItem: {fileID: 8300000, guid: 32d370b55cdc7e84c88e5be582d9b634, type: 3}
   titleButton: {fileID: 8300000, guid: 59faf1dcbe807da4d9d5324aed894daf, type: 3}

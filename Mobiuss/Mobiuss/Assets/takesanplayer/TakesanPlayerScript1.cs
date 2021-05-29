@@ -76,6 +76,13 @@ public class TakesanPlayerScript1 : MonoBehaviour
         Playerdirection();
         JumpStatus();
         GetPlayerStatus();
+        if(LSH != 0)
+        {
+            if(DoJump == false)
+            {
+                NewSoundScriot.Run1 = true;
+            }
+        }
     }
 
 

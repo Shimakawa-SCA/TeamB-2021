@@ -109,7 +109,7 @@ public class NewSoundScriot : MonoBehaviour
             audioSource.PlayOneShot(landing);
             Landing1 = false;
         }
-        /*if (Run1 == true&&i==0)
+        if (Run1 == true&&i==0)
         {
             audioSource.PlayOneShot(run);
             Run1 = false;
@@ -122,7 +122,7 @@ public class NewSoundScriot : MonoBehaviour
                 i=0;
             }
             i++;
-        }*/
+        }
     }
 
 

@@ -1063,13 +1063,12 @@ MonoBehaviour:
   menuButton: {fileID: 8300000, guid: 5a1d24b00d338984f8a463e41c706e12, type: 3}
   clear: {fileID: 8300000, guid: 23aa35439e56e1a4e9ae199a4196511b, type: 3}
   gameOver: {fileID: 8300000, guid: df0ba0151f1bfcf48b1ecb90bb57dc18, type: 3}
-  lever: {fileID: 8300000, guid: 6790ac3589636d74ca1590082e988440, type: 3}
   getItem: {fileID: 8300000, guid: cfb183aea1af3ce40affbb1fd81cf3b2, type: 3}
   useItem: {fileID: 8300000, guid: 32d370b55cdc7e84c88e5be582d9b634, type: 3}
   titleButton: {fileID: 8300000, guid: 59faf1dcbe807da4d9d5324aed894daf, type: 3}
-  revive: {fileID: 8300000, guid: 4ef905509e5ff774ea0859e141bc24f6, type: 3}
-  floor: {fileID: 8300000, guid: b84963845b5dfdc468103f7ca0b848a5, type: 3}
-  downDoor: {fileID: 8300000, guid: c6439483367b9404badf20c19bddee7d, type: 3}
+  jump: {fileID: 8300000, guid: 8ec759e0bdc9f3444906ca988816cf27, type: 3}
+  landing: {fileID: 8300000, guid: 88da6089a26dfc240b4b03cbe6386fb4, type: 3}
+  run: {fileID: 8300000, guid: 80c16fddc7cb02d4298ffed024351cc8, type: 3}
 --- !u!82 &801449618
 AudioSource:
   m_ObjectHideFlags: 0
