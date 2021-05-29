@@ -81,14 +81,14 @@ public class bom : MonoBehaviour
         }*/
     }
         void  OnTriggerStay(Collider other){
-                if (other.gameObject.tag == "hantei")
+                if (other.gameObject.tag == "bomhantei")
                 {
                     i=1;
                 }
         }
         void OnTriggerExit(Collider other)
         {
-                if (other.gameObject.tag == "hantei")
+                if (other.gameObject.tag == "bomhantei")
                 {
                     i = 0;
                 }
