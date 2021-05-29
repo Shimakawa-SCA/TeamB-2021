@@ -14,6 +14,7 @@ public class aka2 : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
+            NewSoundScriot.Sound1 = true;
             i = 1;
             Debug.Log("i=1");
         }

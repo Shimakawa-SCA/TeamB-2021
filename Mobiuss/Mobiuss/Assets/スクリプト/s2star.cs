@@ -28,6 +28,7 @@ public class s2star : MonoBehaviour
     {
         if (other.gameObject.tag == "star")
         {
+            NewSoundScriot.UseItem1 = true;
             Destroy(other.gameObject);
             //パーティクルとか出したい。
             Invoke("koraidalost", 1.5f);

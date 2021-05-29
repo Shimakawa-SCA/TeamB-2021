@@ -233,6 +233,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
         Animator animator = GetComponent<Animator>();
         int Animaint = animator.GetInteger("Animationint");
         if (LSH == 0){
+            NewSoundScriot.i = 0;
             Wait = true;
             Move = false;
         }

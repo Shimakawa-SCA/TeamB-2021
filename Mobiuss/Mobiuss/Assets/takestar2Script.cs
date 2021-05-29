@@ -37,6 +37,7 @@ public class takestar2Script : MonoBehaviour
         {
             if ((Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1")) && (pih == false))
             {
+                NewSoundScriot.GetItem1 = true;
                 ch = true;
             }
             if (ch == true)
