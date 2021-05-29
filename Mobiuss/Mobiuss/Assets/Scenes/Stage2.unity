@@ -6172,7 +6172,7 @@ GameObject:
   - component: {fileID: 1453632185}
   - component: {fileID: 1453632184}
   - component: {fileID: 1453632183}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: star
   m_TagString: star
   m_Icon: {fileID: 0}
@@ -9134,7 +9134,7 @@ GameObject:
   - component: {fileID: 1992545019}
   - component: {fileID: 1992545018}
   - component: {fileID: 1992545023}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: star (1)
   m_TagString: star
   m_Icon: {fileID: 0}
@@ -9821,6 +9821,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: iwa
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254782028956227129, guid: 829b2d0cc57ef4f49b8a13ebdcc1cf58,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1254782028956227130, guid: 829b2d0cc57ef4f49b8a13ebdcc1cf58,
         type: 3}
