@@ -24,7 +24,11 @@ public class takestar2Script : MonoBehaviour
         sttp = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         PlayerRight = TakesanPlayerScript2.PlayerRight;
         pih = TakesanPlayerScript2.Hold;
-        pdis = ((Mathf.Abs(transform.position.x) - Mathf.Abs(player.transform.position.x)) + (Mathf.Abs(transform.position.y) - Mathf.Abs(player.transform.position.y)));
+        if ((player.transform.position.x > 0) || (player.transform.position.y > 0))
+        {
+            pdis = ((Mathf.Abs(transform.position.x) - Mathf.Abs(player.transform.position.x)) + (Mathf.Abs(transform.position.y) - Mathf.Abs(player.transform.position.y)));
+        }
+        Debug.Log("s2" + pdis);
         if (pdis < 1)
         {
             if ((Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1")) && (pih == false))
