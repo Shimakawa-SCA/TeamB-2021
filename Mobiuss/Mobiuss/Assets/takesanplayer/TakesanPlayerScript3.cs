@@ -97,6 +97,7 @@ public class TakesanPlayerScript3 : MonoBehaviour
 
     void GetLstickNull(){
         if (LSH == 0) LSH = 0;
+        if (CanMove == false) LSH =0;
     }
 
     void AddSpeed(){
