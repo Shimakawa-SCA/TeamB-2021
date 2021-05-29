@@ -11,16 +11,21 @@ public class takestar2Script : MonoBehaviour
     bool PlayerRight;
     bool pih;
     public static Vector3 sttp;
+    bool prs;
     // Start is called before the first frame update
     void Start()
     {
         ch = false;
         pih = false;
+        prs = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (prs == true) prs = false;
+        if (TakesanPlayerScript2.respornstack == true) prs = true;
+        if ((prs == true) && (ch == true)) ch = false;
         sttp = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         PlayerRight = TakesanPlayerScript2.PlayerRight;
         pih = TakesanPlayerScript2.Hold;
