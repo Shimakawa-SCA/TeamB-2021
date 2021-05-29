@@ -195,6 +195,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
         CanMove = false;
         PlayerDeth = true;
         respornstack = true;
+        FindObjectOfType<getplayerScript>().repd();
         Invoke("RespornReset", 1);
     }
 

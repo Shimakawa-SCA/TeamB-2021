@@ -58,7 +58,7 @@ public class bom : MonoBehaviour
         }
         if (itemposition == true && i == 1)
         {
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
                 rb.velocity = new Vector3(0,0,0);
                 transform.parent = null;
