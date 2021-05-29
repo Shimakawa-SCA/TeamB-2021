@@ -30,7 +30,7 @@ public class takestar2Script : MonoBehaviour
         sttp = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         PlayerRight = TakesanPlayerScript2.PlayerRight;
         pih = TakesanPlayerScript2.Hold;
-        pdis = ((Mathf.Abs(transform.position.x) - Mathf.Abs(player.transform.position.x)) + (Mathf.Abs(transform.position.y) - Mathf.Abs(player.transform.position.y)));
+        pdis = (Mathf.Abs(transform.position.x - player.transform.position.x) + Mathf.Abs(transform.position.y - player.transform.position.y));
         pdiss = Mathf.Abs(pdis);
         Debug.Log("s2" + pdiss);
         if (pdiss < 1)
