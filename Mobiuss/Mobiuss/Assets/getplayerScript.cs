@@ -31,13 +31,13 @@ public class getplayerScript : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "player")
+        if ((other.gameObject.tag == "player") || (other.gameObject.tag == "dead"))
         {
             pd = ((transform.position.x-other.transform.position.x) +(transform.position.y -other.transform.position.y));
         }
     }
 
-    void repd()
+     public void repd()
     {
         pd = 0;
     }
