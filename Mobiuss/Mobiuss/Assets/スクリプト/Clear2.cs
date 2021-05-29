@@ -36,7 +36,7 @@ public class Clear2 : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (TakesanPlayerScript2.R2Count < 4)
+        if (TakesanPlayerScript2.R2Count < 6)
         {
             bClearImag.SetActive(true);
         }

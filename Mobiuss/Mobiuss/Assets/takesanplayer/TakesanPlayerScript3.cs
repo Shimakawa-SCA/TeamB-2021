@@ -33,6 +33,8 @@ public class TakesanPlayerScript3 : MonoBehaviour
     public bool Wait;
 
     public static int R3Count;
+    int jk = 0;
+
 
     // Start is called before the first frame update
     void Start()
@@ -107,10 +109,17 @@ public class TakesanPlayerScript3 : MonoBehaviour
             if (DoJump == false) Move = true;
             //タイマーを起動させる用
             TimeCounter3.tTime3 = 1;
+            NewSoundScriot.Run1 = true;
+
         }
     }
 
     void Jump() {
+        if (jk == 0)
+        {
+            NewSoundScriot.Jump1 = true;
+            jk = 1;
+        }
         if (JumpTimeLine <= SecondJumpRrocessRange) JumpTimeLine++;
         if (JumpTimeLine <= FirstJumpProcessRange)
         {
@@ -182,8 +191,6 @@ public class TakesanPlayerScript3 : MonoBehaviour
         if (PlayerRight == false){
             Invoke("LeftDeth", 1f);
         }
-        //音
-        NewSoundScriot.Revive1 = true;
         R3Count++;
         CanMove = false;
         PlayerDeth = true;
@@ -267,6 +274,8 @@ public class TakesanPlayerScript3 : MonoBehaviour
                 }
             }
             if (JumpStatusNumber == 4){
+                NewSoundScriot.Landing1 = true;
+                jk = 0;
                 if (PlayerRight == true){
                     Animaint = 22;
                 }
@@ -321,6 +330,8 @@ public class TakesanPlayerScript3 : MonoBehaviour
                 }
             }
             if (JumpStatusNumber == 4){
+                NewSoundScriot.Landing1 = true;
+                jk = 0;
                 if (PlayerRight == true){
                     Animaint = 10;
                 }

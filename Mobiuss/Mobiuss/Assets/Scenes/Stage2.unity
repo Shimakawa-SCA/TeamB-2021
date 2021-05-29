@@ -8700,7 +8700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C\uFF13\u56DE\u4EE5\u4E0B"
+  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C5\u56DE\u4EE5\u4E0B"
 --- !u!222 &1934602819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9535,7 +9535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2073343715
 GameObject:
@@ -10495,7 +10495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C\u4E09\u56DE\u4EE5\u4E0B"
+  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C5\u56DE\u4EE5\u4E0B"
 --- !u!222 &2700475189759277505
 CanvasRenderer:
   m_ObjectHideFlags: 0
