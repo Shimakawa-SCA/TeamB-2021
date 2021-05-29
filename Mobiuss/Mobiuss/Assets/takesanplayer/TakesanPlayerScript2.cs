@@ -9,7 +9,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
     float blx;
     float LSH;
     float MoveDirection;
-    public float Speed;
+    public static float Speed;
     public static bool PlayerRight;
     public bool Move;
 
