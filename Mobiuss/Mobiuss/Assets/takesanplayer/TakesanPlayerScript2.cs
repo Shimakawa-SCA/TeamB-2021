@@ -50,6 +50,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
         PlayerRight = true;
         R2Count = 0;
         respornstack = false;
+        Speed = 2.5f;
     }
 
     // Update is called once per frame
