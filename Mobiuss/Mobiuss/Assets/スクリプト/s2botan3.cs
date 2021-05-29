@@ -23,7 +23,7 @@ public class s2botan3 : MonoBehaviour
                 jk = 1;
             }
             Instantiate(iwaPrefab);
-            i=1;
+            i+=1;
         }
 
     }
@@ -31,7 +31,7 @@ public class s2botan3 : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
-            i=0;
+            i--;
             jk = 0;
         }
 
@@ -43,7 +43,7 @@ public class s2botan3 : MonoBehaviour
         {
             if (Input.GetKeyDown("joystick button 2"))
             {
-                i = 0;
+                i --;
                 jk = 0;
             }
         }

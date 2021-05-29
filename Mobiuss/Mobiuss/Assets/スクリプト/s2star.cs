@@ -5,6 +5,7 @@ using UnityEngine;
 public class s2star : MonoBehaviour
 {
     public GameObject item_Star;
+    public int i;
     /*float changeRed = 1.0f;
     float changeGreen = 1.0f;
     float cahngeBlue = 1.0f;
@@ -14,6 +15,7 @@ public class s2star : MonoBehaviour
     void Start()
     {        
         GetComponent<Collider>().isTrigger = true;
+        i = 0;
         /*changeRed = 1.0f;
         changeGreen = 1.0f;
         cahngeBlue = 1.0f;
@@ -26,8 +28,9 @@ public class s2star : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "star")
+        if (other.gameObject.tag == "star"||i==1)
         {
+            i = 1;
             NewSoundScriot.UseItem1 = true;
             Destroy(other.gameObject);
             //パーティクルとか出したい。
