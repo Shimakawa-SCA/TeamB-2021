@@ -19,7 +19,7 @@ public class ao : MonoBehaviour
         {
             i = 1;
             //壁が出る音
-            //NewSoundScriot.DownDoor1 = true;
+            NewSoundScriot.DownDoor1 = true;
             NewSoundScriot.Sound1 = true;
             Instantiate(CubePrefab);
             Instantiate(CubePrefab2);

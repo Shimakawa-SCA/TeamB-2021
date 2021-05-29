@@ -51,7 +51,7 @@ public class Clear : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //クリア音
-        //NewSoundScriot.Clear1 = true;
+        NewSoundScriot.Clear1 = true;
         GameClearImag.SetActive(true);
         Invoke("CPanel", 1);
         TimeCounter.tTime = 0;

@@ -14,7 +14,7 @@ public class kami : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown("joystick button 1"))
         {
           i = 0;
           Destroy(gameObject);

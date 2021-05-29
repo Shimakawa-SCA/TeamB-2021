@@ -29,7 +29,7 @@ public class ImageEx : MonoBehaviour
         if (count == 0 && Input.GetKeyDown(KeyCode.Space) || count == 0 && Input.GetKeyDown("joystick button 0"))
         {
             //ボタン音
-            //NewSoundScriot.TitleButton1 = true;
+            NewSoundScriot.TitleButton1 = true;
             WhiteOut();
             count++;
         }

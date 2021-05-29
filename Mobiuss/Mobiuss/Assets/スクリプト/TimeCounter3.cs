@@ -22,6 +22,7 @@ public class TimeCounter3 : MonoBehaviour
         TimeOverPanel.SetActive(false);
         tTime3 = 0;
         isCalledOnce = false;
+        countdown3 = 300.0f;
     }
     // Update is called once per frame
     void Update()
@@ -41,7 +42,7 @@ public class TimeCounter3 : MonoBehaviour
                 if (!isCalledOnce)
                 {
                     //タイムオーバー音
-                    //NewSoundScriot.GameOver1 = true;
+                    NewSoundScriot.GameOver1 = true;
                     isCalledOnce = true;
                     TimeButton.Select();
                 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fade : MonoBehaviour
+public class FadeWhite : MonoBehaviour
 {
     bool IsFadeOut;//フェードアウトをするかどうか
     public bool IsFade;//フェードの演出をするかどうか
@@ -31,8 +31,8 @@ public class Fade : MonoBehaviour
             else
             {
                 //フェードインの処理
-                if (image.color.a >= 0) image.color = new Color(0, 0, 0, image.color.a - 1 / (60 * time));
-                else image.color = new Color(0, 0, 0, 0);
+                if (image.color.a >= 0) image.color = new Color(255, 255, 255, image.color.a - 1 / (60 * time));
+                else image.color = new Color(255, 255, 255, 0);
             }
         }
     }

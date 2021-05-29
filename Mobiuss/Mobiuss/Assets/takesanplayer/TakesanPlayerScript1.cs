@@ -179,7 +179,7 @@ public class TakesanPlayerScript1 : MonoBehaviour
             Invoke("LeftDeth", 1f);
         }
         //音
-        //NewSoundScriot.Revive1 = true;
+        NewSoundScriot.Revive1 = true;
         R1Count++;
         CanMove = false;
         PlayerDeth = true;
