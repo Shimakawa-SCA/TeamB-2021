@@ -106,6 +106,7 @@ public class elevatorst : MonoBehaviour
             {
                 y = 0;
                 tyek = 0;
+                mati = 0;
             }
         }
         if (tyek == 2)
@@ -119,6 +120,7 @@ public class elevatorst : MonoBehaviour
             {
                 y = 0;
                 tyek = 0;
+                mati = 0;
             }
         }
     }
@@ -126,12 +128,10 @@ public class elevatorst : MonoBehaviour
     {
         tyek = 1;
         iti -= 1;
-        mati = 0;
     }
     void age()
     {
         tyek = 2;
         iti += 1;
-        mati = 0;
     }
 }

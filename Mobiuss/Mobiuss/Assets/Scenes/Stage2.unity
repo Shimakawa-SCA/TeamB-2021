@@ -4165,7 +4165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_Star: {fileID: 781523936}
-  i: 0
 --- !u!65 &781523939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6938,7 +6937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item_Star: {fileID: 1593276416}
-  i: 0
 --- !u!65 &1593276418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7191,8 +7189,8 @@ GameObject:
   - component: {fileID: 1660115552}
   - component: {fileID: 1660115551}
   - component: {fileID: 1660115550}
-  - component: {fileID: 1660115549}
   - component: {fileID: 1660115548}
+  - component: {fileID: 1660115549}
   m_Layer: 0
   m_Name: CubeStar
   m_TagString: Untagged
@@ -7225,11 +7223,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1660115547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a367ab671274ca4698dc3c4c849a83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a84192fc6f9aba45ad827fb93351f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item_Star: {fileID: 1660115547}
-  i: 0
 --- !u!65 &1660115550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8042,11 +8039,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1796830765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a367ab671274ca4698dc3c4c849a83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a84192fc6f9aba45ad827fb93351f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item_Star: {fileID: 1796830765}
-  i: 0
 --- !u!65 &1796830768
 BoxCollider:
   m_ObjectHideFlags: 0

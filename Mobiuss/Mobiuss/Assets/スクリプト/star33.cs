@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class s2star : MonoBehaviour
+public class star33 : MonoBehaviour
 {
     public GameObject item_Star;
     public static int i;
@@ -10,10 +10,10 @@ public class s2star : MonoBehaviour
     float changeGreen = 1.0f;
     float cahngeBlue = 1.0f;
     float cahngeAlpha = 0.25f;*/
-    
+
     // Start is called before the first frame update
     void Start()
-    {        
+    {
         GetComponent<Collider>().isTrigger = true;
         i = 0;
         /*changeRed = 1.0f;
@@ -38,7 +38,7 @@ public class s2star : MonoBehaviour
         }
 
     }
-    void koraidalost() 
+    void koraidalost()
     {
         GetComponent<Collider>().isTrigger = false;
         /*cahngeAlpha = 1f;

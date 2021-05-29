@@ -13,9 +13,9 @@ public class s2botan3 : MonoBehaviour
         i=0;
     }
 
-    void OnCollisionStay(Collision other)
+    void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "player"&&i==0|| other.gameObject.tag == "dead"&&i==0)
+        if (other.gameObject.tag == "player"|| other.gameObject.tag == "dead")
         {
             if(jk == 0)
             {
@@ -23,7 +23,7 @@ public class s2botan3 : MonoBehaviour
                 jk = 1;
             }
             Instantiate(iwaPrefab);
-            i+=1;
+            i++;
         }
 
     }
