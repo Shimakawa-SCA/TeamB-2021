@@ -25,7 +25,7 @@ public class TakesanPlayerScript3 : MonoBehaviour
     public GameObject cadaver;
     public GameObject cadaverl;
     Quaternion q;
-    bool respornstack;
+    public static bool respornstack;
     Vector3 PlayerSpownpoint;
 
     public static bool Hold;
@@ -96,7 +96,7 @@ public class TakesanPlayerScript3 : MonoBehaviour
     }
 
     void GetLstickNull(){
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LSH = 0;
+        if (LSH == 0) LSH = 0;
     }
 
     void AddSpeed(){
