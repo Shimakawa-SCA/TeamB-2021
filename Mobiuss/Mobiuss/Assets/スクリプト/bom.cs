@@ -31,7 +31,7 @@ public class bom : MonoBehaviour
 
     private void Update()
     {
-        if (rb.velocity.x > TakesanPlayerScript2.Speed) rb.velocity = new Vector3(0,0,0);
+        if (rb.velocity.x > 2.5) rb.velocity = new Vector3(0,0,0);
         pdis = ((transform.position.x - player.transform.position.x) + (transform.position.y - player.transform.position.y));
         //Debug.Log(pdis);
         if (Mathf.Abs(this.transform.position.x) > 8.5f) transform.position = new Vector3(blx, transform.position.y);
