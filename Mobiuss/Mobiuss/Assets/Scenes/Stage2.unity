@@ -2055,7 +2055,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.53034, y: 12.838601, z: 1}
+  m_Size: {x: 15.53034, y: 12.838601, z: 0.2}
   m_Center: {x: -0.20383562, y: 0.81541955, z: 0}
 --- !u!114 &394930433
 MonoBehaviour:
@@ -2745,7 +2745,7 @@ GameObject:
   - component: {fileID: 592868098}
   - component: {fileID: 592868102}
   - component: {fileID: 592868103}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cube (10)
   m_TagString: yuka
   m_Icon: {fileID: 0}
@@ -2763,8 +2763,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9887837, y: 1, z: 1}
-  m_Center: {x: -0.005608302, y: 5.672929e-17, z: 0}
+  m_Size: {x: 0.704127, y: 1, z: 1}
+  m_Center: {x: -0.14793642, y: -2.817451e-15, z: 0}
 --- !u!23 &592868099
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2820,8 +2820,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592868097}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.0303917, y: 1.293, z: 14}
-  m_LocalScale: {x: 2.4301405, y: 0.50000167, z: 1}
+  m_LocalPosition: {x: 4.0303917, y: 1.2930756, z: 13.766012}
+  m_LocalScale: {x: 2.4301403, y: 0.50000167, z: 1}
   m_Children:
   - {fileID: 633775586}
   m_Father: {fileID: 1627515063}
@@ -3258,7 +3258,7 @@ GameObject:
   - component: {fileID: 615863339}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Flor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4213,7 +4213,7 @@ GameObject:
   - component: {fileID: 802780458}
   m_Layer: 0
   m_Name: Cube (6)
-  m_TagString: Flor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7558,8 +7558,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782916930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.7784, y: -2.1617, z: 14.320012}
-  m_LocalScale: {x: 0.53973943, y: 0.19891669, z: 1}
+  m_LocalPosition: {x: 5.7784, y: -2.1716, z: 14.320012}
+  m_LocalScale: {x: 0.53973943, y: 0.17910174, z: 1}
   m_Children:
   - {fileID: 394930430}
   m_Father: {fileID: 1627515063}
@@ -7577,7 +7577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049f00f231c14c34493d3cb980c0e5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1957503787}
+  player: {fileID: 0}
 --- !u!1 &1783189624
 GameObject:
   m_ObjectHideFlags: 0
@@ -8700,7 +8700,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C\uFF15\u56DE\u4EE5\u4E0B"
+  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C5\u56DE\u4EE5\u4E0B"
 --- !u!222 &1934602819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9242,10 +9242,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Y\u3067\u30EC\u30D0\u30FC\u3001B\u3067\u7269\u3092\u6301\u3066\u308B\u305E"
+  m_Text: "Y\u3067\u30EC\u30D0\u30FCB\u3067\u7269\u3092\u6301\u3066\u308B\u305E"
 --- !u!222 &2053255830
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10495,7 +10495,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C\uFF15\u56DE\u4EE5\u4E0B"
+  m_Text: "\u6B7B\u3093\u3060\u56DE\u6570\u304C5\u56DE\u4EE5\u4E0B"
 --- !u!222 &2700475189759277505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10964,7 +10964,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u30A8\u30F3\u30C7\u30A3\u30F3\u30B0\u3078"
+  m_Text: "\u6B21\u306E\u30B9\u30C6\u30FC\u30B8\u3078"
 --- !u!222 &2700475190230134445
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11057,7 +11057,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8624585575513451672}
-        m_MethodName: Stage4
+        m_MethodName: Stage3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

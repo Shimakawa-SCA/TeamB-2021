@@ -18,20 +18,19 @@ public class NewSoundScriot : MonoBehaviour
     public static bool Clear1;
     public AudioClip gameOver;
     public static bool GameOver1;
-    public AudioClip lever;
-    public static bool Lever1;
     public AudioClip getItem;
     public static bool GetItem1;
     public AudioClip useItem;
     public static bool UseItem1;
     public AudioClip titleButton;
     public static bool TitleButton1;
-    public AudioClip revive;
-    public static bool Revive1;
-    public AudioClip floor;
-    public static bool Floor1;
-    public AudioClip downDoor;
-    public static bool DownDoor1;
+    public AudioClip jump;
+    public static bool Jump1;
+    public AudioClip landing;
+    public static bool Landing1;
+    public AudioClip run;
+    public static bool Run1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +41,12 @@ public class NewSoundScriot : MonoBehaviour
         MenuButton1 = false;
         Clear1 = false;
         GameOver1 = false;
-        Lever1 = false;
         GetItem1 = false;
         UseItem1 = false;
         TitleButton1 = false;
-        Revive1 = false;
-        Floor1 = false;
-        DownDoor1 = false;
+        Jump1 = false;
+        Landing1 = false;
+        Run1 = false;
     }
 
     // Update is called once per frame
@@ -84,11 +82,6 @@ public class NewSoundScriot : MonoBehaviour
             audioSource.PlayOneShot(gameOver);
             GameOver1 = false;
         }
-        if (Lever1 == true)
-        {
-            audioSource.PlayOneShot(lever);
-            Lever1 = false;
-        }
         if (GetItem1 == true)
         {
             audioSource.PlayOneShot(getItem);
@@ -104,20 +97,20 @@ public class NewSoundScriot : MonoBehaviour
             audioSource.PlayOneShot(titleButton);
             TitleButton1 = false;
         }
-        if (Revive1 == true)
+        if (Jump1 == true)
         {
-            audioSource.PlayOneShot(revive);
-            Revive1 = false;
+            audioSource.PlayOneShot(jump);
+            Jump1 = false;
         }
-        if (Floor1 == true)
+        if (Landing1 == true)
         {
-            audioSource.PlayOneShot(floor);
-            Floor1 = false;
+            audioSource.PlayOneShot(landing);
+            Landing1 = false;
         }
-        if (DownDoor1 == true)
+        if (Run1 == true)
         {
-            audioSource.PlayOneShot(downDoor);
-            DownDoor1 = false;
+            audioSource.PlayOneShot(run);
+            Run1 = false;
         }
     }
 

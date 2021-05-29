@@ -18,9 +18,6 @@ public class ao : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             i = 1;
-            //壁が出る音
-            NewSoundScriot.DownDoor1 = true;
-            NewSoundScriot.Sound1 = true;
             Instantiate(CubePrefab);
             Instantiate(CubePrefab2);
             Destroy(gameObject);

@@ -35,7 +35,7 @@ public class edrool : MonoBehaviour
         count = 2;
         Debug.Log(count);
         Debug.Log("buttonB");
-        isStopEndRoll = false;
+        Invoke("EndRoll",2.0f);
     }
 
     // Update is called once per frame
@@ -116,4 +116,8 @@ public class edrool : MonoBehaviour
         Time.timeScale = newTimeScale;
     }
   
+    void EndRoll()
+    {
+        isStopEndRoll = false;
+    }
 }

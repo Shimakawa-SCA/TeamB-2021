@@ -35,8 +35,6 @@ public class reba3: MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T)|| Input.GetKeyDown("joystick button 3"))
             {
-                //レバー音
-                //NewSoundScriot.Lever1 = true;
                 if (i == 0)
                 {
                     i = 1;
