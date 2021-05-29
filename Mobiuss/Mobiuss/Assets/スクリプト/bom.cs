@@ -41,6 +41,7 @@ public class bom : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
+                NewSoundScriot.GetItem1 = true;
                 itemposition = true;
                 TakesanPlayerScript2.Hold = true;
             }
@@ -60,6 +61,7 @@ public class bom : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
+                NewSoundScriot.UseItem1 = true;
                 rb.velocity = new Vector3(0,0,0);
                 transform.parent = null;
                 itemposition = false;

@@ -41,4 +41,12 @@ public class getplayerScript : MonoBehaviour
     {
         pd = 0;
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if ((other.gameObject.tag == "player") || (other.gameObject.tag == "dead"))
+        {
+            NewSoundScriot.Sound1 = true;
+        }
+    }
+   
 }
