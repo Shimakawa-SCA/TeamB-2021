@@ -33,7 +33,7 @@ public class Clear : MonoBehaviour
     void Update()
     {        
         //時間
-        if (TimeCounter.countdown > 120)
+        if (TimeCounter.countdown > 120.0f)
         {
             aClearImag.SetActive(true);
         }

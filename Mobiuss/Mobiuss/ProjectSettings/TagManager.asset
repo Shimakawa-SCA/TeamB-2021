@@ -14,6 +14,7 @@ TagManager:
   - Bom
   - dead
   - bomhantei
+  - kibako
   layers:
   - Default
   - TransparentFX

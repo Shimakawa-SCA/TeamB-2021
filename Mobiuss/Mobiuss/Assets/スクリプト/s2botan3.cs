@@ -34,7 +34,7 @@ public class s2botan3 : MonoBehaviour
     {
         if (i == 1)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown("joystick button 2"))
             {
                 i = 0;
             }
