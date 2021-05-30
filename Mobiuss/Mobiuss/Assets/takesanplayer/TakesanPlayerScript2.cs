@@ -193,10 +193,10 @@ public class TakesanPlayerScript2 : MonoBehaviour
 
     void ReSpown(){
         if (PlayerRight == true){
-            Invoke("RightDeth", 1f);
+            Invoke("RightDeth", 1.05f);
         }
         if (PlayerRight == false){
-            Invoke("LeftDeth", 1f);
+            Invoke("LeftDeth", 1.05f);
         }
         R2Count++;
         CanMove = false;
@@ -225,6 +225,7 @@ public class TakesanPlayerScript2 : MonoBehaviour
         rb.velocity = new Vector3(0, 0, 0);
         transform.position = PlayerSpownpoint;
         LSH = 0;
+        DoJump = false;
         CanMove = true;
         PlayerRight = true;
     }
