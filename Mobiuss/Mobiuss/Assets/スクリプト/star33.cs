@@ -6,6 +6,7 @@ public class star33 : MonoBehaviour
 {
     public GameObject item_Star;
     public static int i;
+    public static int  p;
     /*float changeRed = 1.0f;
     float changeGreen = 1.0f;
     float cahngeBlue = 1.0f;
@@ -16,6 +17,7 @@ public class star33 : MonoBehaviour
     {
         GetComponent<Collider>().isTrigger = true;
         i = 0;
+        p = 0;
         /*changeRed = 1.0f;
         changeGreen = 1.0f;
         cahngeBlue = 1.0f;
@@ -28,11 +30,14 @@ public class star33 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "star"||i==1)
+        if (other.gameObject.tag == "star")
         {
             i = 1;
             NewSoundScriot.UseItem1 = true;
-            Destroy(other.gameObject);
+           
+            
+                Destroy(other.gameObject);
+            
             //パーティクルとか出したい。
             Invoke("koraidalost", 1.5f);
         }

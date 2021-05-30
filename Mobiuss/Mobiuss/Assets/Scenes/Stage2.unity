@@ -4161,7 +4161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 781523936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a367ab671274ca4698dc3c4c849a83a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e9983f82b204f1478505aa0fffae5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item_Star: {fileID: 781523936}
@@ -6919,7 +6919,7 @@ GameObject:
   - component: {fileID: 1593276417}
   m_Layer: 0
   m_Name: Cube (19)
-  m_TagString: Flor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8039,7 +8039,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1796830765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a84192fc6f9aba45ad827fb93351f16, type: 3}
+  m_Script: {fileID: 11500000, guid: d2dbeeec14c4e3247a8e38f7ae02456a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item_Star: {fileID: 1796830765}
