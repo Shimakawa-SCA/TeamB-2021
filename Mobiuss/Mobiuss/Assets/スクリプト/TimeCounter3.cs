@@ -32,7 +32,7 @@ public class TimeCounter3 : MonoBehaviour
             //時間をカウントダウンする
             countdown3 -= Time.deltaTime;
             //時間を表示する
-            timeText.text = countdown3.ToString("f1") + "秒";
+            timeText.text = "残り" + ((int)countdown3) ;//countdown3.ToString("f1") + "秒";
 
             //countdownが0以下になったとき
             if (countdown3 <= 0)

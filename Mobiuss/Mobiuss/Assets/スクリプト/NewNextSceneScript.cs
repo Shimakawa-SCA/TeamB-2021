@@ -21,18 +21,31 @@ public class NewNextSceneScript : MonoBehaviour
     public void OnClick()
     {
         SceneManager.LoadScene("Stage2");
+        //ボタンを押す音
+        NewSoundScriot.MenuButton1 = true;
     }
-
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //ボタンを押す音
+        NewSoundScriot.MenuButton1 = true;
+    }
     public void OnClickT()
     {
         SceneManager.LoadScene("Prologue");
+        //ボタンを押す音
+        NewSoundScriot.MenuButton1 = true;
     }
     public void Stage3()
     {
         SceneManager.LoadScene("stage3");
+        //ボタンを押す音
+        NewSoundScriot.MenuButton1 = true;
     }
     public void Stage4()
     {
         SceneManager.LoadScene("end");
+        //ボタンを押す音
+        NewSoundScriot.MenuButton1 = true;
     }
 }

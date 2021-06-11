@@ -60,7 +60,7 @@ public class ImageEx : MonoBehaviour
     void StartButt()
     {
         bottonPanel.SetActive(true);
-        StoryFade.isFadeOut = true;
+        //StoryFade.isFadeOut = true;
         NextSceneCount++;
     }
 }
