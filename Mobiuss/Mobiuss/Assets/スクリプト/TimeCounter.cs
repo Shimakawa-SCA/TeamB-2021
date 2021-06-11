@@ -8,7 +8,6 @@ public class TimeCounter : MonoBehaviour
 {
     //カウントダウン
     public static float countdown = 300.0f;
-
     //時間を表示するText型の変数
     public Text timeText;
     [SerializeField] private GameObject TimeOverPanel;
@@ -32,7 +31,7 @@ public class TimeCounter : MonoBehaviour
             //時間をカウントダウンする
             countdown -= Time.deltaTime;
             //時間を表示する
-            timeText.text = countdown.ToString("f1") + "秒";
+            timeText.text = "残り" + ((int)countdown);
 
             //countdownが0以下になったとき
             if (countdown <= 0)

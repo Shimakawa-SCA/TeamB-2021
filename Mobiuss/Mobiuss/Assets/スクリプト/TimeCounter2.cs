@@ -32,7 +32,7 @@ public class TimeCounter2 : MonoBehaviour
             //時間をカウントダウンする
             countdown2 -= Time.deltaTime;
             //時間を表示する
-            timeText.text = countdown2.ToString("f1") + "秒";
+            timeText.text = "残り" + ((int)countdown2);//countdown2.ToString("f1") + "秒";
 
             //countdownが0以下になったとき
             if (countdown2 <= 0)
