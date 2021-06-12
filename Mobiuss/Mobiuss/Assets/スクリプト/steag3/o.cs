@@ -5,19 +5,27 @@ using UnityEngine;
 public class o : MonoBehaviour
 {
     public static int i;
-    private int n;
+    public GameObject obj;
+    public static int n;
+    private int g;
     public GameObject CubePrefab;
     // Start is called before the first frame update
     void Start()
     {
         i = 0;
         n = 0;
+        g = 0;
     }
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "player")
         {
             n = 1;
+            if (g == 0)
+            {
+                Instantiate(obj);
+                g = 1;
+            }
         }
     }
     void OnTriggerExit(Collider other)
@@ -25,6 +33,7 @@ public class o : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             n = 0;
+            g = 0;
         }
     }
     void Update()
@@ -33,11 +42,10 @@ public class o : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.T) || Input.GetKeyDown("joystick button 3"))
             {
-                
+
                 botun.sum += 1;
-                i = 1;
+                i += 1;
             }
         }
     }
 }
-

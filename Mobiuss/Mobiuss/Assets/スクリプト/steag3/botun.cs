@@ -42,7 +42,7 @@ public class botun : MonoBehaviour
         if (sum == 2&&a==1)
         {
             a++;
-            if (x.i == 1 && y.i == 1 && z.i == 0 && o.i == 0)
+            if (x.i == 1 && y.i == 0 && z.i == 1 && o.i == 0)
             {
                 audioSource.clip = audioClip1;
                 audioSource.Play();
@@ -56,7 +56,7 @@ public class botun : MonoBehaviour
         if (sum == 3&&a==2)
         {
             a++;
-            if (x.i == 1 && y.i == 1 && z.i == 1 && o.i == 0)
+            if (x.i == 1 && y.i == 0 && z.i == 1 && o.i == 1)
             {
                 audioSource.clip = audioClip1;
                 audioSource.Play();
@@ -67,10 +67,38 @@ public class botun : MonoBehaviour
             }
 
         }
-        if (sum ==4 && v == 0)
+        if (sum == 4 && a == 3)
+        {
+            a++;
+            if (x.i == 2 && y.i == 0 && z.i == 1 && o.i == 1)
+            {
+                audioSource.clip = audioClip1;
+                audioSource.Play();
+            }
+            else
+            {
+                Invoke("outu", 0f);
+            }
+
+        }
+        if (sum == 5 && a == 4)
+        {
+            a++;
+            if (x.i == 2 && y.i == 1 && z.i == 1 && o.i == 1)
+            {
+                audioSource.clip = audioClip1;
+                audioSource.Play();
+            }
+            else
+            {
+                Invoke("outu", 0f);
+            }
+
+        }
+        if (sum ==6 && v == 0)
         {
 
-            if (x.i == 1 && y.i == 1 && z.i == 1 && o.i == 1)
+            if (x.i == 2 && y.i == 1 && z.i == 2 && o.i == 1)
             {
                 audioSource.clip = audioClip1;
                 audioSource.Play();

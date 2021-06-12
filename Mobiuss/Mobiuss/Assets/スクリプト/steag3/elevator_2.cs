@@ -64,7 +64,7 @@ public class elevator_2 : MonoBehaviour
     {
         if (dead == 1)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
             {
                 weit -= 1;
                 dead = 0;
