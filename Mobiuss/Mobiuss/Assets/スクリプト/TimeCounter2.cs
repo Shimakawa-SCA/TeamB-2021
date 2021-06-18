@@ -12,8 +12,10 @@ public class TimeCounter2 : MonoBehaviour
     //時間を表示するText型の変数
     public Text timeText;
     [SerializeField] private GameObject TimeOverPanel;
+    [SerializeField] private GameObject ButtonPanel;
     [SerializeField] private Button TimeButton;
     bool isCalledOnce;
+    bool isCalledSelect;
 
     public static int tTime2;
 
@@ -21,8 +23,11 @@ public class TimeCounter2 : MonoBehaviour
     {
         countdown2 = 300.0f;
         TimeOverPanel.SetActive(false);
+        ButtonPanel.SetActive(false);
         tTime2 = 0;
         isCalledOnce = false;
+        isCalledSelect = false;
+
     }
     // Update is called once per frame
     void Update()
@@ -39,32 +44,45 @@ public class TimeCounter2 : MonoBehaviour
             {
                 timeText.text = "時間になりました！";
                 TimeOverPanel.SetActive(true);
+                TimeImage.fadeIn = true;
+                Invoke("ActiveButtonPanel", 2.0f);
                 if (!isCalledOnce)
                 {
                     //タイムオーバー音
                     NewSoundScriot.GameOver1 = true;
                     isCalledOnce = true;
-                    TimeButton.Select();
                 }
 
-                //Invoke("GameOver", 1.0f);
-                //SceneManager.LoadScene("GameOver");
             }
         }
-        /*void GameOver()
+    }
+    void ActiveButtonPanel()
+    {
+        ButtonPanel.SetActive(true);
+        if (!isCalledSelect)
         {
-            SceneManager.LoadScene("GameOver");
-        }*/
+            TimeButton.Select();
+            isCalledSelect = true;
+        }
     }
     //やり直しボタン
     public void OnClick()
+    {
+        FadeController2.isFadeOut = true;
+        Invoke("Retry", 2.0f);
+    }
+    void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     //タイトルに行くボタン
     public void OnClickT()
     {
+        FadeController2.isFadeOut = true;
+        Invoke("Title", 2.0f);
+    }
+    void Title()
+    {
         SceneManager.LoadScene("Prologue");
     }
-
 }

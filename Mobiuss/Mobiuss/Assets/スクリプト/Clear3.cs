@@ -49,8 +49,8 @@ public class Clear3 : MonoBehaviour
         //クリア音
         NewSoundScriot.Clear1 = true;
         GameClearImag.SetActive(true);
-        GameClearImag.SetActive(true);
-        Invoke("CPanel", 1);
+        Invoke("FadeIn", 0.1f);
+        Invoke("CPanel", 2.0f);
         TimeCounter3.tTime3 = 0;
         Debug.Log(TimeCounter.tTime);
         //DeleteTargetObj という名前のオブジェクトを取得
@@ -59,7 +59,10 @@ public class Clear3 : MonoBehaviour
         Destroy(obj);
         Pausable.NotMenuCount = 1;
     }
-
+    void FadeIn()
+    {
+        ClearImageFade.fadeIn = true;
+    }
     void CPanel()
     {
         ClearPanel.SetActive(true);

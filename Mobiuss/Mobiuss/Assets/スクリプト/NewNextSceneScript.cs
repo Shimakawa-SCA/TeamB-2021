@@ -20,32 +20,57 @@ public class NewNextSceneScript : MonoBehaviour
 
     public void OnClick()
     {
-        SceneManager.LoadScene("Stage2");
+        Invoke("NextScene1",2.0f);
+        FadeController2.isFadeOut = true;
         //ボタンを押す音
         NewSoundScriot.MenuButton1 = true;
+    }
+    void NextScene1()
+    {
+        SceneManager.LoadScene("Stage2");
     }
     public void Retry()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Invoke("Retry1",2.0f);
+        FadeController2.isFadeOut = true;
         //ボタンを押す音
         NewSoundScriot.MenuButton1 = true;
+    }
+    void Retry1()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void OnClickT()
     {
-        SceneManager.LoadScene("Prologue");
+        Invoke("Title",2.0f);
+        FadeController2.isFadeOut = true;
         //ボタンを押す音
         NewSoundScriot.MenuButton1 = true;
+    }
+    void Title()
+    {
+        SceneManager.LoadScene("Prologue");
     }
     public void Stage3()
     {
-        SceneManager.LoadScene("stage3");
+        Invoke("NextScene2", 2.0f);
+        FadeController2.isFadeOut = true;
         //ボタンを押す音
         NewSoundScriot.MenuButton1 = true;
     }
+    void NextScene2()
+    {
+        SceneManager.LoadScene("stage3");
+    }
     public void Stage4()
     {
-        SceneManager.LoadScene("end");
+        Invoke("NextScene3", 2.0f);
+        FadeController2.isFadeOut = true;
         //ボタンを押す音
         NewSoundScriot.MenuButton1 = true;
+    }
+    void NextScene3()
+    {
+        SceneManager.LoadScene("end");
     }
 }
