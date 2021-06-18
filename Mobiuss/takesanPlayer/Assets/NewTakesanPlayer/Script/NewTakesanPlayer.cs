@@ -78,7 +78,9 @@ public class NewTakesanPlayer : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LStickHorizontal = 0;
             if (LStickHorizontal < 0) MoveDirection = -1;
             if (LStickHorizontal > 0) MoveDirection = 1;
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")) jump = true;
+            if (IsGround == true){
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")) jump = true;
+            }
         }
     }
 
@@ -98,7 +100,7 @@ public class NewTakesanPlayer : MonoBehaviour
 
     private void OnCollisionStay(Collision collision){
         if ((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "iwa")){
-
+            IsGround = false;
         }
     }
 }
