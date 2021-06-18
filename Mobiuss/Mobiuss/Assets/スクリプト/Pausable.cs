@@ -162,12 +162,16 @@ public class Pausable : MonoBehaviour
 	//やり直しボタン
     public void OnClick()
 	{
-		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		FadeController2.isFadeOut = true;
+		Invoke("Retry", 2.0f);
 		//ボタンを押す音
 		NewSoundScriot.MenuButton1 = true;
 		pausing = false;
 		Time.timeScale = 1;  // 再開
-
+	}
+	void Retry()
+    {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 	//タイトルに行くボタン
 	public void OnClickT()
@@ -176,9 +180,12 @@ public class Pausable : MonoBehaviour
 	　　//ボタンを押す音
 		NewSoundScriot.MenuButton1 = true;
 		pausing = false;
+		FadeController2.isFadeOut = true;
+		Invoke("Title", 2.0f);
+	}
+	void Title()
+	{
 		SceneManager.LoadScene("Prologue");
-
-		
 	}
 }
 
