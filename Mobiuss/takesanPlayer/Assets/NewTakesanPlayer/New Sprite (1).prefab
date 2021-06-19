@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6672119436620009449}
   - component: {fileID: 7007135301683452071}
   - component: {fileID: 7565648589061883903}
-  - component: {fileID: 8482932655061012740}
+  - component: {fileID: 2632081735688587266}
   m_Layer: 0
   m_Name: New Sprite (1)
   m_TagString: player
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.078456, y: 6.290645, z: 1}
   m_Center: {x: 1.4970858, y: -2.645322, z: 0}
---- !u!114 &8482932655061012740
+--- !u!114 &2632081735688587266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,6 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5360416352593068188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa2123508940b944899e9440d1b5f85, type: 3}
+  m_Script: {fileID: 11500000, guid: 10dd610a4d04ede47a99edcb40e5a50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
