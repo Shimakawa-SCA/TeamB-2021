@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//タイミング300
 public class NewTakesanPlayer : MonoBehaviour
 {
     enum PlayerStatus
@@ -27,6 +27,7 @@ public class NewTakesanPlayer : MonoBehaviour
     bool IsGround;
     float MoveDirection;
     bool jump;
+    bool ajump;
     int JumpTimeLine;
     float blx;
     [SerializeField] int FirstJumpProcessRange;
@@ -35,6 +36,7 @@ public class NewTakesanPlayer : MonoBehaviour
     bool sground;
     bool jump4;
     bool waitanimation;
+    bool lfjump;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +44,9 @@ public class NewTakesanPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Hold = false;
         PlayerRight = true;
-        CanMove = false;
+        CanMove = true;
         jump = false;
+        ajump = false;
         PassInitializ();
         GetPass();
         SetPass();
@@ -53,7 +56,9 @@ public class NewTakesanPlayer : MonoBehaviour
     }
 
     void StageSteUp(){
-
+        if (StageNumber == 1) ;
+        if (StageNumber == 2) ;
+        if (StageNumber == 3) ;
     }
 
     // Update is called once per frame
@@ -66,6 +71,10 @@ public class NewTakesanPlayer : MonoBehaviour
             PlayerAnimationDirector();
         }
         Border();
+        latejumptf();
+        SetPass();
+        GetPass();
+        Sound();
     }
 
     void Border(){
@@ -82,7 +91,6 @@ public class NewTakesanPlayer : MonoBehaviour
 
     void GetPass(){
         CanMove = Pass.PlayerCanMove;
-        StageNumber = Pass.StageNumber;
         Hold = Pass.PlayerHold;
     }
 
@@ -104,12 +112,20 @@ public class NewTakesanPlayer : MonoBehaviour
             if (IsGround == true){
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")) jump = true;
             }
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")) DethDirector();
         }
     }
 
     void ActionDirector(){
         rb.velocity = new Vector3(MoveDirection*MoveSpeed,rb.velocity.y,0);
         if (jump) JumpDirector();
+    }
+
+    void Sound(){
+        if ((lfjump != jump) && jump == true) ;
+        lfjump = jump;
+        if (playerstatus == PlayerStatus.Move) ;
+        //177
     }
 
     void JumpDirector(){
@@ -133,16 +149,20 @@ public class NewTakesanPlayer : MonoBehaviour
         }
     }
 
+    void latejumptf(){
+        ajump = jump;
+    }
+
     void PlayerStatusDirector(){
         if (Hold == false){
             if (MoveDirection == 0) playerstatus = PlayerStatus.Wait;
             if (MoveDirection != 0) playerstatus = PlayerStatus.Move;
-            if (jump == true) playerstatus = PlayerStatus.Jump;
+            if (ajump == true) playerstatus = PlayerStatus.Jump;
         }
         if (Hold == true){
             if (MoveDirection == 0) playerstatus = PlayerStatus.HoldWait;
             if (MoveDirection != 0) playerstatus = PlayerStatus.HoldMove;
-            if (jump == true) playerstatus = PlayerStatus.HoldJump;
+            if (ajump == true) playerstatus = PlayerStatus.HoldJump;
         }
         if (Deth == true) playerstatus = PlayerStatus.Deth;
         if (MoveDirection > 0) PlayerRight = true;
@@ -152,7 +172,10 @@ public class NewTakesanPlayer : MonoBehaviour
     void PlayerAnimationDirector(){
         Animator animator = GetComponent<Animator>();
         int Animaint = animator.GetInteger("panime");
-        if (sground != IsGround && IsGround == true) jump4 = true;
+        if (sground != IsGround && IsGround == true) {
+            jump4 = true; 
+
+        }
         if (PlayerRight == true){
             if (playerstatus == PlayerStatus.Wait) Animaint = 0;
             if (playerstatus == PlayerStatus.Move) Animaint = 2;
@@ -160,17 +183,17 @@ public class NewTakesanPlayer : MonoBehaviour
                 if (rb.velocity.y > 0) Animaint = 5;
                 if (rb.velocity.y < 0) Animaint = 6;
                 if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 4;
-            }
                 if (jump4 == true) { Animaint = 7; waitanimation = true; AnimationWaiter(1);}
+            }
             if (playerstatus == PlayerStatus.HoldWait) Animaint = 12;
             if (playerstatus == PlayerStatus.HoldMove) Animaint = 14;
             if (playerstatus == PlayerStatus.HoldJump){
                 if (rb.velocity.y > 0) Animaint = 17;
                 if (rb.velocity.y < 0) Animaint = 18;
                 if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 16;
-            }
                 if (jump4 == true) { Animaint = 19; waitanimation = true; AnimationWaiter(1); }
-            if (playerstatus.Equals("Deth")) Animaint = 24;
+            }
+            if (playerstatus == PlayerStatus.Deth) Animaint = 24;
         }
         if (PlayerRight == false){
             if (playerstatus == PlayerStatus.Wait) Animaint = 1;
@@ -179,6 +202,7 @@ public class NewTakesanPlayer : MonoBehaviour
                 if (rb.velocity.y > 0) Animaint = 9;
                 if (rb.velocity.y < 0) Animaint = 10;
                 if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 8;
+                if (jump4 == true) { Animaint = 11; waitanimation = true; AnimationWaiter(1); }
             }
             if (playerstatus == PlayerStatus.HoldWait) Animaint = 13;
             if (playerstatus == PlayerStatus.HoldMove) Animaint = 15;
@@ -186,10 +210,9 @@ public class NewTakesanPlayer : MonoBehaviour
                 if (rb.velocity.y > 0) Animaint = 21;
                 if (rb.velocity.y < 0) Animaint = 22;
                 if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 20;
+                if (jump4 == true) { Animaint = 23; waitanimation = true; AnimationWaiter(1); }
             }
-            if (jump4 == true) { Animaint = 11; waitanimation = true; AnimationWaiter(1); }
-            if (jump4 == true) { Animaint = 23; waitanimation = true; AnimationWaiter(1); }
-            if (playerstatus.Equals("Deth")) Animaint = 25;
+            if (playerstatus == PlayerStatus.Deth) Animaint = 25;
         }
         if (sground == IsGround) jump4 = false;
         sground = IsGround;
@@ -197,10 +220,20 @@ public class NewTakesanPlayer : MonoBehaviour
     }
 
     public void AnimationWaiter(int type){
-        if (type == 1) Invoke("WaitF",0.5f);
+        if (type == 1) Invoke("WaitF",0.25f);
     }
 
     void WaitF(){
         waitanimation = false;
+    }
+
+    void DethDirector(){
+        Deth = true;
+        Invoke("PlayerDeth",1f);
+        CanMove = false;
+    }
+
+    void PlayerDeth(){
+        Destroy(this.gameObject);
     }
 }
