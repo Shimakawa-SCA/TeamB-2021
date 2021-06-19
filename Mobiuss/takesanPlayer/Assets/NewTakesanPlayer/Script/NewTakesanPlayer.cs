@@ -28,8 +28,13 @@ public class NewTakesanPlayer : MonoBehaviour
     float MoveDirection;
     bool jump;
     int JumpTimeLine;
+    float blx;
     [SerializeField] int FirstJumpProcessRange;
     [SerializeField] int SecondJumpRrocessRange;
+    bool Deth;
+    bool sground;
+    bool jump4;
+    bool waitanimation;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +47,13 @@ public class NewTakesanPlayer : MonoBehaviour
         PassInitializ();
         GetPass();
         SetPass();
+        Deth = false;
+        StageSteUp();
+        waitanimation = false;
+    }
+
+    void StageSteUp(){
+
     }
 
     // Update is called once per frame
@@ -49,6 +61,16 @@ public class NewTakesanPlayer : MonoBehaviour
     {
         InputDirector();
         ActionDirector();
+        PlayerStatusDirector();
+        if (waitanimation == false){
+            PlayerAnimationDirector();
+        }
+        Border();
+    }
+
+    void Border(){
+        if (Mathf.Abs(this.transform.position.x) > 8.5f) transform.position = new Vector3(blx, transform.position.y);
+        blx = this.transform.position.x;
     }
 
     void PassInitializ(){
@@ -78,6 +100,7 @@ public class NewTakesanPlayer : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LStickHorizontal = 0;
             if (LStickHorizontal < 0) MoveDirection = -1;
             if (LStickHorizontal > 0) MoveDirection = 1;
+            if (LStickHorizontal == 0) MoveDirection = 0;
             if (IsGround == true){
                 if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown("joystick button 0")) jump = true;
             }
@@ -85,22 +108,99 @@ public class NewTakesanPlayer : MonoBehaviour
     }
 
     void ActionDirector(){
-        rb.velocity = new Vector3(MoveDirection,rb.velocity.y,0);
+        rb.velocity = new Vector3(MoveDirection*MoveSpeed,rb.velocity.y,0);
         if (jump) JumpDirector();
     }
 
     void JumpDirector(){
-        if (JumpTimeLine < SecondJumpRrocessRange) JumpTimeLine++;
+        if (JumpTimeLine <= SecondJumpRrocessRange) JumpTimeLine++;
         if (JumpTimeLine <= FirstJumpProcessRange){
             rb.velocity = new Vector3(rb.velocity.x, JumpForce);
             if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp("joystick button 0")) JumpTimeLine = FirstJumpProcessRange;
+            IsGround = false;
         }
         if (JumpTimeLine > FirstJumpProcessRange && JumpTimeLine <= SecondJumpRrocessRange) rb.AddForce(0, JumpKeepForce, 0);
     }
 
     private void OnCollisionStay(Collision collision){
         if ((collision.gameObject.tag == "Flor") || (collision.gameObject.tag == "iwa")){
-            IsGround = false;
+            IsGround = true;
+            if (JumpTimeLine > FirstJumpProcessRange) { 
+                JumpTimeLine = SecondJumpRrocessRange;
+                jump = false; 
+                JumpTimeLine = 0;
+            }
         }
+    }
+
+    void PlayerStatusDirector(){
+        if (Hold == false){
+            if (MoveDirection == 0) playerstatus = PlayerStatus.Wait;
+            if (MoveDirection != 0) playerstatus = PlayerStatus.Move;
+            if (jump == true) playerstatus = PlayerStatus.Jump;
+        }
+        if (Hold == true){
+            if (MoveDirection == 0) playerstatus = PlayerStatus.HoldWait;
+            if (MoveDirection != 0) playerstatus = PlayerStatus.HoldMove;
+            if (jump == true) playerstatus = PlayerStatus.HoldJump;
+        }
+        if (Deth == true) playerstatus = PlayerStatus.Deth;
+        if (MoveDirection > 0) PlayerRight = true;
+        if (MoveDirection < 0) PlayerRight = false;
+    }
+
+    void PlayerAnimationDirector(){
+        Animator animator = GetComponent<Animator>();
+        int Animaint = animator.GetInteger("panime");
+        if (sground != IsGround && IsGround == true) jump4 = true;
+        if (PlayerRight == true){
+            if (playerstatus == PlayerStatus.Wait) Animaint = 0;
+            if (playerstatus == PlayerStatus.Move) Animaint = 2;
+            if (playerstatus == PlayerStatus.Jump){
+                if (rb.velocity.y > 0) Animaint = 5;
+                if (rb.velocity.y < 0) Animaint = 6;
+                if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 4;
+            }
+                if (jump4 == true) { Animaint = 7; waitanimation = true; AnimationWaiter(1);}
+            if (playerstatus == PlayerStatus.HoldWait) Animaint = 12;
+            if (playerstatus == PlayerStatus.HoldMove) Animaint = 14;
+            if (playerstatus == PlayerStatus.HoldJump){
+                if (rb.velocity.y > 0) Animaint = 17;
+                if (rb.velocity.y < 0) Animaint = 18;
+                if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 16;
+            }
+                if (jump4 == true) { Animaint = 19; waitanimation = true; AnimationWaiter(1); }
+            if (playerstatus.Equals("Deth")) Animaint = 24;
+        }
+        if (PlayerRight == false){
+            if (playerstatus == PlayerStatus.Wait) Animaint = 1;
+            if (playerstatus == PlayerStatus.Move) Animaint = 3;
+            if (playerstatus == PlayerStatus.Jump){
+                if (rb.velocity.y > 0) Animaint = 9;
+                if (rb.velocity.y < 0) Animaint = 10;
+                if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 8;
+            }
+            if (playerstatus == PlayerStatus.HoldWait) Animaint = 13;
+            if (playerstatus == PlayerStatus.HoldMove) Animaint = 15;
+            if (playerstatus == PlayerStatus.HoldJump){
+                if (rb.velocity.y > 0) Animaint = 21;
+                if (rb.velocity.y < 0) Animaint = 22;
+                if (JumpTimeLine <= FirstJumpProcessRange) Animaint = 20;
+            }
+            if (jump4 == true) { Animaint = 11; waitanimation = true; AnimationWaiter(1); }
+            if (jump4 == true) { Animaint = 23; waitanimation = true; AnimationWaiter(1); }
+            if (playerstatus.Equals("Deth")) Animaint = 25;
+        }
+        if (sground == IsGround) jump4 = false;
+        sground = IsGround;
+        animator.SetInteger("panime", Animaint);
+    }
+
+    public void AnimationWaiter(int type){
+        if (type == 1) Invoke("WaitF",0.5f);
+    }
+
+    void WaitF(){
+        waitanimation = false;
     }
 }
