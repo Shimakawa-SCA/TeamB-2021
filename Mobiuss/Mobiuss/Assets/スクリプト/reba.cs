@@ -5,18 +5,26 @@ using UnityEngine;
 public class reba : MonoBehaviour
 {
     public static int i ;
-    private int n;
+    public GameObject obj;
+    public static  int n;
+    [SerializeField] private GameObject RebaYY;
+
     // Start is called before the first frame update
     void Start()
     {
         i = 0;
         n=0;
+        RebaYY.SetActive(false);
+
     }
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "player")
         {
             n =1;
+            RebaYY.SetActive(true);
+
+            //Instantiate(obj);
         }
     }
     void OnTriggerExit(Collider other)
@@ -24,6 +32,7 @@ public class reba : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             n = 0;
+            RebaYY.SetActive(false);
         }
     }
 

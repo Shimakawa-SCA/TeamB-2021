@@ -17,6 +17,7 @@ public class bom : MonoBehaviour
     Quaternion q;
     //爆発エフェクト的なパーティクル
     public GameObject particleObject;
+    [SerializeField] private GameObject BomYY;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class bom : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         q = Quaternion.Euler(0, 0, 0);
         player = GameObject.Find("New Sprite");
+        BomYY.SetActive(false);
     }
 
     private void Update()
@@ -39,12 +41,22 @@ public class bom : MonoBehaviour
         PlayerRight = TakesanPlayerScript2.PlayerRight;
         if (pdis < 1)
         {
+            if (itemposition == false)
+            {
+                BomYY.SetActive(true);
+            }
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
                 NewSoundScriot.GetItem1 = true;
                 itemposition = true;
                 TakesanPlayerScript2.Hold = true;
+                BomYY.SetActive(false);
             }
+           
+        }
+        else
+        {
+            BomYY.SetActive(false);
         }
         if (itemposition == true)
         {
@@ -61,6 +73,7 @@ public class bom : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
+
                 NewSoundScriot.UseItem1 = true;
                 rb.velocity = new Vector3(0,0,0);
                 transform.parent = null;

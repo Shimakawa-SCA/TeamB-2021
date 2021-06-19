@@ -35,7 +35,7 @@ public class saku : MonoBehaviour
             if (z == 0)
             {
                 z=1;
-                transform.Translate(0f, 0f, -5f);
+                transform.Translate(0f, 0f, -3f);
             }
             if (g < 50) { 
             transform.Translate(0f, 0.032f,0f);
@@ -59,7 +59,7 @@ public class saku : MonoBehaviour
                 v = 0;
                 g = 0;
                 z=0;
-                transform.Translate(0f, 0f, 5f);
+                transform.Translate(0f, 0f, 3f);
             }
         }
     }
