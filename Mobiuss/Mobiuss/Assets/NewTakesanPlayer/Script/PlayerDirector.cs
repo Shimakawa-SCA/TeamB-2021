@@ -40,7 +40,7 @@ public class PlayerDirector : MonoBehaviour
 
     void FirstReSpawn(){
         RespawnStack = true;
-        Instantiate(Player, SpawnPoint[Pass.StageNumber], Quaternion.identity);
+        Instantiate(Player, SpawnPoint[Pass.StageNumber], Quaternion.identity,this.transform);
         Invoke("SpawnDirector", 0.3f);
     }
 
@@ -71,7 +71,7 @@ public class PlayerDirector : MonoBehaviour
             if (Pass.PlayerRight == true){
                 Instantiate(cadaver3, Pass.PlayerPosition, Quaternion.identity);
             }
-            if (Pass.PlayerRight == true){
+            if (Pass.PlayerRight == false){
                 Instantiate(cadaverl3, Pass.PlayerPosition, Quaternion.identity);
             }
         }
