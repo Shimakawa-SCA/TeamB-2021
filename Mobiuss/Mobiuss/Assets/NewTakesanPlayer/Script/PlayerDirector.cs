@@ -29,6 +29,7 @@ public class PlayerDirector : MonoBehaviour
         if ((RespawnStack == false) && (Input.GetKeyDown(KeyCode.R))){
             Invoke("PlayerSpawn",1f);
             Invoke("InsCav",0.9f);
+            RespawnStack = true;
         }
         SetPass();
     }
@@ -54,7 +55,6 @@ public class PlayerDirector : MonoBehaviour
     }
 
     void PlayerSpawn(){
-        RespawnStack = true;
         if (Pass.StageNumber == 1 || Pass.StageNumber == 2){
             if (Pass.PlayerRight == true){
                 Instantiate(cadaver,Pass.PlayerPosition,Quaternion.identity);
