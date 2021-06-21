@@ -133,8 +133,8 @@ MonoBehaviour:
   JumpKeepForce: 1
   PlayerRight: 0
   CanMove: 0
-  FirstJumpProcessRange: 120
-  SecondJumpRrocessRange: 180
+  FirstJumpProcessRange: 30
+  SecondJumpRrocessRange: 45
 --- !u!95 &4121762579453515826
 Animator:
   serializedVersion: 3

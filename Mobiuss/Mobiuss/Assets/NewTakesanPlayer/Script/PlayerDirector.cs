@@ -27,11 +27,15 @@ public class PlayerDirector : MonoBehaviour
     void Update()
     {
         if ((RespawnStack == false) && (Input.GetKeyDown(KeyCode.R))){
-            Invoke("PlayerSpawn",1f);
-            Invoke("InsCav",0.9f);
-            RespawnStack = true;
+            StartRespawn();
         }
         SetPass();
+    }
+
+    public void StartRespawn(){
+        Invoke("PlayerSpawn", 1f);
+        Invoke("InsCav", 0.9f);
+        RespawnStack = true;
     }
 
     void FirstReSpawn(){
