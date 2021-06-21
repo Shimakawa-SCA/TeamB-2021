@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8670718161751887697}
   - component: {fileID: 7888265135147556393}
   - component: {fileID: 8682612010143768482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: d2r
   m_TagString: Untagged
   m_Icon: {fileID: 0}

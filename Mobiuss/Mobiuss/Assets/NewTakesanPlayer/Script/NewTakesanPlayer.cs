@@ -37,6 +37,7 @@ public class NewTakesanPlayer : MonoBehaviour
     bool jump4;
     bool waitanimation;
     bool lfjump;
+    bool respawnstack;
     // Start is called before the first frame update
     void Start()
     {
@@ -92,6 +93,7 @@ public class NewTakesanPlayer : MonoBehaviour
     void GetPass(){
         CanMove = Pass.PlayerCanMove;
         Hold = Pass.PlayerHold;
+        respawnstack = Pass.RespawnStack;
     }
 
     void SetPass(){
@@ -147,6 +149,11 @@ public class NewTakesanPlayer : MonoBehaviour
                 JumpTimeLine = 0;
             }
         }
+        if ((respawnstack == false) && (collision.gameObject.tag == ("yuka"))){
+            FindObjectOfType<PlayerDirector>().StartRespawn();
+            DethDirector();
+        }
+
     }
 
     void latejumptf(){

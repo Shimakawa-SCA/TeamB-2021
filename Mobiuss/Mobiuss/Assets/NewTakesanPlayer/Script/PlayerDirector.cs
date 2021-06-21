@@ -27,15 +27,20 @@ public class PlayerDirector : MonoBehaviour
     void Update()
     {
         if ((RespawnStack == false) && (Input.GetKeyDown(KeyCode.R))){
-            Invoke("PlayerSpawn",1f);
-            Invoke("InsCav",0.9f);
+            StartRespawn();
         }
         SetPass();
     }
 
+    public void StartRespawn(){
+        Invoke("PlayerSpawn", 1f);
+        Invoke("InsCav", 0.9f);
+        RespawnStack = true;
+    }
+
     void FirstReSpawn(){
         RespawnStack = true;
-        Instantiate(Player, SpawnPoint[Pass.StageNumber], Quaternion.identity);
+        Instantiate(Player, SpawnPoint[Pass.StageNumber], Quaternion.identity,this.transform);
         Invoke("SpawnDirector", 0.3f);
     }
 
@@ -54,7 +59,6 @@ public class PlayerDirector : MonoBehaviour
     }
 
     void PlayerSpawn(){
-        RespawnStack = true;
         if (Pass.StageNumber == 1 || Pass.StageNumber == 2){
             if (Pass.PlayerRight == true){
                 Instantiate(cadaver,Pass.PlayerPosition,Quaternion.identity);
@@ -67,7 +71,7 @@ public class PlayerDirector : MonoBehaviour
             if (Pass.PlayerRight == true){
                 Instantiate(cadaver3, Pass.PlayerPosition, Quaternion.identity);
             }
-            if (Pass.PlayerRight == true){
+            if (Pass.PlayerRight == false){
                 Instantiate(cadaverl3, Pass.PlayerPosition, Quaternion.identity);
             }
         }
