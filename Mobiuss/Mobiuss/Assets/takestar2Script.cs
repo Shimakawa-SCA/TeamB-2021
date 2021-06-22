@@ -5,6 +5,7 @@ using UnityEngine;
 public class takestar2Script : MonoBehaviour
 {
     public GameObject player;
+    Vector3 playerposition;
     float pdis;
     float pdiss;
     float blx;
@@ -24,13 +25,14 @@ public class takestar2Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerposition = Pass.PlayerPosition;
         if (prs == true) prs = false;
-        if (TakesanPlayerScript2.respornstack == true) prs = true;
+        if (Pass.RespawnStack == true) prs = true;
         if ((prs == true) && (ch == true)) ch = false;
         sttp = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        PlayerRight = TakesanPlayerScript2.PlayerRight;
-        pih = TakesanPlayerScript2.Hold;
-        pdis = (Mathf.Abs(transform.position.x - player.transform.position.x) + Mathf.Abs(transform.position.y - player.transform.position.y));
+        PlayerRight = Pass.PlayerRight;
+        pih = Pass.PlayerHold;
+        pdis = (Mathf.Abs(transform.position.x - playerposition.x) + Mathf.Abs(transform.position.y - playerposition.y));
         pdiss = Mathf.Abs(pdis);
         Debug.Log("s2" + pdiss);
         if (pdiss < 1)
@@ -44,11 +46,11 @@ public class takestar2Script : MonoBehaviour
             {
                 if (PlayerRight == true)
                 {
-                    transform.position = new Vector3(player.transform.position.x + 0.5f, player.transform.position.y, 0);
+                    transform.position = new Vector3(playerposition.x + 0.5f, playerposition.y, 0);
                 }
                 if (PlayerRight == false)
                 {
-                    transform.position = new Vector3(player.transform.position.x - 0.5f, player.transform.position.y, 0);
+                    transform.position = new Vector3(playerposition.x - 0.5f, playerposition.y, 0);
                 }
             }
         }

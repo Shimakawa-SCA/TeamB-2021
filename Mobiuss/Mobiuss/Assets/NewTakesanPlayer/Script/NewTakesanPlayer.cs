@@ -94,6 +94,7 @@ public class NewTakesanPlayer : MonoBehaviour
         CanMove = Pass.PlayerCanMove;
         Hold = Pass.PlayerHold;
         respawnstack = Pass.RespawnStack;
+        StageNumber = Pass.StageNumber;
     }
 
     void SetPass(){
