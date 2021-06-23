@@ -157,13 +157,12 @@ MonoBehaviour:
   menuButton: {fileID: 8300000, guid: 8cc9645158db20742a919e6be205738e, type: 3}
   clear: {fileID: 8300000, guid: 90334200a939bd240bb45549e0ecf060, type: 3}
   gameOver: {fileID: 8300000, guid: eee0dd723d200e24393a80d410d7a424, type: 3}
-  lever: {fileID: 8300000, guid: 6790ac3589636d74ca1590082e988440, type: 3}
   getItem: {fileID: 8300000, guid: 127846b93e979be40abae37ed28ad669, type: 3}
   useItem: {fileID: 8300000, guid: cd85442668d42a74196e3bd705c2d1b0, type: 3}
   titleButton: {fileID: 8300000, guid: 160b38df028ecb145a33d90a505b6b4f, type: 3}
-  revive: {fileID: 8300000, guid: 4ef905509e5ff774ea0859e141bc24f6, type: 3}
-  floor: {fileID: 8300000, guid: b84963845b5dfdc468103f7ca0b848a5, type: 3}
-  downDoor: {fileID: 8300000, guid: c6439483367b9404badf20c19bddee7d, type: 3}
+  jump: {fileID: 0}
+  landing: {fileID: 0}
+  run: {fileID: 0}
 --- !u!82 &90353506
 AudioSource:
   m_ObjectHideFlags: 0
@@ -772,8 +771,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000028648, y: -996}
-  m_SizeDelta: {x: 3986.5098, y: 1152.94}
+  m_AnchoredPosition: {x: -0.0000028648, y: -1162.5}
+  m_SizeDelta: {x: 3986.5098, y: 1543.6323}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1073353876
 MonoBehaviour:
@@ -789,9 +788,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpText: {fileID: 1233659601}
   Brack: {fileID: 1982783273}
-  textScrollSpeed: 80
-  limitPosition: 550
-  scale: 10
+  textScrollSpeed: 40
+  limitPosition: 1700
+  scale: 80
 --- !u!114 &1073353877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,11 +812,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a44c94025c5617041b59469fce5ce0bc, type: 3}
-    m_FontSize: 90
+    m_FontSize: 100
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 90
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
