@@ -7,7 +7,7 @@ public class bom : MonoBehaviour
     private int i;
     public static int n;
     public GameObject CubePrefab;
-    GameObject player;
+    //GameObject player;
     float pdis;
     float blx;
     float pdistans;
@@ -27,18 +27,18 @@ public class bom : MonoBehaviour
         itemposition = false;
         rb = GetComponent<Rigidbody>();
         q = Quaternion.Euler(0, 0, 0);
-        player = GameObject.Find("New Sprite");
+        //player = GameObject.Find("New Sprite");
         BomYY.SetActive(false);
     }
 
     private void Update()
     {
         if (rb.velocity.x > 2.5) rb.velocity = new Vector3(0,0,0);
-        pdis = (Mathf.Abs(transform.position.x - player.transform.position.x) + Mathf.Abs(transform.position.y - player.transform.position.y));
+        pdis = (Mathf.Abs(transform.position.x - Pass.PlayerPosition.x) + Mathf.Abs(transform.position.y - Pass.PlayerPosition.y));
         //Debug.Log(pdis);
         if (Mathf.Abs(this.transform.position.x) > 8.5f) transform.position = new Vector3(blx, transform.position.y);
         blx = this.transform.position.x;
-        PlayerRight = TakesanPlayerScript2.PlayerRight;
+        PlayerRight = Pass.PlayerRight;
         if (pdis < 1)
         {
             if (itemposition == false)
@@ -49,10 +49,9 @@ public class bom : MonoBehaviour
             {
                 NewSoundScriot.GetItem1 = true;
                 itemposition = true;
-                TakesanPlayerScript2.Hold = true;
+                Pass.PlayerHold = true;
                 BomYY.SetActive(false);
             }
-           
         }
         else
         {
@@ -62,25 +61,24 @@ public class bom : MonoBehaviour
         {
             if (PlayerRight == true)
             {
-                transform.position = new Vector3(player.transform.position.x+0.5f,player.transform.position.y,0);
+                transform.position = new Vector3(Pass.PlayerPosition.x+0.5f, Pass.PlayerPosition.y,0);
             }
             if (PlayerRight == false)
             {
-                transform.position = new Vector3(player.transform.position.x - 0.5f, player.transform.position.y, 0);
+                transform.position = new Vector3(Pass.PlayerPosition.x - 0.5f, Pass.PlayerPosition.y, 0);
             }
         }
         if (itemposition == true && i == 1)
         {
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
-
                 NewSoundScriot.UseItem1 = true;
                 rb.velocity = new Vector3(0,0,0);
                 transform.parent = null;
                 itemposition = false;
                 Debug.Log("6秒後に爆発！！");
                 Invoke("ban", 6f);
-                TakesanPlayerScript2.Hold = false;
+                Pass.PlayerHold = false;
             }
         }
     }

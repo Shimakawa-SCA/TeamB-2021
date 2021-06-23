@@ -41,6 +41,7 @@ public class takestar2Script : MonoBehaviour
             {
                 NewSoundScriot.GetItem1 = true;
                 ch = true;
+                Pass.PlayerHold = true;
             }
             if (ch == true)
             {
