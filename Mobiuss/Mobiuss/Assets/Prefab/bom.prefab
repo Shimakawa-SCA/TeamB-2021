@@ -222,6 +222,7 @@ MonoBehaviour:
   CubePrefab: {fileID: 6176694364796214941}
   particleObject: {fileID: 4910948430540803796, guid: 008c82a83c717054fb7dfd87121ffd54,
     type: 3}
+  BomYY: {fileID: 0}
 --- !u!1 &8285853495511489837
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 401276670313770011}
   - component: {fileID: 8561151045147178757}
+  - component: {fileID: 8972703461475485562}
   m_Layer: 0
   m_Name: "\u30A4\u30E9\u30B9\u30C896 2"
   m_TagString: Untagged
@@ -303,3 +305,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8972703461475485562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8285853495511489837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61e718f5ce09c74db470a5fce9335cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bomimage: {fileID: 8285853495511489837}
+  fadeStart: 0
+  fadeSpeed: 3
