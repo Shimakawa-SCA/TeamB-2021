@@ -29,6 +29,7 @@ public class bom : MonoBehaviour
         q = Quaternion.Euler(0, 0, 0);
         //player = GameObject.Find("New Sprite");
         BomYY.SetActive(false);
+
     }
 
     private void Update()
@@ -76,11 +77,13 @@ public class bom : MonoBehaviour
                 rb.velocity = new Vector3(0,0,0);
                 transform.parent = null;
                 itemposition = false;
-                Debug.Log("6秒後に爆発！！");
-                Invoke("ban", 6f);
+                BomColor.ColorChange = true; //ボムの点滅
+                Debug.Log("4秒後に爆発！！");
+                Invoke("ban", 3.5f);
                 Pass.PlayerHold = false;
             }
         }
+       
     }
 
     void OnCollisionStay(Collision other)
@@ -123,11 +126,9 @@ public class bom : MonoBehaviour
                 GameObject iwa = Instantiate(CubePrefab);
                 iwa.transform.position = new Vector3(8.05f, -2.05f, 0);
             }
-
             Destroy(this.gameObject);
-
         }
-
+   
    /* void res()
     {
         Instantiate(CubePrefab, new Vector3(8.05f, -2.05f, 0),q);

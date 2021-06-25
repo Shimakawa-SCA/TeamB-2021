@@ -9,7 +9,7 @@ public class PlayerDirector : MonoBehaviour
     public GameObject cadaverl;
     public GameObject cadaver3;
     public GameObject cadaverl3;
-    int RespawnCount;
+    public static int RespawnCount;
     public Vector3[] SpawnPoint;
     bool RespawnStack;
     // Start is called before the first frame update

@@ -10,6 +10,8 @@ public class Clear3 : MonoBehaviour
 {
     [SerializeField] private GameObject GameClearImag;
     [SerializeField] private GameObject ClearPanel;
+    [SerializeField] private GameObject MissionPanel;
+    [SerializeField] private GameObject ButtonPanel;
     [SerializeField] private GameObject aClearImag;
     [SerializeField] private GameObject bClearImag;
     [SerializeField] private Button NextButton;
@@ -19,6 +21,8 @@ public class Clear3 : MonoBehaviour
     void Start()
     {
         ClearPanel.SetActive(false);
+        MissionPanel.SetActive(false);
+        ButtonPanel.SetActive(false);
         GameClearImag.SetActive(false);
         aClearImag.SetActive(false);
         bClearImag.SetActive(false);
@@ -34,7 +38,7 @@ public class Clear3 : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (TakesanPlayerScript3.R3Count < 5)
+        if (PlayerDirector.RespawnCount < 5)
         {
             bClearImag.SetActive(true);
         }
@@ -43,7 +47,6 @@ public class Clear3 : MonoBehaviour
             bClearImag.SetActive(false);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         //クリア音
@@ -67,14 +70,17 @@ public class Clear3 : MonoBehaviour
     {
         ClearPanel.SetActive(true);
         GameClearImag.SetActive(false);
+        Invoke("MPanel", 1.5f);
+    }
+    void MPanel()
+    {
+        MissionPanel.SetActive(true);
+        Invoke("BPanel", 1.5f);
+    }
+    void BPanel()
+    {
+        ButtonPanel.SetActive(true);
         // 最初に選択状態にしたいボタンの設定
         NextButton.Select();
-
     }
-
-
-    // if (other.gameObject.CompareTag("player"))
-    //    {
-    //      SceneManager.LoadScene("stage2");
-    //    }
 }

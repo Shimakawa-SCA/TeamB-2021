@@ -10,6 +10,8 @@ public class Clear2 : MonoBehaviour
 {
     [SerializeField] private GameObject GameClearImag;
     [SerializeField] private GameObject ClearPanel;
+    [SerializeField] private GameObject MissionPanel;
+    [SerializeField] private GameObject ButtonPanel;
     [SerializeField] private GameObject aClearImag;
     [SerializeField] private GameObject bClearImag;
     [SerializeField] private Button NextButton;
@@ -20,11 +22,12 @@ public class Clear2 : MonoBehaviour
     {
 
         ClearPanel.SetActive(false);
+        MissionPanel.SetActive(false);
+        ButtonPanel.SetActive(false);
         GameClearImag.SetActive(false);
         aClearImag.SetActive(false);
         bClearImag.SetActive(false);
         Pausable.NotMenuCount = 0;
-
     }
 
     // Update is called once per frame
@@ -36,7 +39,7 @@ public class Clear2 : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (TakesanPlayerScript2.R2Count < 6)
+        if (PlayerDirector.RespawnCount < 6)
         {
             bClearImag.SetActive(true);
         }
@@ -69,14 +72,17 @@ public class Clear2 : MonoBehaviour
     {
         ClearPanel.SetActive(true);
         GameClearImag.SetActive(false);
+        Invoke("MPanel", 1.5f);
+    }
+    void MPanel()
+    {
+        MissionPanel.SetActive(true);
+        Invoke("BPanel", 1.5f);
+    }
+    void BPanel()
+    {
+        ButtonPanel.SetActive(true);
         // 最初に選択状態にしたいボタンの設定
         NextButton.Select();
-
     }
-
-
-    // if (other.gameObject.CompareTag("player"))
-    //    {
-    //      SceneManager.LoadScene("stage2");
-    //    }
 }
