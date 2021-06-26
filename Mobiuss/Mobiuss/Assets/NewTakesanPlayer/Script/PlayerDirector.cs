@@ -9,7 +9,7 @@ public class PlayerDirector : MonoBehaviour
     public GameObject cadaverl;
     public GameObject cadaver3;
     public GameObject cadaverl3;
-    public static int RespawnCount;
+    int RespawnCount;
     public Vector3[] SpawnPoint;
     bool RespawnStack;
     // Start is called before the first frame update
@@ -27,7 +27,9 @@ public class PlayerDirector : MonoBehaviour
     void Update()
     {
         if ((RespawnStack == false) && ((Input.GetKeyDown(KeyCode.R)) || (Input.GetKeyDown("joystick button 2")))){
-            StartRespawn();
+            if (Pass.PlayerCanMove == true){
+                StartRespawn();
+            }
         }
         SetPass();
     }
@@ -75,9 +77,14 @@ public class PlayerDirector : MonoBehaviour
                 Instantiate(cadaverl3, Pass.PlayerPosition, Quaternion.identity);
             }
         }
-        Instantiate(Player,SpawnPoint[Pass.StageNumber],Quaternion.identity);
+        Instantiate(Player,SpawnPoint[Pass.StageNumber],Quaternion.identity,this.transform);
         Invoke("SpawnDirector",0.3f);
+        Invoke("canmove",0.1f);
         RespawnCount++;
+    }
+
+    void canmove(){
+        Pass.PlayerCanMove = true;
     }
 
     void SpawnDirector(){

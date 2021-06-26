@@ -40,7 +40,7 @@ public class Clear : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (PlayerDirector.RespawnCount < 4)
+        if (Pass.RespawnPoint < 4)
         {
             bClearImag.SetActive(true);
         }

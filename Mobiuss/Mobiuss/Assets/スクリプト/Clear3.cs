@@ -38,7 +38,7 @@ public class Clear3 : MonoBehaviour
             aClearImag.SetActive(true);
         }
 
-        if (PlayerDirector.RespawnCount < 5)
+        if (Pass.RespawnPoint < 5)
         {
             bClearImag.SetActive(true);
         }

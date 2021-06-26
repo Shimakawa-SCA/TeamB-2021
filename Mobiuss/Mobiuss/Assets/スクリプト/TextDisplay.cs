@@ -41,5 +41,6 @@ public class TextDisplay : MonoBehaviour
         TimeCounter.tTime = 1;
         TimeCounter2.tTime2 = 1;
         TimeCounter3.tTime3= 1;
+        Pass.PlayerCanMove = true;
     }
 }

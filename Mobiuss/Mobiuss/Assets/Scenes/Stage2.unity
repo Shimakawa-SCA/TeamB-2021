@@ -2952,7 +2952,7 @@ GameObject:
   - component: {fileID: 577642698}
   m_Layer: 13
   m_Name: Cube (16)
-  m_TagString: yuka
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

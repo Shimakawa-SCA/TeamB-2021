@@ -45,7 +45,7 @@ public class NewTakesanPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Hold = false;
         PlayerRight = true;
-        CanMove = true;
+        CanMove = false;
         jump = false;
         ajump = false;
         PassInitializ();
@@ -59,7 +59,13 @@ public class NewTakesanPlayer : MonoBehaviour
     void StageSteUp(){
         if (StageNumber == 1) ;
         if (StageNumber == 2) ;
-        if (StageNumber == 3) transform.localScale = new Vector3(0.075f,0.075f,1);
+        if (StageNumber == 3){
+            transform.localScale = new Vector3(0.075f, 0.075f, 1);
+            JumpForce = 2;
+            JumpKeepForce = 1;
+            FirstJumpProcessRange = 30;
+            SecondJumpRrocessRange = 30;
+        }
     }
 
     // Update is called once per frame
@@ -129,7 +135,7 @@ public class NewTakesanPlayer : MonoBehaviour
     }
 
     void Sound(){
-        if ((lfjump != jump) && jump == true) ;
+        if ((lfjump != jump) && jump == true) NewSoundScriot.Jump1 = true;
         lfjump = jump;
         if (playerstatus == PlayerStatus.Move) ;
         //177
@@ -185,8 +191,8 @@ public class NewTakesanPlayer : MonoBehaviour
         Animator animator = GetComponent<Animator>();
         int Animaint = animator.GetInteger("panime");
         if (sground != IsGround && IsGround == true) {
-            jump4 = true; 
-
+            jump4 = true;
+            NewSoundScriot.Landing1 = true;
         }
         if (PlayerRight == true){
             if (playerstatus == PlayerStatus.Wait) Animaint = 0;
