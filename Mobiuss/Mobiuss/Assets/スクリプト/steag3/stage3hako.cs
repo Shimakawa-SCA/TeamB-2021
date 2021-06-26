@@ -7,11 +7,13 @@ public class stage3hako : MonoBehaviour
     public float pdis;
     bool playerhold;
     bool latehold;
+    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         playerhold = false;
         latehold = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class stage3hako : MonoBehaviour
             {
                 playerhold = false;
                 Pass.PlayerHold = false;
+                rb.velocity = new Vector3(0,0,0);
             }
         }
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
