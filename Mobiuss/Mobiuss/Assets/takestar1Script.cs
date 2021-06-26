@@ -33,7 +33,7 @@ public class takestar1Script : MonoBehaviour
         pdis = (Mathf.Abs(transform.position.x - Pass.PlayerPosition.x) + Mathf.Abs(transform.position.y - Pass.PlayerPosition.y));
         pdiss = Mathf.Abs(pdis);
         Debug.Log("s1"+pdiss);
-        if (pdiss < 1)
+        if (pdiss < 1.5)
         {
             if ((Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1")) && (pih == false))
             {
