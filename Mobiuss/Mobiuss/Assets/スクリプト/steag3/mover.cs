@@ -15,11 +15,11 @@ public class mover : MonoBehaviour
     {
         if ((elevator.y > 0&& elevator_1.play==1)|| (elevator_2.play==1&& elevator.y > 0))
         {
-            TakesanPlayerScript3.CanMove = false;
+            Pass.PlayerCanMove = false;
         }
         else
         {
-            TakesanPlayerScript3.CanMove = true;
+            Pass.PlayerCanMove = true;
         }
     }
 }
