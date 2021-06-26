@@ -57,7 +57,10 @@ public class NewTakesanPlayer : MonoBehaviour
     }
 
     void StageSteUp(){
-        if (StageNumber == 1) ;
+        if (StageNumber == 1) {
+            FirstJumpProcessRange = 20;
+            SecondJumpRrocessRange = 30;
+        }
         if (StageNumber == 2) ;
         if (StageNumber == 3){
             transform.localScale = new Vector3(0.075f, 0.075f, 1);
