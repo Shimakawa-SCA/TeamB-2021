@@ -59,9 +59,9 @@ public class Clear2 : MonoBehaviour
         TimeCounter2.tTime2 = 0;
         Debug.Log(TimeCounter.tTime);
         //DeleteTargetObj という名前のオブジェクトを取得
-        GameObject obj = GameObject.Find("New Sprite");
+        //GameObject obj = GameObject.Find("New Sprite");
         // 指定したオブジェクトを削除
-        Destroy(obj);
+        Destroy(other.gameObject);
         Pausable.NotMenuCount = 1;
     }
     void FadeIn()
