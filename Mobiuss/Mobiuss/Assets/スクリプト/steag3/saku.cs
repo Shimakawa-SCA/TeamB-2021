@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class saku : MonoBehaviour
 {
-    private int i;
+   private int i;
     private int v;
-    private int g;
     private int z;
+    private int g;
+    public static int o;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class saku : MonoBehaviour
         g=0;
         v=0;
         z=0;
+        o=0;
     }
 
     // Update is called once per frame
@@ -66,9 +68,11 @@ public class saku : MonoBehaviour
     void spon()
     {
         v=1;
+        o=1;
     }
     void respon()
     {
         v=2;
+        o=0;
     }
 }

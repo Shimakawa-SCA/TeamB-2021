@@ -13,7 +13,7 @@ public class mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((elevator.y > 0&& elevator_1.play==1)|| (elevator_2.play==1&& elevator.y > 0))
+        if ((saku.o == 1&& elevator_1.play==1)|| (elevator_2.play==1&& saku.o == 1))
         {
             Pass.PlayerCanMove = false;
         }
