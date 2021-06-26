@@ -35,6 +35,7 @@ public class s2star : MonoBehaviour
             i = 1;
             NewSoundScriot.UseItem1 = true;
            
+            Pass.PlayerHold = false;
                 Destroy(other.gameObject);
              
             //パーティクルとか出したい。
