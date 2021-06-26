@@ -83,7 +83,10 @@ public class bom : MonoBehaviour
                 Pass.PlayerHold = false;
             }
         }
-       
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
+            itemposition = false;
+            Pass.PlayerHold = false;
+        }
     }
 
     void OnCollisionStay(Collision other)
