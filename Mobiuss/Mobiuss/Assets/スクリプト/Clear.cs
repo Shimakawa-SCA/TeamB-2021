@@ -64,7 +64,7 @@ public class Clear : MonoBehaviour
             //DeleteTargetObj という名前のオブジェクトを取得
             GameObject obj = GameObject.Find("New Sprite");
             // 指定したオブジェクトを削除
-            Destroy(obj);
+            Destroy(other.gameObject);
             Pausable.NotMenuCount = 1;
         }
     }
