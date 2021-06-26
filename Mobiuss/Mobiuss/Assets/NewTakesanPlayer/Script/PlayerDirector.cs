@@ -27,7 +27,9 @@ public class PlayerDirector : MonoBehaviour
     void Update()
     {
         if ((RespawnStack == false) && ((Input.GetKeyDown(KeyCode.R)) || (Input.GetKeyDown("joystick button 2")))){
-            StartRespawn();
+            if (Pass.PlayerCanMove == true){
+                StartRespawn();
+            }
         }
         SetPass();
     }
