@@ -105,9 +105,9 @@ public class NewTakesanPlayer : MonoBehaviour
 
     void InputDirector(){
         if (CanMove == true){
-            //LStickHorizontal = Input.GetAxis("L_Stick_H");
-            if (Input.GetKeyDown(KeyCode.A)) LStickHorizontal = -0.5f;
-            if (Input.GetKeyDown(KeyCode.D)) LStickHorizontal = 0.5f;
+            LStickHorizontal = Input.GetAxis("L_Stick_H");
+            if (Input.GetKey(KeyCode.A)) LStickHorizontal = -0.5f;
+            if (Input.GetKey(KeyCode.D)) LStickHorizontal = 0.5f;
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) LStickHorizontal = 0;
             if (LStickHorizontal < 0) MoveDirection = -1;
             if (LStickHorizontal > 0) MoveDirection = 1;
@@ -122,6 +122,10 @@ public class NewTakesanPlayer : MonoBehaviour
     void ActionDirector(){
         rb.velocity = new Vector3(MoveDirection*MoveSpeed,rb.velocity.y,0);
         if (jump) JumpDirector();
+        if (CanMove == false){
+            LStickHorizontal = 0;
+            MoveDirection = 0;
+        }
     }
 
     void Sound(){
