@@ -78,6 +78,7 @@ public class PlayerDirector : MonoBehaviour
             }
         }
         Instantiate(Player,SpawnPoint[Pass.StageNumber],Quaternion.identity);
+        Pass.PlayerCanMove = true;
         Invoke("SpawnDirector",0.3f);
         RespawnCount++;
     }
