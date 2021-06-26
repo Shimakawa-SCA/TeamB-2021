@@ -77,9 +77,14 @@ public class PlayerDirector : MonoBehaviour
                 Instantiate(cadaverl3, Pass.PlayerPosition, Quaternion.identity);
             }
         }
-        Instantiate(Player,SpawnPoint[Pass.StageNumber],Quaternion.identity);
+        Instantiate(Player,SpawnPoint[Pass.StageNumber],Quaternion.identity,this.transform);
         Invoke("SpawnDirector",0.3f);
+        Invoke("canmove",0.1f);
         RespawnCount++;
+    }
+
+    void canmove(){
+        Pass.PlayerCanMove = true;
     }
 
     void SpawnDirector(){
