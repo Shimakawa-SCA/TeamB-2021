@@ -140,7 +140,8 @@ public class NewTakesanPlayer : MonoBehaviour
     void Sound(){
         if ((lfjump != jump) && jump == true) NewSoundScriot.Jump1 = true;
         lfjump = jump;
-        if (playerstatus == PlayerStatus.Move) ;
+        if (playerstatus == PlayerStatus.Move) NewSoundScriot.Run1 = true;
+        else NewSoundScriot.Run1 = false;
         //177
     }
 
