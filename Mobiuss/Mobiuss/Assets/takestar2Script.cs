@@ -37,7 +37,7 @@ public class takestar2Script : MonoBehaviour
         Debug.Log("s2" + pdiss);
         if (pdiss < 1.5)
         {
-            if ((Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1")) && (pih == false))
+            if ((Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1")) && (pih == false) && Pass.RespawnStack == false)
             {
                 NewSoundScriot.GetItem1 = true;
                 ch = true;

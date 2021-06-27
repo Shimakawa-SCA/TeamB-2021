@@ -38,5 +38,7 @@ public class BomColor : MonoBehaviour
         }
         
     }
-
+    public void ColorReset(){
+        this.GetComponent<SpriteRenderer>().color = new Color(1,1,1,1);
+    }
 }

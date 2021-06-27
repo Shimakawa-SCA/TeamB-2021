@@ -17,7 +17,7 @@ public class reba : MonoBehaviour
         RebaYY.SetActive(false);
 
     }
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "player")
         {
@@ -56,6 +56,10 @@ public class reba : MonoBehaviour
                     myTransform.Rotate(0,  -180f,0, Space.World);
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
+            n = 0;
+            RebaYY.SetActive(false);
         }
     }
        
