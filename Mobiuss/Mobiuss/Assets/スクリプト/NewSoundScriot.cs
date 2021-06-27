@@ -32,6 +32,8 @@ public class NewSoundScriot : MonoBehaviour
     public static bool Run1;
     public static int i;
 
+    float atl;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +111,20 @@ public class NewSoundScriot : MonoBehaviour
             audioSource.PlayOneShot(landing);
             Landing1 = false;
         }
+
+        
+        if (Run1 == true){
+            if (atl == 0){
+                audioSource.PlayOneShot(run);
+                Invoke("x2run",0.25f);
+            }
+            atl += Time.deltaTime;
+            if (atl > 2.2f) atl = 0;
+        }
+        if (Run1 == false){
+            audioSource.Stop();
+            atl = 0;
+        }
         /*if (Run1 == true)//&&i==0)
         {
             audioSource.PlayOneShot(run);
@@ -125,5 +141,8 @@ public class NewSoundScriot : MonoBehaviour
         }*/
     }
 
-
+    /*public void x2run()
+    {
+        audioSource.PlayOneShot(run);
+    }*/
 }
