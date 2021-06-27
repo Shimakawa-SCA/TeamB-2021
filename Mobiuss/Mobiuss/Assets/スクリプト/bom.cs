@@ -15,6 +15,7 @@ public class bom : MonoBehaviour
     bool PlayerRight;
     Rigidbody rb;
     Quaternion q;
+    bool canhold;
     //爆発エフェクト的なパーティクル
     public GameObject particleObject;
     [SerializeField] private GameObject BomYY;
@@ -29,7 +30,7 @@ public class bom : MonoBehaviour
         q = Quaternion.Euler(0, 0, 0);
         //player = GameObject.Find("New Sprite");
         BomYY.SetActive(false);
-
+        canhold = true;
     }
 
     private void Update()
@@ -46,7 +47,7 @@ public class bom : MonoBehaviour
             {
                 BomYY.SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
+            if ((Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1")) && itemposition == false && canhold == true && Pass.RespawnStack == false)
             {
                 NewSoundScriot.GetItem1 = true;
                 itemposition = true;
@@ -73,6 +74,7 @@ public class bom : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown("joystick button 1"))
             {
+                canhold = false;
                 NewSoundScriot.UseItem1 = true;
                 rb.velocity = new Vector3(0,0,0);
                 transform.parent = null;
@@ -86,6 +88,12 @@ public class bom : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
             itemposition = false;
             Pass.PlayerHold = false;
+        }
+        if (i == 1 && itemposition == true){
+            BomYY.SetActive(true);
+        }
+        if (i == 0 == itemposition == true){
+            BomYY.SetActive(false);
         }
     }
 
@@ -128,6 +136,7 @@ public class bom : MonoBehaviour
                 i=0;
                 GameObject iwa = Instantiate(CubePrefab);
                 iwa.transform.position = new Vector3(8.05f, -2.05f, 0);
+                FindObjectOfType<BomColor>().ColorReset();
             }
             Destroy(this.gameObject);
         }
