@@ -15,6 +15,7 @@ TagManager:
   - dead
   - bomhantei
   - kibako
+  - snowwall
   layers:
   - Default
   - TransparentFX

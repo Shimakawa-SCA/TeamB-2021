@@ -3076,7 +3076,7 @@ GameObject:
   - component: {fileID: 592868103}
   m_Layer: 13
   m_Name: Cube (10)
-  m_TagString: Untagged
+  m_TagString: snowwall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5570,7 +5570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1016973530
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12320,7 +12320,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8624585575513451672}
-        m_MethodName: Stage4
+        m_MethodName: Stage3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
