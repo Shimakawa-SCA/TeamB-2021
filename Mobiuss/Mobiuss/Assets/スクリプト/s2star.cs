@@ -11,7 +11,9 @@ public class s2star : MonoBehaviour
     float changeGreen = 1.0f;
     float cahngeBlue = 1.0f;
     float cahngeAlpha = 0.25f;*/
-    
+    [SerializeField] private GameObject asibahosiari;
+
+
     // Start is called before the first frame update
     void Start()
     {        
@@ -26,6 +28,8 @@ public class s2star : MonoBehaviour
         color.a = 0.6f;
         gameObject.GetComponent<Renderer>().material.color = color;
         GetComponent<Material>().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);*/
+        asibahosiari.SetActive(false);
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -37,8 +41,8 @@ public class s2star : MonoBehaviour
            
             Pass.PlayerHold = false;
                 Destroy(other.gameObject);
-             
             //パーティクルとか出したい。
+            asibahosiari.SetActive(true);
             Invoke("koraidalost", 1.5f);
         }
 
