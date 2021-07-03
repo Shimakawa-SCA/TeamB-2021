@@ -13,8 +13,10 @@ public class cadaver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
-            Destroy(this.gameObject);
+        if (Pass.PlayerCanMove == true){
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
+                Destroy(this.gameObject);
+            }
         }
     }
 }

@@ -30,7 +30,7 @@ public class iwa2 : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "yuka")
+        if (other.gameObject.tag == "snowwall")
         {
            
             var instantiateEffect = GameObject.Instantiate(effectObject, transform.position + new Vector3(0f, offset, 0f), Quaternion.identity) as GameObject;
