@@ -789,8 +789,8 @@ MonoBehaviour:
   OpText: {fileID: 1233659601}
   Brack: {fileID: 1982783273}
   textScrollSpeed: 40
-  limitPosition: 1700
-  scale: 80
+  limitPosition: 540
+  scale: 10
 --- !u!114 &1073353877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,7 +812,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: a44c94025c5617041b59469fce5ce0bc, type: 3}
-    m_FontSize: 100
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

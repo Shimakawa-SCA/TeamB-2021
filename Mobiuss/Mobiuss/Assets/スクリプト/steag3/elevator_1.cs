@@ -7,6 +7,7 @@ public class elevator_1 : MonoBehaviour
     public static int play;
     public static int dead;
     public static int weit;
+    public static int kibako;
 
 
     void Start()
@@ -14,6 +15,7 @@ public class elevator_1 : MonoBehaviour
         play = 0;
         dead = 0;
         weit = 0;
+        kibako = 0;
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,6 +29,11 @@ public class elevator_1 : MonoBehaviour
         {
             weit += 1;
             dead = 1;
+        }
+        if (other.gameObject.tag == "kibako" && kibako == 0)
+        {
+            weit += 1;
+            kibako = 1;
         }
     }
     /*void OnTriggerStay(Collider other)
@@ -43,6 +50,11 @@ public class elevator_1 : MonoBehaviour
             weit -= 1;
             play = 0;
         }
+        if (other.gameObject.tag == "kibako")
+        {
+            weit -= 1;
+            kibako = 0;
+        }
     }
     // Start is called before the first frame update
 
@@ -52,11 +64,20 @@ public class elevator_1 : MonoBehaviour
     {
         if (dead == 1)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
             {
                 weit -= 1;
                 dead = 0;
             }
+        }
+        if (play == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
+            {
+                weit -= 1;
+                play = 0;
+            }
+
         }
     }
 }

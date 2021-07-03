@@ -26,7 +26,7 @@ public class PlayerDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((RespawnStack == false) && ((Input.GetKeyDown(KeyCode.R)) || (Input.GetKeyDown("joystick button 2")))){
+        if ((Pass.PlayerCanMove == true) && (RespawnStack == false) && ((Input.GetKeyDown(KeyCode.R)) || (Input.GetKeyDown("joystick button 2")))){
             if (Pass.PlayerCanMove == true){
                 StartRespawn();
             }

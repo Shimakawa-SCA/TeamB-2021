@@ -27,7 +27,7 @@ public class elevator_2 : MonoBehaviour
         }
         if (other.gameObject.tag == "dead"&&dead==0)
         {
-            weit += 1;
+           // weit += 1;
             dead = 1;
         }
         if (other.gameObject.tag == "kibako" && kibako == 0)
@@ -73,6 +73,15 @@ public class elevator_2 : MonoBehaviour
         if (weit >= 3)
         {
             weit=2;
+        }
+        if (play == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
+            {
+                //weit -= 1;
+                play = 0;
+            }
+
         }
     }
 }

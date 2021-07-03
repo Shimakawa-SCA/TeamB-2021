@@ -6,17 +6,23 @@ public class reba3: MonoBehaviour
 {
     public static int i;
     public static int n;
+    [SerializeField] private GameObject RebaYYY;
+
     // Start is called before the first frame update
     void Start()
     {
         i = 0;
         n = 0;
+        RebaYYY.SetActive(false);
+
     }
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "player")
         {
             n = 1;
+            RebaYYY.SetActive(true);
+
         }
     }
     void OnTriggerExit(Collider other)
@@ -25,6 +31,7 @@ public class reba3: MonoBehaviour
         {
             n = 0;
             Debug.Log("離れた");
+            RebaYYY.SetActive(false);
         }
     }
 
