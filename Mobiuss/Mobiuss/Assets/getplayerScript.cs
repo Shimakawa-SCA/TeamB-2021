@@ -23,7 +23,7 @@ public class getplayerScript : MonoBehaviour
         {
             FindObjectOfType<kiirobo2>().getc(0);
         }
-        if(Input.GetKeyDown(KeyCode.R))
+        if(Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
         {
             Invoke("repd",0.1f);
         }
