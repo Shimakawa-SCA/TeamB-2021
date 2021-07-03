@@ -9,12 +9,12 @@ public class Exp02 : MonoBehaviour
     void Start()
     {
       Lv = 2;
-      Exp = 250;
+      Exp = 50;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        this.gameObject.transform.Translate(1, 0, 1);
     }
 }
