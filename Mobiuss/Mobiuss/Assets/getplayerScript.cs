@@ -15,7 +15,7 @@ public class getplayerScript : MonoBehaviour
     void Update()
     {
         //Debug.Log(pd);
-        if(pd < 0 && pd > -0.9)
+        if(pd < 0 && pd > -0.3)
         {
             FindObjectOfType<kiirobo2>().getc(1);
         }
@@ -33,7 +33,7 @@ public class getplayerScript : MonoBehaviour
     {
         if ((other.gameObject.tag == "player") || (other.gameObject.tag == "dead"))
         {
-            pd = ((transform.position.x-other.transform.position.x) +(transform.position.y -other.transform.position.y));
+            pd = ((transform.position.x - 0.1f - other.transform.position.x) +(transform.position.y + 0.3f -other.transform.position.y));
         }
     }
 
