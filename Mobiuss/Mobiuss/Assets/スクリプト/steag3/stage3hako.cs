@@ -52,6 +52,7 @@ public class stage3hako : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
             Pass.PlayerHold = false;
             playerhold = false;
+            rb.velocity = new Vector3(0, 0, 0);
         }
             latehold = playerhold;
     }
