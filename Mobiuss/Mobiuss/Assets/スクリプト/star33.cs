@@ -11,6 +11,7 @@ public class star33 : MonoBehaviour
     float changeGreen = 1.0f;
     float cahngeBlue = 1.0f;
     float cahngeAlpha = 0.25f;*/
+    [SerializeField] private GameObject asibahosiari;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class star33 : MonoBehaviour
         color.a = 0.6f;
         gameObject.GetComponent<Renderer>().material.color = color;
         GetComponent<Material>().color = new Color(changeRed, changeGreen, cahngeBlue, cahngeAlpha);*/
+        asibahosiari.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -37,7 +39,7 @@ public class star33 : MonoBehaviour
            
             Pass.PlayerHold = false;
                 Destroy(other.gameObject);
-            
+            asibahosiari.SetActive(true);
             //パーティクルとか出したい。
             Invoke("koraidalost", 1.5f);
         }
