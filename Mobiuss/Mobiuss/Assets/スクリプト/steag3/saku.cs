@@ -9,6 +9,7 @@ public class saku : MonoBehaviour
     private int z;
     private int g;
     public static int o;
+    private int mati;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class saku : MonoBehaviour
         v=0;
         z=0;
         o=0;
+        mati=0;
     }
 
     // Update is called once per frame
@@ -32,8 +34,9 @@ public class saku : MonoBehaviour
             i = 0;
             Invoke("respon", 0.3f);
         }
-        if (v == 1)
+        if (v == 1||mati==1)
         {
+            mati=1;
             if (z == 0)
             {
                 z=1;
@@ -47,10 +50,12 @@ public class saku : MonoBehaviour
             {
                 v=0;
                 g=0;
+                mati=0;
             }
         }
-        if (v == 2)
+        if (v == 2||mati==2)
         {
+            mati=2;
             if (g < 50)
             {
                 transform.Translate(0f, -0.032f, 0f);
@@ -58,6 +63,7 @@ public class saku : MonoBehaviour
             }
             else
             {
+                mati=0;
                 v = 0;
                 g = 0;
                 z=0;
