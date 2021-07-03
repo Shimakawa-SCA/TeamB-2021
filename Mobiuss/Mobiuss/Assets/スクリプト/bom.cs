@@ -88,6 +88,7 @@ public class bom : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2")){
             itemposition = false;
             Pass.PlayerHold = false;
+            rb.velocity = new Vector3(0, 0, 0);
         }
         if (i == 1 && itemposition == true){
             BomYY.SetActive(true);
