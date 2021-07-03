@@ -73,7 +73,8 @@ public class saku : MonoBehaviour
                 g = 0;
                 z=0;
                 transform.Translate(0f, 0f, 3f);
-                kirei=true;
+                o = 0;
+                kirei =true;
             }
         }
     }
@@ -85,6 +86,6 @@ public class saku : MonoBehaviour
     void respon()
     {
         v=2;
-        o=0;
+    
     }
 }

@@ -17,7 +17,7 @@ public class mover : MonoBehaviour
         {
             Pass.PlayerCanMove = false;
         }
-        else if(TimeCounter.tTime ==1)
+       else if(TimeCounter.tTime ==1)
         {
             Pass.PlayerCanMove = true;
         }

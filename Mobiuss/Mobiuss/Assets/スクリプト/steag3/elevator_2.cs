@@ -76,7 +76,7 @@ public class elevator_2 : MonoBehaviour
         }
         if (play == 1)
         {
-            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
+            if ((Pass.PlayerCanMove == true) && Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
             {
                 //weit -= 1;
                 play = 0;
