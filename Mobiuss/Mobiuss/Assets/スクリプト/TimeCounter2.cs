@@ -21,7 +21,7 @@ public class TimeCounter2 : MonoBehaviour
 
     void Start()
     {
-        countdown2 = 300.0f;
+        countdown2 = 120.0f;
         TimeOverPanel.SetActive(false);
         ButtonPanel.SetActive(false);
         tTime2 = 0;
