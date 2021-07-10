@@ -1,0 +1,258 @@
+
+辛い.png
+size: 1445,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+.hutomomo L
+  rotate: true
+  xy: 493, 9
+  size: 54, 133
+  orig: 57, 135
+  offset: 2, 1
+  index: -1
+Maekami
+  rotate: true
+  xy: 1172, 130
+  size: 137, 123
+  orig: 137, 123
+  offset: 0, 0
+  index: -1
+R hidari
+  rotate: false
+  xy: 213, 10
+  size: 24, 34
+  orig: 26, 36
+  offset: 1, 1
+  index: -1
+R hidarisita
+  rotate: false
+  xy: 152, 5
+  size: 28, 36
+  orig: 30, 38
+  offset: 1, 1
+  index: -1
+R hidariue
+  rotate: false
+  xy: 451, 2
+  size: 11, 15
+  orig: 13, 18
+  offset: 1, 2
+  index: -1
+R migi
+  rotate: false
+  xy: 182, 6
+  size: 29, 35
+  orig: 31, 37
+  offset: 1, 1
+  index: -1
+R migisita
+  rotate: false
+  xy: 122, 4
+  size: 28, 37
+  orig: 30, 39
+  offset: 1, 1
+  index: -1
+R migiue
+  rotate: false
+  xy: 464, 4
+  size: 16, 13
+  orig: 18, 15
+  offset: 1, 1
+  index: -1
+R sentar
+  rotate: false
+  xy: 368, 26
+  size: 12, 18
+  orig: 14, 20
+  offset: 1, 1
+  index: -1
+Sade R
+  rotate: false
+  xy: 381, 57
+  size: 65, 210
+  orig: 65, 210
+  offset: 0, 0
+  index: -1
+U ude L
+  rotate: false
+  xy: 1180, 3
+  size: 67, 125
+  orig: 69, 127
+  offset: 1, 1
+  index: -1
+Uude R
+  rotate: true
+  xy: 628, 6
+  size: 67, 138
+  orig: 69, 140
+  offset: 1, 1
+  index: -1
+akikuti
+  rotate: true
+  xy: 355, 23
+  size: 21, 11
+  orig: 23, 13
+  offset: 1, 1
+  index: -1
+asi L
+  rotate: false
+  xy: 621, 75
+  size: 86, 192
+  orig: 88, 194
+  offset: 1, 1
+  index: -1
+asi R
+  rotate: false
+  xy: 852, 101
+  size: 90, 166
+  orig: 92, 168
+  offset: 1, 1
+  index: -1
+body
+  rotate: false
+  xy: 2, 11
+  size: 118, 256
+  orig: 120, 258
+  offset: 1, 1
+  index: -1
+defo
+  rotate: false
+  xy: 368, 15
+  size: 18, 9
+  orig: 20, 11
+  offset: 1, 1
+  index: -1
+hand L
+  rotate: false
+  xy: 1093, 119
+  size: 77, 148
+  orig: 77, 148
+  offset: 0, 0
+  index: -1
+hand R
+  rotate: true
+  xy: 884, 22
+  size: 77, 153
+  orig: 77, 153
+  offset: 0, 0
+  index: -1
+hanme
+  rotate: false
+  xy: 239, 11
+  size: 104, 33
+  orig: 108, 39
+  offset: 2, 2
+  index: -1
+hutomomo R
+  rotate: false
+  xy: 1397, 134
+  size: 46, 133
+  orig: 48, 135
+  offset: 1, 1
+  index: -1
+kamikage
+  rotate: false
+  xy: 1249, 15
+  size: 131, 113
+  orig: 132, 113
+  offset: 1, 0
+  index: -1
+kanasisi mayu
+  rotate: false
+  xy: 388, 19
+  size: 103, 17
+  orig: 107, 20
+  offset: 2, 2
+  index: -1
+kao
+  rotate: true
+  xy: 944, 115
+  size: 152, 147
+  orig: 154, 149
+  offset: 1, 1
+  index: -1
+koutoubu
+  rotate: true
+  xy: 709, 87
+  size: 180, 141
+  orig: 182, 143
+  offset: 1, 1
+  index: -1
+mayu
+  rotate: false
+  xy: 884, 4
+  size: 116, 16
+  orig: 118, 18
+  offset: 1, 1
+  index: -1
+me
+  rotate: true
+  xy: 1397, 3
+  size: 129, 45
+  orig: 131, 48
+  offset: 1, 2
+  index: -1
+nikiniki
+  rotate: true
+  xy: 345, 15
+  size: 29, 8
+  orig: 31, 10
+  offset: 1, 1
+  index: -1
+oko mayu
+  rotate: false
+  xy: 382, 38
+  size: 107, 17
+  orig: 109, 19
+  offset: 1, 1
+  index: -1
+side L
+  rotate: false
+  xy: 122, 43
+  size: 63, 224
+  orig: 63, 231
+  offset: 0, 0
+  index: -1
+tojime
+  rotate: false
+  xy: 345, 2
+  size: 104, 11
+  orig: 107, 14
+  offset: 2, 2
+  index: -1
+ude L
+  rotate: false
+  xy: 1297, 132
+  size: 98, 135
+  orig: 100, 137
+  offset: 1, 1
+  index: -1
+ude R
+  rotate: true
+  xy: 1039, 13
+  size: 100, 139
+  orig: 102, 141
+  offset: 1, 1
+  index: -1
+usirogami
+  rotate: false
+  xy: 187, 46
+  size: 192, 221
+  orig: 193, 221
+  offset: 0, 0
+  index: -1
+wanpi-su
+  rotate: false
+  xy: 448, 65
+  size: 171, 202
+  orig: 171, 202
+  offset: 0, 0
+  index: -1
+レイヤー 44
+  rotate: false
+  xy: 768, 5
+  size: 114, 80
+  orig: 114, 80
+  offset: 0, 0
+  index: -1
