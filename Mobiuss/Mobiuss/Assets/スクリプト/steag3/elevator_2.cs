@@ -70,10 +70,7 @@ public class elevator_2 : MonoBehaviour
                 dead = 0;
             }
         }
-        if (weit >= 3)
-        {
-            weit=2;
-        }
+       
         if (play == 1)
         {
             if ((Pass.PlayerCanMove == true) && Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown("joystick button 2"))
